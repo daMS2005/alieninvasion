@@ -14,6 +14,17 @@ void displayMenu() {
     std::cout << "Press 'Q' to Quit.\n";
 }
 
+// Function to display the score
+void displayScore(int score) {
+    std::cout << "\n===================================\n";
+    std::cout << "            GAME OVER              \n";
+    std::cout << "===================================\n\n";
+    std::cout << "Your Score: " << score << "\n";
+    std::cout << "---------------------------------\n";
+    std::cout << "Press 'P' to Play Again!\n";
+    std::cout << "Press 'Q' to Quit.\n";
+}
+
 int main() {
     // Display the menu
     displayMenu();
