@@ -1,57 +1,59 @@
 #include "Player.hpp"
+#include <iostream>
 
-Player::Player() : speed(300.0f) {
+Player::Player() : speed(200.0f) { // Default player speed
     if (!texture.loadFromFile("resources/player.png")) {
         std::cerr << "Error loading player texture\n";
     }
     sprite.setTexture(texture);
-    sprite.setPosition(400.0f, 500.0f); // Center bottom
+    sprite.setPosition(400.0f, 500.0f); // Initialize player position (centered at the bottom)
 }
 
-void Player::handleInput() {
+void Player::handleInput(float deltaTime) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sprite.getPosition().x > 0) {
-        sprite.move(-speed * 0.016f, 0); // Move left
+        sprite.move(-speed * deltaTime, 0); // Move left
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sprite.getPosition().x < 800 - sprite.getGlobalBounds().width) {
-        sprite.move(speed * 0.016f, 0); // Move right
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) &&
+        sprite.getPosition().x < 800 - sprite.getGlobalBounds().width) {
+        sprite.move(speed * deltaTime, 0); // Move right
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-        shoot();
+        shoot(); // Fire a projectile
     }
 }
 
-void Player::shoot() {
-    if (shootClock.getElapsedTime().asMilliseconds() > 300) { // Fire every 300 ms
-        sf::Vector2f position = sprite.getPosition();
-        projectiles.emplace_back(position);
-        shootClock.restart();
-    }
+void Player::update() {
+    // No specific logic for the player yet, but this can be expanded
 }
 
-void Player::updateProjectiles() {
+void Player::updateProjectiles(float deltaTime) {
     for (auto it = projectiles.begin(); it != projectiles.end();) {
-        it->update();
+        it->update(deltaTime); // Update each projectile with deltaTime
         if (it->isOffScreen()) {
-            it = projectiles.erase(it);
+            it = projectiles.erase(it); // Remove projectiles that are off-screen
         } else {
             ++it;
         }
     }
 }
 
+void Player::render(sf::RenderWindow& window) {
+    window.draw(sprite); // Draw the player sprite
+}
+
 void Player::renderProjectiles(sf::RenderWindow& window) {
     for (auto& projectile : projectiles) {
-        projectile.render(window);
+        projectile.render(window); // Draw each projectile
     }
 }
 
-const std::vector<Projectile>& Player::getProjectiles() const {
+void Player::shoot() {
+    sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
+                          sprite.getPosition().y); // Set projectile starting position
+    projectiles.emplace_back(position); // Create a new projectile
+}
+
+std::vector<Projectile>& Player::getProjectiles() {
     return projectiles;
 }
 
-void Player::update() {
-    updateProjectiles();
-}
-void Player::render(sf::RenderWindow& window) {
-    window.draw(sprite); // Draw the player's sprite
-}

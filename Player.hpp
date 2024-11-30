@@ -2,7 +2,6 @@
 #define PLAYER_HPP
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include <vector>
 #include "Projectile.hpp"
 
@@ -16,16 +15,17 @@ private:
 
 public:
     Player();
-    void handleInput();
+    void handleInput(float deltaTime);          // Fixed: Requires deltaTime
     void update();
+    void updateProjectiles(float deltaTime);
     void render(sf::RenderWindow& window);
+    void renderProjectiles(sf::RenderWindow& window);
+    void shoot();
 
     sf::Vector2f getPosition() const;
     sf::FloatRect getBounds() const;
-    void shoot();
-    void updateProjectiles();
-    void renderProjectiles(sf::RenderWindow& window);
-    const std::vector<Projectile>& getProjectiles() const;
+    std::vector<Projectile>& getProjectiles(); // Fixed: Const-qualified
+    void removeProjectile(size_t index);
 };
 
 #endif // PLAYER_HPP
