@@ -14,7 +14,8 @@ int main() {
     sf::Clock clock;
     sf::Clock scoreClock;
     int score = 0;
-    bool isGameOver = false; // Track if the game is over
+    bool isGameOver = false;
+    bool initialSetup = true; // Track if we're in the initial setup phase
     std::set<int> usedPositions;
 
     // Load font for text
@@ -37,7 +38,7 @@ int main() {
     gameOverText.setCharacterSize(48);
     gameOverText.setFillColor(sf::Color::Red);
     gameOverText.setString("Game Over!");
-    gameOverText.setPosition(300.0f, 250.0f); // Centered in the window
+    gameOverText.setPosition(300.0f, 250.0f);
 
     // Create Restart text
     sf::Text restartText;
@@ -62,6 +63,7 @@ int main() {
                 aliens.clear();    // Clear all aliens
                 score = 0;         // Reset score
                 isGameOver = false;
+                initialSetup = true; // Return to initial setup
                 spawnClock.restart();
                 clock.restart();
                 scoreClock.restart();
@@ -94,14 +96,28 @@ int main() {
 
         scoreText.setString("Score: " + std::to_string(score));
 
-        // Spawn new aliens periodically
+        // Initial setup: Create a row of aliens
+        if (initialSetup) {
+            for (int i = 0; i < 10; ++i) { // Spawn 10 aliens in a row
+                AlienType type = (i % 2 == 0) ? AlienType::Blue : AlienType::Yellow;
+                int initialHealth = (type == AlienType::Blue) ? 1 : 2;
+                aliens.emplace_back(sf::Vector2f(50.0f + i * 70.0f, 100.0f), type, initialHealth);
+            }
+            initialSetup = false; // Move to random spawning mode
+        }
+
+        // Spawn new aliens randomly after the initial setup
         if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
             int x;
             do {
-                x = rand() % 750;
+                x = rand() % 750; // Generate random x within screen bounds
             } while (usedPositions.count(x));
             usedPositions.insert(x);
-            aliens.emplace_back(sf::Vector2f(static_cast<float>(x), 100), 3);
+
+            AlienType type = (rand() % 2 == 0) ? AlienType::Blue : AlienType::Yellow;
+            int initialHealth = (type == AlienType::Blue) ? 1 : 2;
+            aliens.emplace_back(sf::Vector2f(static_cast<float>(x), 100.0f), type, initialHealth);
+
             spawnClock.restart();
         }
 
@@ -138,12 +154,6 @@ int main() {
             } else {
                 ++it;
             }
-        }
-
-        // Check if the player's health is zero
-        if (player.getHealth() <= 0) {
-            isGameOver = true;
-            continue;
         }
 
         // Render everything

@@ -7,14 +7,15 @@ class Projectile {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
-    float speed; // Speed of the projectile
+    sf::Vector2f velocity;
 
 public:
-    Projectile(const sf::Vector2f& position);
-    void update(float deltaTime); // Accept deltaTime for frame-independent movement
+    Projectile(const sf::Vector2f& position, const sf::Vector2f& velocity); // Existing constructor
+    Projectile(const sf::Vector2f& position); // Overloaded constructor
+    void update(float deltaTime);
     void render(sf::RenderWindow& window);
-    sf::FloatRect getBounds() const; // Get the projectile's bounds
-    bool isOffScreen() const;        // Check if the projectile is off-screen
+    sf::FloatRect getBounds() const;
+    bool isOffScreen() const;
 };
 
 #endif // PROJECTILE_HPP

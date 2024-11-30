@@ -1,26 +1,36 @@
 #include "Projectile.hpp"
 #include <iostream>
 
-Projectile::Projectile(const sf::Vector2f& position) : speed(-500.0f) { // Set a negative speed for upward movement
+Projectile::Projectile(const sf::Vector2f& position, const sf::Vector2f& velocity)
+    : velocity(velocity) {
     if (!texture.loadFromFile("resources/projectile.png")) {
         std::cerr << "Error loading projectile texture\n";
     }
     sprite.setTexture(texture);
-    sprite.setPosition(position.x, position.y); // Initialize the position
+    sprite.setPosition(position);
+}
+
+Projectile::Projectile(const sf::Vector2f& position)
+    : velocity(0.0f, -300.0f) { // Default upward velocity
+    if (!texture.loadFromFile("resources/projectile.png")) {
+        std::cerr << "Error loading projectile texture\n";
+    }
+    sprite.setTexture(texture);
+    sprite.setPosition(position);
 }
 
 void Projectile::update(float deltaTime) {
-    sprite.move(0, speed * deltaTime); // Use deltaTime for consistent upward movement
+    sprite.move(velocity * deltaTime); // Move the projectile using velocity
 }
 
 void Projectile::render(sf::RenderWindow& window) {
-    window.draw(sprite); // Render the projectile
+    window.draw(sprite);
 }
 
 sf::FloatRect Projectile::getBounds() const {
-    return sprite.getGlobalBounds(); // Return the projectile's bounds for collision detection
+    return sprite.getGlobalBounds();
 }
 
 bool Projectile::isOffScreen() const {
-    return sprite.getPosition().y + sprite.getGlobalBounds().height < 0; // Check if the projectile is above the screen
+    return sprite.getPosition().y < 0 || sprite.getPosition().y > 600;
 }
