@@ -1,12 +1,26 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player() : speed(200.0f) { // Default player speed
+Player::Player() : speed(200.0f), shootCooldown(0.5f), health(100) { // Start with 100 health
     if (!texture.loadFromFile("resources/player.png")) {
         std::cerr << "Error loading player texture\n";
     }
     sprite.setTexture(texture);
-    sprite.setPosition(400.0f, 500.0f); // Initialize player position (centered at the bottom)
+    sprite.setPosition(400.0f, 500.0f);
+
+    // Configure health bar
+    healthBarBackground.setSize(sf::Vector2f(200.0f, 20.0f)); // Background size
+    healthBarBackground.setFillColor(sf::Color::Red);         // Background color
+    healthBarBackground.setPosition(580.0f, 10.0f);           // Top-right corner (adjust x and y)
+
+    healthBarForeground.setSize(sf::Vector2f(200.0f, 20.0f)); // Foreground size
+    healthBarForeground.setFillColor(sf::Color::Green);       // Foreground color
+    healthBarForeground.setPosition(580.0f, 10.0f);           // Top-right corner (adjust x and y)
+}
+
+
+int Player::getHealth() {
+    return health;
 }
 
 void Player::handleInput(float deltaTime) {
@@ -18,19 +32,38 @@ void Player::handleInput(float deltaTime) {
         sprite.move(speed * deltaTime, 0); // Move right
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-        shoot(); // Fire a projectile
+        shoot(); // Attempt to shoot
     }
 }
 
+void Player::shoot() {
+    if (shootClock.getElapsedTime().asSeconds() >= shootCooldown) {
+        sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
+                              sprite.getPosition().y);
+        projectiles.emplace_back(position); // Create a new projectile
+        shootClock.restart();              // Restart the cooldown timer
+    }
+}
+void Player::takeDamage(int damage) {
+    health -= damage; // Reduce health
+    if (health < 0) {
+        health = 0; // Prevent negative health
+    }
+
+    // Update health bar
+    float healthPercentage = static_cast<float>(health) / 100.0f;
+    healthBarForeground.setSize(sf::Vector2f(200.0f * healthPercentage, 20.0f));
+}
+
 void Player::update() {
-    // No specific logic for the player yet, but this can be expanded
+    // General player update logic (if needed)
 }
 
 void Player::updateProjectiles(float deltaTime) {
     for (auto it = projectiles.begin(); it != projectiles.end();) {
-        it->update(deltaTime); // Update each projectile with deltaTime
+        it->update(deltaTime);
         if (it->isOffScreen()) {
-            it = projectiles.erase(it); // Remove projectiles that are off-screen
+            it = projectiles.erase(it); // Remove off-screen projectiles
         } else {
             ++it;
         }
@@ -38,22 +71,33 @@ void Player::updateProjectiles(float deltaTime) {
 }
 
 void Player::render(sf::RenderWindow& window) {
-    window.draw(sprite); // Draw the player sprite
+    window.draw(sprite); // Render the player
 }
 
 void Player::renderProjectiles(sf::RenderWindow& window) {
     for (auto& projectile : projectiles) {
-        projectile.render(window); // Draw each projectile
+        projectile.render(window); // Render projectiles
     }
 }
-
-void Player::shoot() {
-    sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
-                          sprite.getPosition().y); // Set projectile starting position
-    projectiles.emplace_back(position); // Create a new projectile
+void Player::renderHealthBar(sf::RenderWindow& window) {
+    window.draw(healthBarBackground); // Draw health bar background
+    window.draw(healthBarForeground); // Draw health bar foreground
 }
 
 std::vector<Projectile>& Player::getProjectiles() {
-    return projectiles;
+    return projectiles; // Return reference to projectiles
 }
 
+sf::Vector2f Player::getPosition() const {
+    return sprite.getPosition();
+}
+
+sf::FloatRect Player::getBounds() const {
+    return sprite.getGlobalBounds();
+}
+
+void Player::removeProjectile(size_t index) {
+    if (index < projectiles.size()) {
+        projectiles.erase(projectiles.begin() + index);
+    }
+}
