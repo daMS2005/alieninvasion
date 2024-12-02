@@ -19,6 +19,7 @@ private:
     AlienType alienType;      // Alien type to decide texture
 
 public:
+    int getHealth() const;
     Alien(const sf::Vector2f& position, int initialHealth = 3, AlienType type = AlienType::Blue); // Default type: Blue
     void update(float deltaTime, int scoreThreshold, int currentScore);
     void render(sf::RenderWindow& window);

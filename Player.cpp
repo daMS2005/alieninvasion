@@ -55,6 +55,14 @@ void Player::takeDamage(int damage) {
     healthBarForeground.setSize(sf::Vector2f(200.0f * healthPercentage, 20.0f));
 }
 
+float Player::getSpeed() const {
+    return speed; // Return the current speed of the player
+}
+
+void Player::setSpeed(float newSpeed) {
+    speed = newSpeed; // Set the player's speed to the new value
+}
+
 void Player::update() {
     // General player update logic (if needed)
 }

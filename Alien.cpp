@@ -31,6 +31,10 @@ Alien::Alien(const sf::Vector2f& position, int initialHealth, AlienType type)
     sprite.setPosition(position);
 }
 
+int Alien::getHealth() const {
+    return health;
+}
+
 void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
     if (currentScore >= scoreThreshold) {
         isMoving = true;
