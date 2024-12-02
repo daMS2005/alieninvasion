@@ -19,7 +19,7 @@ int main() {
 
     // Load font for text
     sf::Font font;
-    if (!font.loadFromFile("resources/arial.ttf")) {
+    if (!font.loadFromFile("../resources/arial.ttf")) {
         std::cerr << "Error loading font\n";
         return -1;
     }

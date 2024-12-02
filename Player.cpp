@@ -1,8 +1,8 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player() : speed(380.0f), shootCooldown(0.33f), health(100) { // By default we start with 100 health
-    if (!texture.loadFromFile("resources/player.png")) {
+Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100) { // By default we start with 100 health
+    if (!texture.loadFromFile("../resources/player.png")) {
         std::cerr << "Error loading player texture\n";
     }
     sprite.setTexture(texture);
