@@ -3,7 +3,7 @@
 
 Projectile::Projectile(const sf::Vector2f& position, const sf::Vector2f& velocity)
     : velocity(velocity) {
-    if (!texture.loadFromFile("resources/projectile.png")) {
+    if (!texture.loadFromFile("resources/laser3.png")) {
         std::cerr << "Error loading projectile texture\n";
     }
     sprite.setTexture(texture);
@@ -12,7 +12,7 @@ Projectile::Projectile(const sf::Vector2f& position, const sf::Vector2f& velocit
 
 Projectile::Projectile(const sf::Vector2f& position)
     : velocity(0.0f, -300.0f) { // Default upward velocity
-    if (!texture.loadFromFile("resources/projectile.png")) {
+    if (!texture.loadFromFile("resources/laser3.png")) {
         std::cerr << "Error loading projectile texture\n";
     }
     sprite.setTexture(texture);

@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "Projectile.hpp"
+#include <SFML/Audio.hpp>
 
 class Player {
 private:
@@ -16,7 +17,8 @@ private:
     int health;           // Player's health
     sf::RectangleShape healthBarBackground; // Health bar background
     sf::RectangleShape healthBarForeground; // Health bar foreground
-
+    sf::SoundBuffer shootingSoundBuffer;
+    sf::Sound shootingSound;
 public:
     Player();
     void handleInput(float deltaTime);
@@ -35,7 +37,7 @@ public:
     int getHealth();
     private:
     std::string texturePath; // Tracks the current texture path
-
+    void loadSounds();
 };
 
 #endif // PLAYER_HPP

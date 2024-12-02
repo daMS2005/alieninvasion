@@ -1,14 +1,17 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player() : speed(300.0f), shootCooldown(0.5f), health(100), texturePath("resources/player.png") { 
+Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100), texturePath("resources/player.png") { 
     // Default skin
     if (!texture.loadFromFile(texturePath)) {
         std::cerr << "Error loading default player texture: " << texturePath << std::endl;
     }
     sprite.setTexture(texture);
     sprite.setPosition(400.0f, 500.0f);
-
+    if (!shootingSoundBuffer.loadFromFile("resources/shootingsound.ogg")) {
+        std::cerr << "Error loading shooting sound\n";
+    }
+    shootingSound.setBuffer(shootingSoundBuffer);
     // Configure health bar
     healthBarBackground.setSize(sf::Vector2f(200.0f, 20.0f)); // Background size
     healthBarBackground.setFillColor(sf::Color::Red);         // Background color
@@ -44,9 +47,11 @@ void Player::shoot() {
         sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
                               sprite.getPosition().y);
         projectiles.emplace_back(position); // Create a new projectile
-        shootClock.restart();              // Restart the cooldown timer
+        shootingSound.play();               // Play the shooting sound
+        shootClock.restart();               // Restart the cooldown timer
     }
 }
+
 
 // Take damage and update health bar
 void Player::takeDamage(int damage) {

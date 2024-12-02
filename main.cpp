@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <SFML/Audio.hpp> 
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Alien Invasion");
@@ -21,7 +22,13 @@ int main() {
     int score = 0;
     bool isGameOver = false;
     bool initialSetup = true;
-
+    sf::Music bgMusic;
+    if (!bgMusic.openFromFile("resources/bgmusic.ogg")) {
+        std::cerr << "Error loading background music\n";
+        return -1;
+    }
+    bgMusic.setLoop(true);  // Loop the music
+    bgMusic.play();  
     // Load font
     sf::Font font;
     if (!font.loadFromFile("resources/retrofont.ttf")) {
@@ -135,97 +142,110 @@ int main() {
             window.draw(skinButton);
             window.draw(leaderboardButton);
             window.draw(quitButton);
+            // HEREEEEEEEEEEEEEEEEEEEE
         } else if (currentState == GameState::Gameplay) {
-            float deltaTime = clock.restart().asSeconds();
+    float deltaTime = clock.restart().asSeconds();
 
-            if (isGameOver) {
-                // Handle game over logic
-                continue;
-            }
-
-            // Handle player input and updates
-            player.handleInput(deltaTime);
-            player.update();
-            player.updateProjectiles(deltaTime);
-
-            // Spawn initial row of aliens (once)
-            if (initialSetup) {
-                for (int i = 0; i < 10; ++i) {
-                    AlienType type = (i % 2 == 0) ? AlienType::Blue : AlienType::Yellow; // Alternate alien types
-                    aliens.emplace_back(sf::Vector2f(50.0f + i * 70.0f, 100.0f), type);
-
-
-                }
-                initialSetup = false;
-            }
-
-            // Spawn new aliens periodically
-            if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
-                float x = static_cast<float>(rand() % 750); // Random x position
-                AlienType type = (rand() % 2 == 0) ? AlienType::Blue : AlienType::Yellow; // Randomize alien type
-                aliens.emplace_back(sf::Vector2f(x, -50), type, 3); // Position, type, health
-
-                spawnClock.restart();                      // Restart the spawn clock
-            }
-
-            // Update aliens
-            // Update aliens
-// Update aliens
-for (auto& alien : aliens) {
-    alien.update(deltaTime, 100, score); // Update alien position and logic
-}
-
-// Handle player health when aliens go offscreen or touch the player
-for (auto it = aliens.begin(); it != aliens.end();) {
-    if (it->isOffScreen()) { 
-        player.takeDamage(10); // Player loses 10 health for offscreen aliens
-        it = aliens.erase(it); // Remove the offscreen alien
-    } else if (it->getBounds().intersects(player.getBounds())) { 
-        player.takeDamage(20); // Player loses 20 health for collision
-        it = aliens.erase(it); // Remove the alien after collision
-    } else {
-        ++it; // Move to the next alien
-    }
-}
-
-// Collision detection between projectiles and aliens
-for (auto& alien : aliens) { // Check collisions for all aliens
-    for (auto it = player.getProjectiles().begin(); it != player.getProjectiles().end();) {
-        if (it->getBounds().intersects(alien.getBounds())) { // Collision detected
-            alien.takeDamage(1);              // Reduce alien health
-            if (alien.isDead()) {
-                score += 100;                 // Increase score if alien is dead
-            }
-            it = player.getProjectiles().erase(it); // Remove the projectile after collision
+    if (isGameOver || player.getHealth() <= 0) {
+        // Add score to the leaderboard
+        std::ofstream file("leaderboard.txt", std::ios::app);
+        if (file.is_open()) {
+            file << score << "\n";
+            file.close();
         } else {
-            ++it; // Move to the next projectile
+            std::cerr << "Error opening leaderboard.txt for writing\n";
+        }
+
+        // Display Game Over screen
+        sf::Text gameOverText("Game Over!", font, 48);
+        gameOverText.setFillColor(sf::Color::Red);
+        gameOverText.setPosition(200, 250);
+
+        sf::Text restartText("Press R to Restart or ESC to Quit", font, 24);
+        restartText.setFillColor(sf::Color::White);
+        restartText.setPosition(150, 320);
+
+        sf::Text menuText("Press M to Return to Menu", font, 24);
+        menuText.setFillColor(sf::Color::White);
+        menuText.setPosition(200, 360);
+
+        window.clear(sf::Color::Black);
+        window.draw(gameOverText);
+        window.draw(restartText);
+        window.draw(menuText);
+        window.display();
+
+        // Handle user input for Game Over options
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+            currentState = GameState::Gameplay; // Restart game
+            aliens.clear();                     // Clear aliens
+            score = 0;                          // Reset score
+            player = Player();                  // Reset player
+            spawnClock.restart();               // Restart spawn clock
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
+            currentState = GameState::StartMenu; // Go back to menu
+            aliens.clear();                      // Clear aliens
+            score = 0;                           // Reset score
+            player = Player();                   // Reset player
+            spawnClock.restart();                // Restart spawn clock
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+            window.close(); // Quit the game
+        }
+
+        return 0; // Skip further game logic if game over
+    }
+
+    // Normal game logic here...
+    player.handleInput(deltaTime);
+    player.update();
+    player.updateProjectiles(deltaTime);
+
+    for (auto& alien : aliens) {
+        alien.update(deltaTime, 100, score);
+    }
+    // Spawn new aliens
+    for (auto& alien : aliens) {
+        for (auto it = player.getProjectiles().begin(); it != player.getProjectiles().end();) {
+            if (it->getBounds().intersects(alien.getBounds())) {
+                alien.takeDamage(1);
+                if (alien.isDead()) {
+                    score += 100;
+                }
+                it = player.getProjectiles().erase(it);
+            } else {
+                ++it;
+            }
         }
     }
+
+    aliens.erase(
+        std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
+            return alien.isDead();
+        }),
+        aliens.end()
+    );
+
+    aliens.erase(
+        std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
+            return alien.isOffScreen();
+        }),
+        aliens.end()
+    );
+
+    // Render game elements
+    for (auto& alien : aliens) {
+        alien.render(window);
+    }
+    player.render(window);
+    player.renderProjectiles(window);
+    player.renderHealthBar(window);
+
+    scoreText.setString("Score: " + std::to_string(score));
+    window.draw(scoreText);
 }
-
-// Remove dead aliens
-aliens.erase(
-    std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
-        return alien.isDead(); // Remove aliens whose health is 0 or below
-    }),
-    aliens.end()
-);
-
-// Render game elements
-for (auto& alien : aliens) {
-    alien.render(window); // Render remaining aliens
-}
-player.render(window);            // Render the player
-player.renderProjectiles(window); // Render projectiles
-player.renderHealthBar(window);   // Render the health bar
-
-// Update and render score
-scoreText.setString("Score: " + std::to_string(score));
-window.draw(scoreText);
-
-
-
-        } else if (currentState == GameState::SkinSelection) {
+else if (currentState == GameState::SkinSelection) {
             sf::Text skinTitle("Select Your Skin", font, 40);
             skinTitle.setPosition(200, 50);
             window.draw(skinTitle);
