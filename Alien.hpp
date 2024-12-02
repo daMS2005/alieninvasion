@@ -4,6 +4,9 @@
 #include <SFML/Graphics.hpp>
 
 class Alien {
+public:
+    enum class AlienType { Blue, Green, Yellow }; // Alien types
+
 private:
     sf::Sprite sprite;
     sf::Texture texture0;
@@ -13,9 +16,10 @@ private:
     sf::Clock animationClock; // Timer for animation
     bool useTexture0;         // Toggle between textures
     bool isMoving;            // Whether the alien is moving or static
+    AlienType alienType;      // Alien type to decide texture
 
 public:
-    Alien(const sf::Vector2f& position, int initialHealth = 3); // Default health = 3
+    Alien(const sf::Vector2f& position, int initialHealth = 3, AlienType type = AlienType::Blue); // Default type: Blue
     void update(float deltaTime, int scoreThreshold, int currentScore);
     void render(sf::RenderWindow& window);
     sf::FloatRect getBounds() const;

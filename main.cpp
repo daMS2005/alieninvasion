@@ -101,7 +101,18 @@ int main() {
                 x = rand() % 750;
             } while (usedPositions.count(x));
             usedPositions.insert(x);
-            aliens.emplace_back(sf::Vector2f(static_cast<float>(x), 100), 3);
+            Alien::AlienType type;
+            int randType = rand() % 3; // Random number between 0 and 2
+            if (randType == 0) {
+                type = Alien::AlienType::Blue;
+            } else if (randType == 1) {
+                type = Alien::AlienType::Green;
+            } else {
+                type = Alien::AlienType::Yellow;
+            }
+
+            aliens.emplace_back(sf::Vector2f(static_cast<float>(x), 100), 3, type);
+
             spawnClock.restart();
         }
 
@@ -109,7 +120,7 @@ int main() {
         for (auto& alien : aliens) {
             alien.update(deltaTime, 100, score);
         }
-
+        
         // Check collisions between projectiles and aliens
         for (auto& alien : aliens) {
             for (auto it = player.getProjectiles().begin(); it != player.getProjectiles().end();) {
@@ -156,7 +167,10 @@ int main() {
         player.renderHealthBar(window);
         window.draw(scoreText);
         window.display();
+
+
     }
+
 
     return 0;
 }

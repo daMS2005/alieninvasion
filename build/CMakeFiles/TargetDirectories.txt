@@ -1,0 +1,3 @@
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/alien_invasion.dir
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/rebuild_cache.dir
