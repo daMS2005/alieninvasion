@@ -19,7 +19,7 @@ int main() {
 
     // Load font for text
     sf::Font font;
-    if (!font.loadFromFile("resources/arial.ttf")) {
+    if (!font.loadFromFile("../resources/arial.ttf")) {
         std::cerr << "Error loading font\n";
         return -1;
     }
@@ -101,13 +101,35 @@ int main() {
                 x = rand() % 750;
             } while (usedPositions.count(x));
             usedPositions.insert(x);
-            aliens.emplace_back(sf::Vector2f(static_cast<float>(x), 100), 3);
+            Alien::AlienType type;
+            int randType = rand() % 3; // Random number between 0 and 2
+            if (randType == 0) {
+                type = Alien::AlienType::Blue;
+            } else if (randType == 1) {
+                type = Alien::AlienType::Green;
+            } else {
+                type = Alien::AlienType::Yellow;
+            }
+
+            aliens.emplace_back(sf::Vector2f(static_cast<float>(x), 100), 3, type);
+
             spawnClock.restart();
         }
 
         // Update aliens
         for (auto& alien : aliens) {
             alien.update(deltaTime, 100, score);
+        }
+
+        // Check collisions between the player and aliens
+        for (auto& alien : aliens) {
+            if (alien.getBounds().intersects(player.getBounds())) {
+                // Alien has collided with the player, apply extra damage
+                player.takeDamage(30); // 30 extra damage when alien crashes on top of player
+
+                // Optionally, remove the alien or handle the crash behavior
+                alien.takeDamage(alien.getHealth()); // or just remove the alien from the game
+            }
         }
 
         // Check collisions between projectiles and aliens
@@ -146,6 +168,7 @@ int main() {
             continue;
         }
 
+
         // Render everything
         window.clear(sf::Color::Black);
         for (auto& alien : aliens) {
@@ -156,7 +179,10 @@ int main() {
         player.renderHealthBar(window);
         window.draw(scoreText);
         window.display();
+
+
     }
+
 
     return 0;
 }

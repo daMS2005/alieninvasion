@@ -1,8 +1,8 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player() : speed(200.0f), shootCooldown(0.5f), health(100) { // Start with 100 health
-    if (!texture.loadFromFile("resources/player.png")) {
+Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100) { // By default we start with 100 health
+    if (!texture.loadFromFile("../resources/player.png")) {
         std::cerr << "Error loading player texture\n";
     }
     sprite.setTexture(texture);
@@ -49,7 +49,7 @@ void Player::takeDamage(int damage) {
     if (health < 0) {
         health = 0; // Prevent negative health
     }
-
+    
     // Update health bar
     float healthPercentage = static_cast<float>(health) / 100.0f;
     healthBarForeground.setSize(sf::Vector2f(200.0f * healthPercentage, 20.0f));

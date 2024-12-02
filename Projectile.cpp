@@ -2,7 +2,7 @@
 #include <iostream>
 
 Projectile::Projectile(const sf::Vector2f& position) : speed(-500.0f) { // Set a negative speed for upward movement
-    if (!texture.loadFromFile("resources/projectile.png")) {
+    if (!texture.loadFromFile("../resources/projectile.png")) {
         std::cerr << "Error loading projectile texture\n";
     }
     sprite.setTexture(texture);
