@@ -8,11 +8,13 @@ Alien::Alien(const sf::Vector2f& position, AlienType alienType, int initialHealt
             !texture2.loadFromFile("resources/bluealien1.png")) {
             std::cerr << "Error loading blue alien textures\n";
         }
+        health = 1; // Blue aliens have less health
     } else if (type == AlienType::Yellow) {
         if (!texture1.loadFromFile("resources/yellowalien0.png") ||
             !texture2.loadFromFile("resources/yellowalien1.png")) {
             std::cerr << "Error loading yellow alien textures\n";
         }
+        health = 2; // Yellow aliens have more health
     }
 
     sprite.setTexture(texture1);
@@ -38,29 +40,36 @@ void Alien::shoot() {
         shootClock.restart();
     }
 }
-#include "Alien.hpp"
-#include <iostream>
+
 
 void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
+    // Check if aliens should start moving based on score
     if (currentScore >= scoreThreshold) {
         isMoving = true;
     }
 
+    // Move the alien downward if it is active
     if (isMoving) {
         sprite.move(0, speed * deltaTime);
     }
 
+    // Yellow aliens can shoot
     if (type == AlienType::Yellow) {
-        shoot(); // Yellow aliens shoot
+        shoot();
     }
 
     // Alternate textures for animation
     if (animationClock.getElapsedTime().asSeconds() > 0.5f) {
-        sprite.setTexture(useTexture1 ? texture2 : texture1);
-        useTexture1 = !useTexture1;
+        if (type == AlienType::Blue) {
+            sprite.setTexture(useTexture1 ? texture1 : texture2); // Alternate blue textures
+        } else if (type == AlienType::Yellow) {
+            sprite.setTexture(useTexture1 ? texture1 : texture2); // Alternate yellow textures
+        }
+        useTexture1 = !useTexture1; // Toggle texture flag
         animationClock.restart();
     }
 }
+
 
 
 void Alien::render(sf::RenderWindow& window) {
