@@ -1,14 +1,10 @@
 #include "Player.hpp"
 #include "Projectile.hpp"
 #include "Alien.hpp"
-#include "PowerUp.hpp"
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <set>
 #include <iostream>
-
-std::vector<PowerUp> powerUps;  // Declare a container for the power-ups
-sf::Clock powerUpTimer; // Timer to track the power-up duration
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Alien Invasion");
@@ -129,7 +125,7 @@ int main() {
         for (auto& alien : aliens) {
             if (alien.getBounds().intersects(player.getBounds())) {
                 // Alien has collided with the player, apply extra damage
-                player.takeDamage(10); // 10 extra damage when alien crashes on top of player
+                player.takeDamage(30); // 30 extra damage when alien crashes on top of player
 
                 // Optionally, remove the alien or handle the crash behavior
                 alien.takeDamage(alien.getHealth()); // or just remove the alien from the game
@@ -170,31 +166,6 @@ int main() {
         if (player.getHealth() <= 0) {
             isGameOver = true;
             continue;
-        }
-
-        if (spawnClock.getElapsedTime().asSeconds() > 30.0f) {
-            // Spawn a power-up (a red circle)
-            powerUps.emplace_back(sf::Vector2f(rand() % 750, 0)); // Random x position
-            spawnClock.restart();
-        }
-
-        // Check for collisions between power-ups and the player
-        for (auto it = powerUps.begin(); it != powerUps.end(); ) {
-            if (it->getBounds().intersects(player.getBounds())) {
-                player.setSpeed(player.getSpeed() * 2); // Double the player's speed
-                powerUpTimer.restart(); // Restart the power-up timer
-                
-                // Remove the power-up after it has been collected
-                it = powerUps.erase(it);  // Erase returns the next iterator
-            } else {
-                ++it; // Move to the next power-up if no collision
-            }
-        }
-
-
-        // If the power-up time has passed, reset the player's speed
-        if (powerUpTimer.getElapsedTime().asSeconds() > 5.0f) {
-            player.setSpeed(player.getSpeed() / 2); // Reset the speed
         }
 
 

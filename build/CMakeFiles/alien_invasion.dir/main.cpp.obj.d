@@ -255,7 +255,6 @@ CMakeFiles/alien_invasion.dir/main.cpp.obj: \
  C:/msys64/mingw64/include/SFML/Graphics/VertexBuffer.hpp \
  C:\Users\Lenovo\Desktop\cppaliens\alieninvasion\Projectile.hpp \
  C:\Users\Lenovo\Desktop\cppaliens\alieninvasion\Alien.hpp \
- C:\Users\Lenovo\Desktop\cppaliens\alieninvasion\PowerUp.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/set \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_set.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multiset.h \

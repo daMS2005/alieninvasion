@@ -1061,7 +1061,7 @@ CMakeFiles/alien_invasion.dir/main.cpp.obj: C:/Users/Lenovo/Desktop/cppaliens/al
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
   C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/Alien.hpp \
   C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/Player.hpp \
-  C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/Powerup.hpp \
+  C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/PowerUp.hpp \
   C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/Projectile.hpp
 
 
@@ -1607,4 +1607,4 @@ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_set.h:
 
 C:/msys64/mingw64/include/c++/14.2.0/set:
 
-C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/Powerup.hpp:
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/PowerUp.hpp:

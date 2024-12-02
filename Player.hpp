@@ -27,8 +27,6 @@ public:
     void renderHealthBar(sf::RenderWindow& window); // Render the health bar
     void shoot();
     void takeDamage(int damage); // Handle player damage
-    float getSpeed() const;  // Add this to get the player's speed
-    void setSpeed(float newSpeed); // Declare setSpeed method
 
     sf::Vector2f getPosition() const;
     sf::FloatRect getBounds() const;

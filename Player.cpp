@@ -49,18 +49,10 @@ void Player::takeDamage(int damage) {
     if (health < 0) {
         health = 0; // Prevent negative health
     }
-
+    
     // Update health bar
     float healthPercentage = static_cast<float>(health) / 100.0f;
     healthBarForeground.setSize(sf::Vector2f(200.0f * healthPercentage, 20.0f));
-}
-
-float Player::getSpeed() const {
-    return speed; // Return the current speed of the player
-}
-
-void Player::setSpeed(float newSpeed) {
-    speed = newSpeed; // Set the player's speed to the new value
 }
 
 void Player::update() {
