@@ -55,6 +55,25 @@ void Alien::shoot() {
 }
 
 void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
+    // Green aliens remain static
+    if (type == AlienType::Green) {
+        // Still allow Green aliens to shoot
+        shoot();
+
+        // Update projectiles for Green aliens
+        for (auto it = projectiles.begin(); it != projectiles.end();) {
+            it->update(deltaTime);
+            if (it->isOffScreen()) {
+                it = projectiles.erase(it);
+            } else {
+                ++it;
+            }
+        }
+
+        // No movement or animation for Green aliens
+        return;
+    }
+
     // Update movement based on type
     if (type == AlienType::Blue || type == AlienType::Yellow) {
         if (currentScore >= scoreThreshold) {
@@ -92,7 +111,7 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
         }
     }
 
-    // Animation logic for Blue, Yellow, Green (UFO excluded)
+    // Animation logic for Blue, Yellow (UFO excluded)
     if (type != AlienType::UFO && animationClock.getElapsedTime().asSeconds() > 0.5f) {
         sprite.setTexture(useTexture1 ? texture2 : texture1);
         useTexture1 = !useTexture1;

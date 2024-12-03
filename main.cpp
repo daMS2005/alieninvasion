@@ -24,6 +24,14 @@ int main() {
     bool initialSetup = true;
     sf::Music bgMusic;
     sf::Music gameoversound;
+    sf::Texture backgroundTexture;
+    sf::Sprite backgroundSprite;
+    if (!backgroundTexture.loadFromFile("resources/background.png")) {
+    std::cerr << "Error loading background image\n";
+    return -1;
+}
+backgroundSprite.setTexture(backgroundTexture);
+
     if (!bgMusic.openFromFile("resources/bgmusic.ogg")) {
         std::cerr << "Error loading background music\n";
         return -1;
@@ -146,7 +154,7 @@ int main() {
             // HEREEEEEEEEEEEEEEEEEEEE
         } else if (currentState == GameState::Gameplay) {
     float deltaTime = clock.restart().asSeconds();
-
+    window.draw(backgroundSprite);
     if (isGameOver || player.getHealth() <= 0) {
     // Add score to the leaderboard
     std::ofstream file("leaderboard.txt", std::ios::app);
@@ -165,13 +173,14 @@ int main() {
     if (!gameoversound.openFromFile("resources/gameoversound.ogg")) {
         std::cerr << "Error loading game over sound\n";
     }
+    bgMusic.stop();
     gameoversound.play();
-
-    sf::Text restartText("Press R to Restart or ESC to Quit", font, 24);
+    
+    sf::Text restartText("          Press ESC to Quit", font, 24);
     restartText.setFillColor(sf::Color::White);
     restartText.setPosition(150, 320);
 
-    sf::Text menuText("Press M to Return to Menu", font, 24);
+    sf::Text menuText("         Press M to go to Menu", font, 24);
     menuText.setFillColor(sf::Color::White);
     menuText.setPosition(200, 360);
 
@@ -194,6 +203,7 @@ int main() {
                     gameOverScreenActive = false; // Exit the Game Over screen
                 } else if (event.key.code == sf::Keyboard::M) {
                     // Return to menu
+                    bgMusic.play();
                     currentState = GameState::StartMenu;
                     aliens.clear();
                     score = 0;
@@ -242,6 +252,14 @@ int main() {
     }
     initialSetup = false; // Ensure this block runs only once
 }
+for (auto it = aliens.begin(); it != aliens.end();) {
+    if (it->getBounds().intersects(player.getBounds())) {
+        player.takeDamage(20); // Damage the player (adjust damage as needed)
+        it = aliens.erase(it); // Remove the alien after collision
+    } else {
+        ++it; // Move to the next alien
+    }
+}
 if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
     float x = static_cast<float>(rand() % 750);
     AlienType type = static_cast<AlienType>(rand() % 4); // Blue, Yellow, Green, UFO
@@ -259,7 +277,9 @@ if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
             type = AlienType::Blue; // Default to another type if UFO exists
         }
     }
-
+    if (type == AlienType::Green && score <= 2000) {
+        type = AlienType::Blue; // Fallback to Blue if score < 2000
+    }
     int health = (type == AlienType::Green) ? 2 : (type == AlienType::UFO) ? 3 : 1;
 
     aliens.emplace_back(sf::Vector2f(x, (type == AlienType::UFO ? 50.0f : -50.0f)), type, health);
@@ -284,7 +304,14 @@ if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
             }
         }
     }
-
+    for (auto it = aliens.begin(); it != aliens.end();) {
+        if (it->isOffScreen()) {
+            player.takeDamage(10); // Reduce player's health
+            it = aliens.erase(it); // Remove the alien
+        } else {
+            ++it; // Move to the next alien
+        }
+    }
     aliens.erase(
         std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
             return alien.isDead();
