@@ -7,7 +7,7 @@
     <incdepgraph>
       <node id="3">
         <label>Projectile.hpp</label>
-        <link refid="_projectile_8hpp_source"/>
+        <link refid="_projectile_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
@@ -39,12 +39,13 @@
           <type>InitialPosition</type>
         </param>
         <briefdescription>
+<para>Test: Initial Position of <ref refid="class_projectile" kindref="compound">Projectile</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestProjectile.cpp" line="4" column="1" bodyfile="tests/TestProjectile.cpp" bodystart="4" bodyend="8"/>
+        <location file="tests/TestProjectile.cpp" line="7" column="1" bodyfile="tests/TestProjectile.cpp" bodystart="7" bodyend="11"/>
       </memberdef>
       <memberdef kind="function" id="_test_projectile_8cpp_1ad61f3279bdb48ed2abb158272ec8697b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -58,12 +59,13 @@
           <type>Movement</type>
         </param>
         <briefdescription>
+<para>Test: <ref refid="class_projectile" kindref="compound">Projectile</ref> Movement. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestProjectile.cpp" line="10" column="1" bodyfile="tests/TestProjectile.cpp" bodystart="10" bodyend="14"/>
+        <location file="tests/TestProjectile.cpp" line="16" column="1" bodyfile="tests/TestProjectile.cpp" bodystart="16" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="_test_projectile_8cpp_1a8e1bc879442b223782ba178af4a2debc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -77,12 +79,13 @@
           <type>OffScreenDetection</type>
         </param>
         <briefdescription>
+<para>Test: Off-Screen Detection. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestProjectile.cpp" line="16" column="1" bodyfile="tests/TestProjectile.cpp" bodystart="16" bodyend="19"/>
+        <location file="tests/TestProjectile.cpp" line="26" column="1" bodyfile="tests/TestProjectile.cpp" bodystart="26" bodyend="29"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -91,24 +94,25 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Projectile.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_projectile_8hpp" kindref="compound">Projectile.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal">TEST(ProjectileTest,<sp/>InitialPosition)<sp/>{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({100.0f,<sp/>200.0f});</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(projectile.getBounds().top,<sp/>200.0f);<sp/></highlight><highlight class="comment">//<sp/>Correct<sp/>Y<sp/>position</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(projectile.getBounds().left,<sp/>100.0f);<sp/></highlight><highlight class="comment">//<sp/>Correct<sp/>X<sp/>position</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal">TEST(ProjectileTest,<sp/>Movement)<sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({0.0f,<sp/>200.0f});</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>projectile.<ref refid="class_projectile_1a5bc646de87829b911d6817a6478c353e" kindref="member">update</ref>(0.016f);<sp/></highlight><highlight class="comment">//<sp/>Simulate<sp/>a<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_LT(projectile.getBounds().top,<sp/>200.0f);<sp/></highlight><highlight class="comment">//<sp/>Y<sp/>position<sp/>decreased</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal">TEST(ProjectileTest,<sp/>OffScreenDetection)<sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({0.0f,<sp/>-10.0f});</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_TRUE(projectile.isOffScreen());<sp/></highlight><highlight class="comment">//<sp/>Projectile<sp/>is<sp/>off-screen</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7" refid="_test_projectile_8cpp_1a3499c60dd7b818ebb2dd1aa00ab74210" refkind="member"><highlight class="normal"><ref refid="_test_projectile_8cpp_1a3499c60dd7b818ebb2dd1aa00ab74210" kindref="member">TEST</ref>(ProjectileTest,<sp/>InitialPosition)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({100.0f,<sp/>200.0f});</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(projectile.getBounds().top,<sp/>200.0f);<sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>Y<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(projectile.getBounds().left,<sp/>100.0f);<sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>X<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="_test_projectile_8cpp_1ad61f3279bdb48ed2abb158272ec8697b" refkind="member"><highlight class="normal"><ref refid="_test_projectile_8cpp_1a3499c60dd7b818ebb2dd1aa00ab74210" kindref="member">TEST</ref>(ProjectileTest,<sp/>Movement)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({0.0f,<sp/>200.0f});</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime<sp/>=<sp/>0.016f;<sp/></highlight><highlight class="comment">//<sp/>Simulate<sp/>a<sp/>frame<sp/>(~60<sp/>FPS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>projectile.<ref refid="class_projectile_1a5bc646de87829b911d6817a6478c353e" kindref="member">update</ref>(deltaTime);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_LT(projectile.getBounds().top,<sp/>200.0f);<sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>Y<sp/>position<sp/>decreases</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="_test_projectile_8cpp_1a8e1bc879442b223782ba178af4a2debc" refkind="member"><highlight class="normal"><ref refid="_test_projectile_8cpp_1a3499c60dd7b818ebb2dd1aa00ab74210" kindref="member">TEST</ref>(ProjectileTest,<sp/>OffScreenDetection)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({0.0f,<sp/>-10.0f});</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_TRUE(projectile.isOffScreen());<sp/></highlight><highlight class="comment">//<sp/>Projectile<sp/>should<sp/>be<sp/>off-screen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="tests/TestProjectile.cpp"/>
   </compounddef>

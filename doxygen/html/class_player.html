@@ -91,65 +91,89 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Represents the player character in the game.  
+<p>Represents the player in the game.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_player_8hpp_source.html">Player.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:affe0cc3cb714f6deb4e62f0c0d3f1fd8" id="r_affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memItemLeft" align="right" valign="top"><a id="affe0cc3cb714f6deb4e62f0c0d3f1fd8" name="affe0cc3cb714f6deb4e62f0c0d3f1fd8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Player</b> ()</td></tr>
-<tr class="memdesc:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_player.html" title="Represents the player character in the game.">Player</a> object and initializes its properties. <br /></td></tr>
+<tr class="memitem:affe0cc3cb714f6deb4e62f0c0d3f1fd8" id="r_affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player</a> ()</td></tr>
+<tr class="memdesc:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="class_player.html" title="Represents the player in the game.">Player</a> object.  <br /></td></tr>
 <tr class="separator:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22c77aea817fb52c33280b2792992123" id="r_a22c77aea817fb52c33280b2792992123"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22c77aea817fb52c33280b2792992123">handleInput</a> (float deltaTime)</td></tr>
-<tr class="memdesc:a22c77aea817fb52c33280b2792992123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles player input and updates position based on input.  <br /></td></tr>
+<tr class="memdesc:a22c77aea817fb52c33280b2792992123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the player's input.  <br /></td></tr>
 <tr class="separator:a22c77aea817fb52c33280b2792992123"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82c3476f3e65a4e2ac6bcd040771bdd4" id="r_a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="memItemLeft" align="right" valign="top"><a id="a82c3476f3e65a4e2ac6bcd040771bdd4" name="a82c3476f3e65a4e2ac6bcd040771bdd4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
-<tr class="memdesc:a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's state, such as animations or cooldowns. <br /></td></tr>
+<tr class="memitem:a82c3476f3e65a4e2ac6bcd040771bdd4" id="r_a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82c3476f3e65a4e2ac6bcd040771bdd4">update</a> ()</td></tr>
+<tr class="memdesc:a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's state.  <br /></td></tr>
 <tr class="separator:a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0ca8feab9679e9e29e61501e5db8451" id="r_aa0ca8feab9679e9e29e61501e5db8451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0ca8feab9679e9e29e61501e5db8451">updateProjectiles</a> (float deltaTime)</td></tr>
-<tr class="memdesc:aa0ca8feab9679e9e29e61501e5db8451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the active projectiles fired by the player.  <br /></td></tr>
+<tr class="memdesc:aa0ca8feab9679e9e29e61501e5db8451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's projectiles.  <br /></td></tr>
 <tr class="separator:aa0ca8feab9679e9e29e61501e5db8451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53938857e80374e79726309e78d1c15c" id="r_a53938857e80374e79726309e78d1c15c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53938857e80374e79726309e78d1c15c">render</a> (sf::RenderWindow &amp;window)</td></tr>
-<tr class="memdesc:a53938857e80374e79726309e78d1c15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the player sprite to the specified window.  <br /></td></tr>
+<tr class="memdesc:a53938857e80374e79726309e78d1c15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the player on the given window.  <br /></td></tr>
 <tr class="separator:a53938857e80374e79726309e78d1c15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee602f1426fb5cea15ba9823f5e198b6" id="r_aee602f1426fb5cea15ba9823f5e198b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee602f1426fb5cea15ba9823f5e198b6">renderProjectiles</a> (sf::RenderWindow &amp;window)</td></tr>
-<tr class="memdesc:aee602f1426fb5cea15ba9823f5e198b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders all active projectiles to the specified window.  <br /></td></tr>
+<tr class="memdesc:aee602f1426fb5cea15ba9823f5e198b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the player's projectiles on the given window.  <br /></td></tr>
 <tr class="separator:aee602f1426fb5cea15ba9823f5e198b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e448bb32639412c88101b64f41b50e6" id="r_a6e448bb32639412c88101b64f41b50e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e448bb32639412c88101b64f41b50e6">renderHealthBar</a> (sf::RenderWindow &amp;window)</td></tr>
-<tr class="memdesc:a6e448bb32639412c88101b64f41b50e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the player's health bar to the specified window.  <br /></td></tr>
+<tr class="memdesc:a6e448bb32639412c88101b64f41b50e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the player's health bar on the given window.  <br /></td></tr>
 <tr class="separator:a6e448bb32639412c88101b64f41b50e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cdc67fd9ca2de09af89d9ae19efe5f8" id="r_a4cdc67fd9ca2de09af89d9ae19efe5f8"><td class="memItemLeft" align="right" valign="top"><a id="a4cdc67fd9ca2de09af89d9ae19efe5f8" name="a4cdc67fd9ca2de09af89d9ae19efe5f8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr>
-<tr class="memdesc:a4cdc67fd9ca2de09af89d9ae19efe5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fires a projectile if the cooldown allows. <br /></td></tr>
+<tr class="memitem:a4cdc67fd9ca2de09af89d9ae19efe5f8" id="r_a4cdc67fd9ca2de09af89d9ae19efe5f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cdc67fd9ca2de09af89d9ae19efe5f8">shoot</a> ()</td></tr>
+<tr class="memdesc:a4cdc67fd9ca2de09af89d9ae19efe5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the player shoot a projectile.  <br /></td></tr>
 <tr class="separator:a4cdc67fd9ca2de09af89d9ae19efe5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af97f9b32912f28fdcdad1785d515cd2d" id="r_af97f9b32912f28fdcdad1785d515cd2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af97f9b32912f28fdcdad1785d515cd2d">takeDamage</a> (int damage)</td></tr>
-<tr class="memdesc:af97f9b32912f28fdcdad1785d515cd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the player's health by a specified amount.  <br /></td></tr>
+<tr class="memdesc:af97f9b32912f28fdcdad1785d515cd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles player damage.  <br /></td></tr>
 <tr class="separator:af97f9b32912f28fdcdad1785d515cd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f679a9d2fa60e76fe00d615dfe4d584" id="r_a4f679a9d2fa60e76fe00d615dfe4d584"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f679a9d2fa60e76fe00d615dfe4d584">getPosition</a> () const</td></tr>
-<tr class="memdesc:a4f679a9d2fa60e76fe00d615dfe4d584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's current position.  <br /></td></tr>
-<tr class="separator:a4f679a9d2fa60e76fe00d615dfe4d584"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec00a96a409d68ac0f88007f93f42329" id="r_aec00a96a409d68ac0f88007f93f42329"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec00a96a409d68ac0f88007f93f42329">getBounds</a> () const</td></tr>
-<tr class="memdesc:aec00a96a409d68ac0f88007f93f42329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box of the player's sprite.  <br /></td></tr>
-<tr class="separator:aec00a96a409d68ac0f88007f93f42329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35390626e4c38747a01f5f51127412d2" id="r_a35390626e4c38747a01f5f51127412d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35390626e4c38747a01f5f51127412d2">setSkin</a> (const std::string &amp;filePath)</td></tr>
+<tr class="memdesc:a35390626e4c38747a01f5f51127412d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the player's skin.  <br /></td></tr>
+<tr class="separator:a35390626e4c38747a01f5f51127412d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23356f99a9de86d3d47eadb679b332dc" id="r_a23356f99a9de86d3d47eadb679b332dc"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23356f99a9de86d3d47eadb679b332dc">getPosition</a> ()</td></tr>
+<tr class="memdesc:a23356f99a9de86d3d47eadb679b332dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's position.  <br /></td></tr>
+<tr class="separator:a23356f99a9de86d3d47eadb679b332dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c9ef1c84a6aeffd225733536be2f53" id="r_a93c9ef1c84a6aeffd225733536be2f53"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93c9ef1c84a6aeffd225733536be2f53">getBounds</a> ()</td></tr>
+<tr class="memdesc:a93c9ef1c84a6aeffd225733536be2f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box of the player.  <br /></td></tr>
+<tr class="separator:a93c9ef1c84a6aeffd225733536be2f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21595133cab1bfdf3c92ec55453fda1" id="r_aa21595133cab1bfdf3c92ec55453fda1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21595133cab1bfdf3c92ec55453fda1">getProjectiles</a> ()</td></tr>
-<tr class="memdesc:aa21595133cab1bfdf3c92ec55453fda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the player's active projectiles.  <br /></td></tr>
+<tr class="memdesc:aa21595133cab1bfdf3c92ec55453fda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's active projectiles.  <br /></td></tr>
 <tr class="separator:aa21595133cab1bfdf3c92ec55453fda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ce7657823f99abdfcf8e0d752465800" id="r_a9ce7657823f99abdfcf8e0d752465800"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ce7657823f99abdfcf8e0d752465800">removeProjectile</a> (size_t index)</td></tr>
-<tr class="memdesc:a9ce7657823f99abdfcf8e0d752465800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a projectile from the player's projectile list.  <br /></td></tr>
+<tr class="memdesc:a9ce7657823f99abdfcf8e0d752465800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a projectile at the specified index.  <br /></td></tr>
 <tr class="separator:a9ce7657823f99abdfcf8e0d752465800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcb15d249bed9a4ab0ab86b52b0d747a" id="r_abcb15d249bed9a4ab0ab86b52b0d747a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcb15d249bed9a4ab0ab86b52b0d747a">getHealth</a> ()</td></tr>
-<tr class="memdesc:abcb15d249bed9a4ab0ab86b52b0d747a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's current health.  <br /></td></tr>
+<tr class="memdesc:abcb15d249bed9a4ab0ab86b52b0d747a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's health.  <br /></td></tr>
 <tr class="separator:abcb15d249bed9a4ab0ab86b52b0d747a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents the player character in the game. </p>
-<p>This class handles the player's movement, shooting, health, and rendering. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aec00a96a409d68ac0f88007f93f42329" name="aec00a96a409d68ac0f88007f93f42329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec00a96a409d68ac0f88007f93f42329">&#9670;&#160;</a></span>getBounds()</h2>
+<div class="textblock"><p>Represents the player in the game. </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00013">13</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="affe0cc3cb714f6deb4e62f0c0d3f1fd8" name="affe0cc3cb714f6deb4e62f0c0d3f1fd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe0cc3cb714f6deb4e62f0c0d3f1fd8">&#9670;&#160;</a></span>Player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Player::Player </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="class_player.html" title="Represents the player in the game.">Player</a> object. </p>
+<p>Constructs a new <a class="el" href="class_player.html" title="Represents the player in the game.">Player</a> object with default settings. </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00007">7</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a93c9ef1c84a6aeffd225733536be2f53" name="a93c9ef1c84a6aeffd225733536be2f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c9ef1c84a6aeffd225733536be2f53">&#9670;&#160;</a></span>getBounds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,13 +182,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
           <td class="memname">sf::FloatRect Player::getBounds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the bounding box of the player's sprite. </p>
-<dl class="section return"><dt>Returns</dt><dd>A FloatRect representing the player's bounding box. </dd></dl>
+<p>Gets the bounding box of the player. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box of the player. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00163">163</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,13 +209,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Gets the player's current health. </p>
-<dl class="section return"><dt>Returns</dt><dd>The player's health as an integer. </dd></dl>
+<p>Gets the player's health. </p>
+<dl class="section return"><dt>Returns</dt><dd>The player's health. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00032">32</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a4f679a9d2fa60e76fe00d615dfe4d584" name="a4f679a9d2fa60e76fe00d615dfe4d584"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f679a9d2fa60e76fe00d615dfe4d584">&#9670;&#160;</a></span>getPosition()</h2>
+<a id="a23356f99a9de86d3d47eadb679b332dc" name="a23356f99a9de86d3d47eadb679b332dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23356f99a9de86d3d47eadb679b332dc">&#9670;&#160;</a></span>getPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,13 +226,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
           <td class="memname">sf::Vector2f Player::getPosition </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the player's current position. </p>
-<dl class="section return"><dt>Returns</dt><dd>A 2D vector representing the player's position. </dd></dl>
+<p>Gets the player's position. </p>
+<dl class="section return"><dt>Returns</dt><dd>The player's position. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00155">155</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -223,8 +253,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Gets a reference to the player's active projectiles. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector containing the active projectiles. </dd></dl>
+<p>Gets the player's active projectiles. </p>
+<p>Gets a reference to the player's active projectiles.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the vector of active projectiles. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00147">147</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -243,13 +276,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Handles player input and updates position based on input. </p>
+<p>Handles the player's input. </p>
+<p>Handles player input for movement and shooting.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">deltaTime</td><td>The elapsed time since the last frame. </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last update. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00040">40</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -268,13 +304,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Removes a projectile from the player's projectile list. </p>
+<p>Removes a projectile at the specified index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The index of the projectile to remove. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00171">171</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,13 +331,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Renders the player sprite to the specified window. </p>
+<p>Renders the player on the given window. </p>
+<p>Renders the player sprite.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML window where the player will be drawn. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to render the player on. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00120">120</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -318,13 +359,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Renders the player's health bar to the specified window. </p>
+<p>Renders the player's health bar on the given window. </p>
+<p>Renders the player's health bar.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML window where the health bar will be drawn. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to render the health bar on. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00138">138</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -343,13 +387,67 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Renders all active projectiles to the specified window. </p>
+<p>Renders the player's projectiles on the given window. </p>
+<p>Renders the player's projectiles.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML window where the projectiles will be drawn. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to render the projectiles on. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00128">128</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a35390626e4c38747a01f5f51127412d2" name="a35390626e4c38747a01f5f51127412d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35390626e4c38747a01f5f51127412d2">&#9670;&#160;</a></span>setSkin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setSkin </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the player's skin. </p>
+<p>Changes the player's skin dynamically.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The file path to the texture.</td></tr>
+    <tr><td class="paramname">filePath</td><td>The file path to the new texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00107">107</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4cdc67fd9ca2de09af89d9ae19efe5f8" name="a4cdc67fd9ca2de09af89d9ae19efe5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cdc67fd9ca2de09af89d9ae19efe5f8">&#9670;&#160;</a></span>shoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::shoot </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Makes the player shoot a projectile. </p>
+<p>Shoots a projectile if the cooldown period has elapsed. </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00056">56</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,13 +466,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Reduces the player's health by a specified amount. </p>
+<p>Handles player damage. </p>
+<p>Inflicts damage to the player and updates the health bar.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">damage</td><td>The amount of damage to apply to the player. </td></tr>
+    <tr><td class="paramname">damage</td><td>The amount of damage to inflict. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00070">70</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a82c3476f3e65a4e2ac6bcd040771bdd4" name="a82c3476f3e65a4e2ac6bcd040771bdd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c3476f3e65a4e2ac6bcd040771bdd4">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the player's state. </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00099">99</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -393,19 +515,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> ()</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Updates the active projectiles fired by the player. </p>
+<p>Updates the player's projectiles. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">deltaTime</td><td>The elapsed time since the last frame. </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last update. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00085">85</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_player_8hpp_source.html">Player.hpp</a></li>
-<li>src/<b>Player.cpp</b></li>
+<li>src/<a class="el" href="_player_8cpp_source.html">Player.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

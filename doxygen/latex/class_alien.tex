@@ -13,38 +13,48 @@ Represents an alien in the game.
 \begin{DoxyCompactItemize}
 \item 
 enum class \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+Type}} \{ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Blue}}
-, \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Green}}
 , \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Yellow}}
+, \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Green}}
+, \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc}{UFO}}
  \}
 \begin{DoxyCompactList}\small\item\em Enumerates the types of aliens. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{class_alien_adb73372fd4a10b742fab3df457bdc0da}{get\+Health}} () const
-\begin{DoxyCompactList}\small\item\em Gets the current health of the alien. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_alien_a8d4d1188bc4cec81a36630588f77f65d}{Alien}} (const sf\+::\+Vector2f \&position, int initial\+Health=3, \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+Type}} type=\mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien\+Type\+::\+Blue}})
+\mbox{\hyperlink{class_alien_a060310ef999b3be89c004cc0d8302e0a}{Alien}} (const sf\+::\+Vector2f \&position, \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+Type}} alien\+Type, int initial\+Health=3)
 \begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_alien}{Alien} object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_alien_a1cc622b85a2286d7ad2d908f42a3ac93}{update}} (float delta\+Time, int score\+Threshold, int current\+Score)
-\begin{DoxyCompactList}\small\item\em Updates the alien\textquotesingle{}s state, including position and animation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_alien_aaa7613bc0d257f498e876521a327e25b}{render}} (sf\+::\+Render\+Window \&window)
 \begin{DoxyCompactList}\small\item\em Renders the alien to the specified window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_alien_ad38168e2cd96e67efdfde002e79cd31f}{shoot}} ()
+\begin{DoxyCompactList}\small\item\em Handles the shooting logic for the alien. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \& \mbox{\hyperlink{class_alien_ab13a473b6bcad2471e558f35cbe86c65}{get\+Projectiles}} ()
+\begin{DoxyCompactList}\small\item\em Gets the projectiles fired by the alien. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_alien_a74cd83a96bb14fd344017927bb2723fd}{update\+Projectiles}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the state of the alien\textquotesingle{}s projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_alien_a55dcf4cc09999083c63f733fc2fb39ee}{render\+Projectiles}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the alien\textquotesingle{}s projectiles to the specified window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_alien_aade4a5092a52bb1540e7e28455fd3da3}{take\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Reduces the alien\textquotesingle{}s health by a specified amount of damage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_alien_a9f42e58e71748b4c14daece420b347e3}{is\+Dead}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the alien is dead (health \texorpdfstring{$<$}{<}= 0). \end{DoxyCompactList}\item 
 sf\+::\+Float\+Rect \mbox{\hyperlink{class_alien_a3e1202ecfff4f6a17ce54947539377dc}{get\+Bounds}} () const
 \begin{DoxyCompactList}\small\item\em Gets the bounding box of the alien\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_alien_ab51931eaa1313529b2950977dfe2b100}{is\+Off\+Screen}} () const
 \begin{DoxyCompactList}\small\item\em Checks if the alien has moved off the screen. \end{DoxyCompactList}\item 
-\Hypertarget{class_alien_ad7253f1aded3432ddd6d7d1c20b6441b}\label{class_alien_ad7253f1aded3432ddd6d7d1c20b6441b} 
-void {\bfseries start\+Moving} ()
-\begin{DoxyCompactList}\small\item\em Starts the alien\textquotesingle{}s movement. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_alien_aade4a5092a52bb1540e7e28455fd3da3}{take\+Damage}} (int damage)
-\begin{DoxyCompactList}\small\item\em Reduces the alien\textquotesingle{}s health by a specified amount of damage. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_alien_a9f42e58e71748b4c14daece420b347e3}{is\+Dead}} () const
-\begin{DoxyCompactList}\small\item\em Checks if the alien is dead (health \texorpdfstring{$<$}{<}= 0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_alien_a1cc622b85a2286d7ad2d908f42a3ac93}{update}} (float delta\+Time, int score\+Threshold, int current\+Score)
+\begin{DoxyCompactList}\small\item\em Updates the alien\textquotesingle{}s state, including position, animation, and shooting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+Type}} \mbox{\hyperlink{class_alien_a46d821afc8f77765a8ec9abe9777b335}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the type of the alien. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Represents an alien in the game. 
 
-This class handles the properties and behaviors of aliens, including movement, health, rendering, and interaction with other game entities. 
+This class handles the properties and behaviors of aliens, including movement, health, rendering, interaction with other game entities, and shooting mechanics. 
+
+Definition at line \mbox{\hyperlink{_alien_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{_alien_8hpp_source}{Alien.\+hpp}}.
+
+
 
 \doxysubsection{Member Enumeration Documentation}
 \Hypertarget{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}\index{Alien@{Alien}!AlienType@{AlienType}}
@@ -62,37 +72,57 @@ Enumerates the types of aliens.
 Blue&Represents a blue alien. \\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yellow@{Yellow}!Alien@{Alien}}\index{Alien@{Alien}!Yellow@{Yellow}}}\Hypertarget{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}\label{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b} 
+Yellow&Represents a yellow alien. \\
+\hline
+
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Green@{Green}!Alien@{Alien}}\index{Alien@{Alien}!Green@{Green}}}\Hypertarget{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}\label{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b} 
 Green&Represents a green alien. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Yellow@{Yellow}!Alien@{Alien}}\index{Alien@{Alien}!Yellow@{Yellow}}}\Hypertarget{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}\label{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b} 
-Yellow&Represents a yellow alien. \\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UFO@{UFO}!Alien@{Alien}}\index{Alien@{Alien}!UFO@{UFO}}}\Hypertarget{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc}\label{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b} 
+UFO&Represents a UFO alien. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{_alien_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_alien_8hpp_source}{Alien.\+hpp}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_alien_a8d4d1188bc4cec81a36630588f77f65d}\index{Alien@{Alien}!Alien@{Alien}}
+\Hypertarget{class_alien_a060310ef999b3be89c004cc0d8302e0a}\index{Alien@{Alien}!Alien@{Alien}}
 \index{Alien@{Alien}!Alien@{Alien}}
 \doxysubsubsection{\texorpdfstring{Alien()}{Alien()}}
-{\footnotesize\ttfamily \label{class_alien_a8d4d1188bc4cec81a36630588f77f65d} 
-Alien\+::\+Alien (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position}{, }\item[{int}]{initial\+Health}{ = {\ttfamily 3}, }\item[{\mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+Type}}}]{type}{ = {\ttfamily \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien\+Type\+::\+Blue}}}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_alien_a060310ef999b3be89c004cc0d8302e0a} 
+Alien\+::\+Alien (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position}{, }\item[{\mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+::\+Alien\+Type}}}]{alien\+Type}{, }\item[{int}]{initial\+Health}{ = {\ttfamily 3}}\end{DoxyParamCaption})}
 
 
 
 Constructs an \doxylink{class_alien}{Alien} object. 
 
+Constructs a new \doxylink{class_alien}{Alien} object with a specified position, type, and initial health.
+
 
 \begin{DoxyParams}{Parameters}
 {\em position} & The initial position of the alien. \\
 \hline
-{\em initial\+Health} & The starting health of the alien (default is 3). \\
+{\em alien\+Type} & The type of alien. \\
 \hline
-{\em type} & The type of alien (default is \doxylink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien\+Type\+::\+Blue}). \\
+{\em initial\+Health} & The starting health of the alien (default is 3).\\
+\hline
+{\em position} & The initial position of the alien. \\
+\hline
+{\em alien\+Type} & The type of the alien. \\
+\hline
+{\em initial\+Health} & The initial health of the alien. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -106,22 +136,57 @@ sf\+::\+Float\+Rect Alien\+::get\+Bounds (\begin{DoxyParamCaption}{}{}\end{DoxyP
 
 Gets the bounding box of the alien\textquotesingle{}s sprite. 
 
-\begin{DoxyReturn}{Returns}
-A Float\+Rect representing the alien\textquotesingle{}s bounding box. 
-\end{DoxyReturn}
-\Hypertarget{class_alien_adb73372fd4a10b742fab3df457bdc0da}\index{Alien@{Alien}!getHealth@{getHealth}}
-\index{getHealth@{getHealth}!Alien@{Alien}}
-\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
-{\footnotesize\ttfamily \label{class_alien_adb73372fd4a10b742fab3df457bdc0da} 
-int Alien\+::get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
-
-
-
-Gets the current health of the alien. 
+Gets the bounding box of the alien.
 
 \begin{DoxyReturn}{Returns}
-The alien\textquotesingle{}s current health as an integer. 
+A Float\+Rect representing the alien\textquotesingle{}s bounding box.
+
+The bounding box of the alien. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
+\Hypertarget{class_alien_ab13a473b6bcad2471e558f35cbe86c65}\index{Alien@{Alien}!getProjectiles@{getProjectiles}}
+\index{getProjectiles@{getProjectiles}!Alien@{Alien}}
+\doxysubsubsection{\texorpdfstring{getProjectiles()}{getProjectiles()}}
+{\footnotesize\ttfamily \label{class_alien_ab13a473b6bcad2471e558f35cbe86c65} 
+std\+::vector$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \& Alien\+::get\+Projectiles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the projectiles fired by the alien. 
+
+Gets the alien\textquotesingle{}s active projectiles.
+
+\begin{DoxyReturn}{Returns}
+A reference to a vector of projectiles.
+
+A reference to the vector of active projectiles. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
+\Hypertarget{class_alien_a46d821afc8f77765a8ec9abe9777b335}\index{Alien@{Alien}!getType@{getType}}
+\index{getType@{getType}!Alien@{Alien}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_alien_a46d821afc8f77765a8ec9abe9777b335} 
+\mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien\+::\+Alien\+Type}} Alien\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the type of the alien. 
+
+\begin{DoxyReturn}{Returns}
+The type of the alien as an Alien\+Type.
+
+The type of the alien. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
 \Hypertarget{class_alien_a9f42e58e71748b4c14daece420b347e3}\index{Alien@{Alien}!isDead@{isDead}}
 \index{isDead@{isDead}!Alien@{Alien}}
 \doxysubsubsection{\texorpdfstring{isDead()}{isDead()}}
@@ -132,9 +197,17 @@ bool Alien\+::is\+Dead (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) cons
 
 Checks if the alien is dead (health \texorpdfstring{$<$}{<}= 0). 
 
+Checks if the alien is dead.
+
 \begin{DoxyReturn}{Returns}
-True if the alien is dead, false otherwise. 
+True if the alien is dead, false otherwise.
+
+True if the alien\textquotesingle{}s health is 0 or less, false otherwise. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
 \Hypertarget{class_alien_ab51931eaa1313529b2950977dfe2b100}\index{Alien@{Alien}!isOffScreen@{isOffScreen}}
 \index{isOffScreen@{isOffScreen}!Alien@{Alien}}
 \doxysubsubsection{\texorpdfstring{isOffScreen()}{isOffScreen()}}
@@ -145,9 +218,17 @@ bool Alien\+::is\+Off\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption
 
 Checks if the alien has moved off the screen. 
 
+Checks if the alien is off the screen.
+
 \begin{DoxyReturn}{Returns}
-True if the alien is off-\/screen, false otherwise. 
+True if the alien is off-\/screen, false otherwise.
+
+True if the alien is off the screen, false otherwise. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
 \Hypertarget{class_alien_aaa7613bc0d257f498e876521a327e25b}\index{Alien@{Alien}!render@{render}}
 \index{render@{render}!Alien@{Alien}}
 \doxysubsubsection{\texorpdfstring{render()}{render()}}
@@ -158,11 +239,48 @@ void Alien\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]
 
 Renders the alien to the specified window. 
 
+Renders the alien on the given window.
+
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The SFML window where the alien will be drawn. \\
+{\em window} & The SFML window where the alien will be drawn.\\
+\hline
+{\em window} & The window to render the alien on. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
+\Hypertarget{class_alien_a55dcf4cc09999083c63f733fc2fb39ee}\index{Alien@{Alien}!renderProjectiles@{renderProjectiles}}
+\index{renderProjectiles@{renderProjectiles}!Alien@{Alien}}
+\doxysubsubsection{\texorpdfstring{renderProjectiles()}{renderProjectiles()}}
+{\footnotesize\ttfamily \label{class_alien_a55dcf4cc09999083c63f733fc2fb39ee} 
+void Alien\+::render\+Projectiles (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Renders the alien\textquotesingle{}s projectiles to the specified window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML window where the projectiles will be drawn. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_alien_ad38168e2cd96e67efdfde002e79cd31f}\index{Alien@{Alien}!shoot@{shoot}}
+\index{shoot@{shoot}!Alien@{Alien}}
+\doxysubsubsection{\texorpdfstring{shoot()}{shoot()}}
+{\footnotesize\ttfamily \label{class_alien_ad38168e2cd96e67efdfde002e79cd31f} 
+void Alien\+::shoot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the shooting logic for the alien. 
+
+Makes the alien shoot a projectile. 
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
 \Hypertarget{class_alien_aade4a5092a52bb1540e7e28455fd3da3}\index{Alien@{Alien}!takeDamage@{takeDamage}}
 \index{takeDamage@{takeDamage}!Alien@{Alien}}
 \doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
@@ -173,11 +291,19 @@ void Alien\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{D
 
 Reduces the alien\textquotesingle{}s health by a specified amount of damage. 
 
+Inflicts damage to the alien.
+
 
 \begin{DoxyParams}{Parameters}
-{\em damage} & The amount of damage to apply to the alien. \\
+{\em damage} & The amount of damage to apply to the alien.\\
+\hline
+{\em damage} & The amount of damage to inflict. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
 \Hypertarget{class_alien_a1cc622b85a2286d7ad2d908f42a3ac93}\index{Alien@{Alien}!update@{update}}
 \index{update@{update}!Alien@{Alien}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
@@ -186,7 +312,9 @@ void Alien\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{, }\it
 
 
 
-Updates the alien\textquotesingle{}s state, including position and animation. 
+Updates the alien\textquotesingle{}s state, including position, animation, and shooting. 
+
+Updates the alien\textquotesingle{}s state.
 
 
 \begin{DoxyParams}{Parameters}
@@ -194,12 +322,37 @@ Updates the alien\textquotesingle{}s state, including position and animation.
 \hline
 {\em score\+Threshold} & A score threshold that may affect alien behavior. \\
 \hline
-{\em current\+Score} & The player\textquotesingle{}s current score, used to adjust behavior. \\
+{\em current\+Score} & The player\textquotesingle{}s current score, used to adjust behavior.\\
+\hline
+{\em delta\+Time} & The time elapsed since the last update. \\
+\hline
+{\em score\+Threshold} & The score threshold for certain behaviors. \\
+\hline
+{\em current\+Score} & The current score of the player. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_alien_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_alien_8cpp_source}{Alien.\+cpp}}.
+
+\Hypertarget{class_alien_a74cd83a96bb14fd344017927bb2723fd}\index{Alien@{Alien}!updateProjectiles@{updateProjectiles}}
+\index{updateProjectiles@{updateProjectiles}!Alien@{Alien}}
+\doxysubsubsection{\texorpdfstring{updateProjectiles()}{updateProjectiles()}}
+{\footnotesize\ttfamily \label{class_alien_a74cd83a96bb14fd344017927bb2723fd} 
+void Alien\+::update\+Projectiles (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the state of the alien\textquotesingle{}s projectiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The elapsed time since the last update. \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Alien.\+hpp\item 
-src/Alien.\+cpp\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_alien_8hpp}{Alien.\+hpp}}\item 
+src/\mbox{\hyperlink{_alien_8cpp}{Alien.\+cpp}}\end{DoxyCompactItemize}

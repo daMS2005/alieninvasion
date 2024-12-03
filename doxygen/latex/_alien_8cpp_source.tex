@@ -1,0 +1,136 @@
+\doxysection{Alien.\+cpp}
+\hypertarget{_alien_8cpp_source}{}\label{_alien_8cpp_source}\index{src/Alien.cpp@{src/Alien.cpp}}
+\mbox{\hyperlink{_alien_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_alien_8hpp}{Alien.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00010}\mbox{\hyperlink{class_alien_a060310ef999b3be89c004cc0d8302e0a}{00010}}\ \mbox{\hyperlink{class_alien_a060310ef999b3be89c004cc0d8302e0a}{Alien::Alien}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position,\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien::AlienType}}\ alienType,\ \textcolor{keywordtype}{int}\ initialHealth)}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00011}00011\ \ \ \ \ :\ type(alienType),\ health(initialHealth),\ speed(100.0f),\ isMoving(false),\ useTexture1(true)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien::AlienType::Blue}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture1.loadFromFile(\textcolor{stringliteral}{"{}../resources/bluealien0.png"{}})\ ||}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ !texture2.loadFromFile(\textcolor{stringliteral}{"{}../resources/bluealien1.png"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ loading\ blue\ alien\ textures\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00017}00017\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Alien::AlienType::Yellow}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture1.loadFromFile(\textcolor{stringliteral}{"{}../resources/yellowalien0.png"{}})\ ||}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ !texture2.loadFromFile(\textcolor{stringliteral}{"{}../resources/yellowalien1.png"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ loading\ yellow\ alien\ textures\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00022}00022\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Alien::AlienType::Green}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture1.loadFromFile(\textcolor{stringliteral}{"{}../resources/greenalien0.png"{}})\ ||}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ !texture2.loadFromFile(\textcolor{stringliteral}{"{}../resources/greenalien1.png"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ loading\ green\ alien\ textures\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00027}00027\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc}{Alien::AlienType::UFO}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture1.loadFromFile(\textcolor{stringliteral}{"{}../resources/ufo.png"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ loading\ UFO\ texture\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00033}00033\ \ \ \ \ sprite.setTexture(texture1);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00034}00034\ \ \ \ \ sprite.setPosition(position);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00041}\mbox{\hyperlink{class_alien_aade4a5092a52bb1540e7e28455fd3da3}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_aade4a5092a52bb1540e7e28455fd3da3}{Alien::takeDamage}}(\textcolor{keywordtype}{int}\ damage)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00042}00042\ \ \ \ \ health\ -\/=\ damage;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (health\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ health\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00052}\mbox{\hyperlink{class_alien_a9f42e58e71748b4c14daece420b347e3}{00052}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_alien_a9f42e58e71748b4c14daece420b347e3}{Alien::isDead}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ health\ <=\ 0;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00059}\mbox{\hyperlink{class_alien_ad38168e2cd96e67efdfde002e79cd31f}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_ad38168e2cd96e67efdfde002e79cd31f}{Alien::shoot}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (shootClock.getElapsedTime().asSeconds()\ >\ 2.0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ sf::Vector2f\ position(sprite.getPosition().x\ +\ sprite.getGlobalBounds().width\ /\ 2,}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite.getPosition().y\ +\ sprite.getGlobalBounds().height);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Alien::AlienType::Yellow}}\ ||\ type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Alien::AlienType::Green}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ projectiles.emplace\_back(position,\ sf::Vector2f(0,\ 300.0f));\ \textcolor{comment}{//\ Fire\ downward}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc}{Alien::AlienType::UFO}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ projectiles.emplace\_back(position,\ sf::Vector2f(0,\ 400.0f));\ \textcolor{comment}{//\ Stronger\ projectile}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ shootClock.restart();}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00080}\mbox{\hyperlink{class_alien_a1cc622b85a2286d7ad2d908f42a3ac93}{00080}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_a1cc622b85a2286d7ad2d908f42a3ac93}{Alien::update}}(\textcolor{keywordtype}{float}\ deltaTime,\ \textcolor{keywordtype}{int}\ scoreThreshold,\ \textcolor{keywordtype}{int}\ currentScore)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien::AlienType::Blue}}\ ||\ type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Alien::AlienType::Yellow}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentScore\ >=\ scoreThreshold)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ isMoving\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Blue\ and\ Yellow\ start\ moving\ based\ on\ score}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isMoving)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.move(0,\ speed\ *\ deltaTime);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00088}00088\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc}{Alien::AlienType::UFO}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UFO\ horizontal\ movement}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ movingRight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (movingRight)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.move(speed\ *\ deltaTime,\ 0);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sprite.getPosition().x\ +\ sprite.getGlobalBounds().width\ >=\ 800)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ movingRight\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.move(-\/speed\ *\ deltaTime,\ 0);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sprite.getPosition().x\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ movingRight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00102}00102\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Alien::AlienType::Green}})\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ green\ aliens\ remain\ visible}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sprite.getPosition().y\ <\ 150.0f)\ \{\ \textcolor{comment}{//\ Adjust\ to\ desired\ starting\ Y\ position}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.setPosition(sprite.getPosition().x,\ 150.0f);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ Shooting\ logic}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{class_alien_ad38168e2cd96e67efdfde002e79cd31f}{shoot}}();}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//\ Animation\ logic\ for\ Blue,\ Yellow,\ Green\ (UFO\ excluded)}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ !=\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc}{Alien::AlienType::UFO}}\ \&\&\ animationClock.getElapsedTime().asSeconds()\ >\ 0.5f)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ sprite.setTexture(useTexture1\ ?\ texture2\ :\ texture1);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ useTexture1\ =\ !useTexture1;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ animationClock.restart();}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ Update\ projectiles}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ projectiles.begin();\ it\ !=\ projectiles.end();)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ it-\/>update(deltaTime);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>isOffScreen())\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ projectiles.erase(it);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00134}\mbox{\hyperlink{class_alien_a46d821afc8f77765a8ec9abe9777b335}{00134}}\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{Alien::AlienType}}\ \mbox{\hyperlink{class_alien_a46d821afc8f77765a8ec9abe9777b335}{Alien::getType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{return}\ type;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00136}00136\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00142}\mbox{\hyperlink{class_alien_aaa7613bc0d257f498e876521a327e25b}{00142}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_aaa7613bc0d257f498e876521a327e25b}{Alien::render}}(sf::RenderWindow\&\ window)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00143}00143\ \ \ \ \ window.draw(sprite);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ Render\ projectiles}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ projectile\ :\ projectiles)\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ projectile.render(window);}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00155}\mbox{\hyperlink{class_alien_a3e1202ecfff4f6a17ce54947539377dc}{00155}}\ sf::FloatRect\ \mbox{\hyperlink{class_alien_a3e1202ecfff4f6a17ce54947539377dc}{Alien::getBounds}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{return}\ sprite.getGlobalBounds();}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00163}\mbox{\hyperlink{class_alien_ab51931eaa1313529b2950977dfe2b100}{00163}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_alien_ab51931eaa1313529b2950977dfe2b100}{Alien::isOffScreen}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ sprite.getPosition().y\ >\ 600;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00171}\mbox{\hyperlink{class_alien_ab13a473b6bcad2471e558f35cbe86c65}{00171}}\ std::vector<Projectile>\&\ \mbox{\hyperlink{class_alien_ab13a473b6bcad2471e558f35cbe86c65}{Alien::getProjectiles}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{return}\ projectiles;}
+\DoxyCodeLine{\Hypertarget{_alien_8cpp_source_l00173}00173\ \}}
+
+\end{DoxyCode}

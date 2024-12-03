@@ -1,6 +1,12 @@
 #include "Alien.hpp"
 #include <iostream>
 
+/**
+ * @brief Constructs a new Alien object with a specified position, type, and initial health.
+ * @param position The initial position of the alien.
+ * @param alienType The type of the alien.
+ * @param initialHealth The initial health of the alien.
+ */
 Alien::Alien(const sf::Vector2f& position, Alien::AlienType alienType, int initialHealth)
     : type(alienType), health(initialHealth), speed(100.0f), isMoving(false), useTexture1(true) {
     if (type == Alien::AlienType::Blue) {
@@ -28,6 +34,10 @@ Alien::Alien(const sf::Vector2f& position, Alien::AlienType alienType, int initi
     sprite.setPosition(position);
 }
 
+/**
+ * @brief Inflicts damage to the alien.
+ * @param damage The amount of damage to inflict.
+ */
 void Alien::takeDamage(int damage) {
     health -= damage;
     if (health < 0) {
@@ -35,10 +45,17 @@ void Alien::takeDamage(int damage) {
     }
 }
 
+/**
+ * @brief Checks if the alien is dead.
+ * @return True if the alien's health is 0 or less, false otherwise.
+ */
 bool Alien::isDead() const {
     return health <= 0;
 }
 
+/**
+ * @brief Makes the alien shoot a projectile.
+ */
 void Alien::shoot() {
     if (shootClock.getElapsedTime().asSeconds() > 2.0f) {
         sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
@@ -54,6 +71,12 @@ void Alien::shoot() {
     }
 }
 
+/**
+ * @brief Updates the alien's state.
+ * @param deltaTime The time elapsed since the last update.
+ * @param scoreThreshold The score threshold for certain behaviors.
+ * @param currentScore The current score of the player.
+ */
 void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
     if (type == Alien::AlienType::Blue || type == Alien::AlienType::Yellow) {
         if (currentScore >= scoreThreshold) {
@@ -104,11 +127,18 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
     }
 }
 
-
+/**
+ * @brief Gets the type of the alien.
+ * @return The type of the alien.
+ */
 Alien::AlienType Alien::getType() const {
     return type;
 }
 
+/**
+ * @brief Renders the alien on the given window.
+ * @param window The window to render the alien on.
+ */
 void Alien::render(sf::RenderWindow& window) {
     window.draw(sprite);
 
@@ -118,13 +148,26 @@ void Alien::render(sf::RenderWindow& window) {
     }
 }
 
+/**
+ * @brief Gets the bounding box of the alien.
+ * @return The bounding box of the alien.
+ */
 sf::FloatRect Alien::getBounds() const {
     return sprite.getGlobalBounds();
 }
 
+/**
+ * @brief Checks if the alien is off the screen.
+ * @return True if the alien is off the screen, false otherwise.
+ */
 bool Alien::isOffScreen() const {
     return sprite.getPosition().y > 600;
 }
+
+/**
+ * @brief Gets the alien's active projectiles.
+ * @return A reference to the vector of active projectiles.
+ */
 std::vector<Projectile>& Alien::getProjectiles() {
     return projectiles;
 }

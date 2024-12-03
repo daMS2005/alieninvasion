@@ -2,7 +2,9 @@
 #include "Player.hpp"
 #include <gtest/gtest.h>
 
-// Test: Collision between an Alien and the Player
+/**
+ * @brief Test collision between an Alien and the Player.
+ */
 TEST(CollisionTest, AlienCollisionWithPlayer) {
     // Initialize player
     Player player;
@@ -18,7 +20,9 @@ TEST(CollisionTest, AlienCollisionWithPlayer) {
     EXPECT_EQ(alien.isDead(), false); // The alien should not be dead on initialization
 }
 
-// Test: Alien taking damage
+/**
+ * @brief Test alien taking damage.
+ */
 TEST(CollisionTest, AlienDamage) {
     // Initialize alien
     Alien alien({100.0f, 100.0f}, Alien::AlienType::Green, 3);
@@ -30,7 +34,9 @@ TEST(CollisionTest, AlienDamage) {
     EXPECT_FALSE(alien.isDead()); // Alien should not be dead yet
 }
 
-// Test: Alien dying after sufficient damage
+/**
+ * @brief Test alien dying after sufficient damage.
+ */
 TEST(CollisionTest, AlienDeath) {
     // Initialize alien
     Alien alien({100.0f, 100.0f}, Alien::AlienType::Yellow, 1);

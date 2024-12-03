@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="14" column="16" bodyfile="include/Player.hpp" bodystart="14" bodyend="-1"/>
+        <location file="include/Player.hpp" line="15" column="16" bodyfile="include/Player.hpp" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1a9c6c14b89a6f99031a0d677828f1fa1a" prot="private" static="no" mutable="no">
         <type>sf::Texture</type>
@@ -26,13 +26,13 @@
         <name>texture</name>
         <qualifiedname>Player::texture</qualifiedname>
         <briefdescription>
-<para>The texture used for the player&apos;s sprite. </para>
+<para>The texture of the player. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="15" column="17" bodyfile="include/Player.hpp" bodystart="15" bodyend="-1"/>
+        <location file="include/Player.hpp" line="16" column="17" bodyfile="include/Player.hpp" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1a770942101eff683b030edde9f730d537" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -41,13 +41,13 @@
         <name>speed</name>
         <qualifiedname>Player::speed</qualifiedname>
         <briefdescription>
-<para>The movement speed of the player. </para>
+<para>Movement speed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="16" column="11" bodyfile="include/Player.hpp" bodystart="16" bodyend="-1"/>
+        <location file="include/Player.hpp" line="17" column="11" bodyfile="include/Player.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1aba64aa705a1be12b6b96256e3f89bdff" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_projectile" kindref="compound">Projectile</ref> &gt;</type>
@@ -56,13 +56,13 @@
         <name>projectiles</name>
         <qualifiedname>Player::projectiles</qualifiedname>
         <briefdescription>
-<para>Active projectiles fired by the player. </para>
+<para>Active projectiles. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="17" column="17" bodyfile="include/Player.hpp" bodystart="17" bodyend="-1"/>
+        <location file="include/Player.hpp" line="18" column="17" bodyfile="include/Player.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1a88b0d81b6e2165fe812512eae6ac8e22" prot="private" static="no" mutable="no">
         <type>sf::Clock</type>
@@ -71,13 +71,13 @@
         <name>shootClock</name>
         <qualifiedname>Player::shootClock</qualifiedname>
         <briefdescription>
-<para>Timer to enforce shooting cooldown. </para>
+<para>Timer for shooting cooldown. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="18" column="15" bodyfile="include/Player.hpp" bodystart="18" bodyend="-1"/>
+        <location file="include/Player.hpp" line="19" column="15" bodyfile="include/Player.hpp" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1a6b76a680424ef79e29be0bd13e19e145" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -86,13 +86,13 @@
         <name>shootCooldown</name>
         <qualifiedname>Player::shootCooldown</qualifiedname>
         <briefdescription>
-<para>Minimum time (in seconds) between shots. </para>
+<para>Minimum time between shots. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="19" column="11" bodyfile="include/Player.hpp" bodystart="19" bodyend="-1"/>
+        <location file="include/Player.hpp" line="20" column="11" bodyfile="include/Player.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1aad33b52bfe73c4c978a3135172f286a0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -101,13 +101,13 @@
         <name>health</name>
         <qualifiedname>Player::health</qualifiedname>
         <briefdescription>
-<para>The player&apos;s health points. </para>
+<para><ref refid="class_player" kindref="compound">Player</ref>&apos;s health. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="20" column="9" bodyfile="include/Player.hpp" bodystart="20" bodyend="-1"/>
+        <location file="include/Player.hpp" line="21" column="9" bodyfile="include/Player.hpp" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1a37cab32e0f665e31919196c05f8b68cd" prot="private" static="no" mutable="no">
         <type>sf::RectangleShape</type>
@@ -116,13 +116,13 @@
         <name>healthBarBackground</name>
         <qualifiedname>Player::healthBarBackground</qualifiedname>
         <briefdescription>
-<para>Background for the player&apos;s health bar. </para>
+<para>Health bar background. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="21" column="24" bodyfile="include/Player.hpp" bodystart="21" bodyend="-1"/>
+        <location file="include/Player.hpp" line="22" column="24" bodyfile="include/Player.hpp" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_player_1a8434a534b36c0e2c5ae370316bb38f80" prot="private" static="no" mutable="no">
         <type>sf::RectangleShape</type>
@@ -131,13 +131,75 @@
         <name>healthBarForeground</name>
         <qualifiedname>Player::healthBarForeground</qualifiedname>
         <briefdescription>
-<para>Foreground for the player&apos;s health bar. </para>
+<para>Health bar foreground. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="22" column="24" bodyfile="include/Player.hpp" bodystart="22" bodyend="-1"/>
+        <location file="include/Player.hpp" line="23" column="24" bodyfile="include/Player.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a7c1e23cf9e31a9a132142a7a5187f663" prot="private" static="no" mutable="no">
+        <type>sf::SoundBuffer</type>
+        <definition>sf::SoundBuffer Player::shootingSoundBuffer</definition>
+        <argsstring></argsstring>
+        <name>shootingSoundBuffer</name>
+        <qualifiedname>Player::shootingSoundBuffer</qualifiedname>
+        <briefdescription>
+<para>Buffer for shooting sound. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Player.hpp" line="24" column="21" bodyfile="include/Player.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a2b5bab0811a1f8b92e02cf97f904f08a" prot="private" static="no" mutable="no">
+        <type>sf::Sound</type>
+        <definition>sf::Sound Player::shootingSound</definition>
+        <argsstring></argsstring>
+        <name>shootingSound</name>
+        <qualifiedname>Player::shootingSound</qualifiedname>
+        <briefdescription>
+<para>Shooting sound. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Player.hpp" line="25" column="15" bodyfile="include/Player.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1ac752cc4359a542f3471c3b6549546757" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Player::texturePath</definition>
+        <argsstring></argsstring>
+        <name>texturePath</name>
+        <qualifiedname>Player::texturePath</qualifiedname>
+        <briefdescription>
+<para>Tracks the current texture path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Player.hpp" line="26" column="17" bodyfile="include/Player.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_player_1a38c81d5639b78caa0a43d8da7e4a81b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::loadSounds</definition>
+        <argsstring>()</argsstring>
+        <name>loadSounds</name>
+        <qualifiedname>Player::loadSounds</qualifiedname>
+        <briefdescription>
+<para>Loads the sounds for the player. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Player.hpp" line="31" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -148,13 +210,14 @@
         <name>Player</name>
         <qualifiedname>Player::Player</qualifiedname>
         <briefdescription>
-<para>Constructs a <ref refid="class_player" kindref="compound">Player</ref> object and initializes its properties. </para>
+<para>Constructs a new <ref refid="class_player" kindref="compound">Player</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs a new <ref refid="class_player" kindref="compound">Player</ref> object with default settings. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="26" column="5" bodyfile="src/Player.cpp" bodystart="4" bodyend="19"/>
+        <location file="include/Player.hpp" line="37" column="5" bodyfile="src/Player.cpp" bodystart="7" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1a22c77aea817fb52c33280b2792992123" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -167,15 +230,16 @@
           <declname>deltaTime</declname>
         </param>
         <briefdescription>
-<para>Handles player input and updates position based on input. </para>
+<para>Handles the player&apos;s input. </para>
         </briefdescription>
         <detaileddescription>
+<para>Handles player input for movement and shooting.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>deltaTime</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The elapsed time since the last frame. </para>
+<para>The time elapsed since the last update. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -183,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="30" column="10" bodyfile="src/Player.cpp" bodystart="26" bodyend="37"/>
+        <location file="include/Player.hpp" line="43" column="10" bodyfile="src/Player.cpp" bodystart="40" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1a82c3476f3e65a4e2ac6bcd040771bdd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -192,13 +256,13 @@
         <name>update</name>
         <qualifiedname>Player::update</qualifiedname>
         <briefdescription>
-<para>Updates the player&apos;s state, such as animations or cooldowns. </para>
+<para>Updates the player&apos;s state. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="33" column="10" bodyfile="src/Player.cpp" bodystart="58" bodyend="60"/>
+        <location file="include/Player.hpp" line="48" column="10" bodyfile="src/Player.cpp" bodystart="99" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1aa0ca8feab9679e9e29e61501e5db8451" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -211,7 +275,7 @@
           <declname>deltaTime</declname>
         </param>
         <briefdescription>
-<para>Updates the active projectiles fired by the player. </para>
+<para>Updates the player&apos;s projectiles. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -219,7 +283,7 @@
 <parametername>deltaTime</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The elapsed time since the last frame. </para>
+<para>The time elapsed since the last update. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -227,7 +291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="37" column="10" bodyfile="src/Player.cpp" bodystart="62" bodyend="71"/>
+        <location file="include/Player.hpp" line="54" column="10" bodyfile="src/Player.cpp" bodystart="85" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1a53938857e80374e79726309e78d1c15c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -240,15 +304,16 @@
           <declname>window</declname>
         </param>
         <briefdescription>
-<para>Renders the player sprite to the specified window. </para>
+<para>Renders the player on the given window. </para>
         </briefdescription>
         <detaileddescription>
+<para>Renders the player sprite.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>window</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The SFML window where the player will be drawn. </para>
+<para>The window to render the player on. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -256,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="41" column="10" bodyfile="src/Player.cpp" bodystart="73" bodyend="75"/>
+        <location file="include/Player.hpp" line="60" column="10" bodyfile="src/Player.cpp" bodystart="120" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1aee602f1426fb5cea15ba9823f5e198b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -269,15 +334,16 @@
           <declname>window</declname>
         </param>
         <briefdescription>
-<para>Renders all active projectiles to the specified window. </para>
+<para>Renders the player&apos;s projectiles on the given window. </para>
         </briefdescription>
         <detaileddescription>
+<para>Renders the player&apos;s projectiles.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>window</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The SFML window where the projectiles will be drawn. </para>
+<para>The window to render the projectiles on. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -285,7 +351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="45" column="10" bodyfile="src/Player.cpp" bodystart="77" bodyend="81"/>
+        <location file="include/Player.hpp" line="66" column="10" bodyfile="src/Player.cpp" bodystart="128" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1a6e448bb32639412c88101b64f41b50e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -298,15 +364,16 @@
           <declname>window</declname>
         </param>
         <briefdescription>
-<para>Renders the player&apos;s health bar to the specified window. </para>
+<para>Renders the player&apos;s health bar on the given window. </para>
         </briefdescription>
         <detaileddescription>
+<para>Renders the player&apos;s health bar.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>window</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The SFML window where the health bar will be drawn. </para>
+<para>The window to render the health bar on. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -314,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="49" column="10" bodyfile="src/Player.cpp" bodystart="82" bodyend="85"/>
+        <location file="include/Player.hpp" line="72" column="10" bodyfile="src/Player.cpp" bodystart="138" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1a4cdc67fd9ca2de09af89d9ae19efe5f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -323,13 +390,14 @@
         <name>shoot</name>
         <qualifiedname>Player::shoot</qualifiedname>
         <briefdescription>
-<para>Fires a projectile if the cooldown allows. </para>
+<para>Makes the player shoot a projectile. </para>
         </briefdescription>
         <detaileddescription>
+<para>Shoots a projectile if the cooldown period has elapsed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="52" column="10" bodyfile="src/Player.cpp" bodystart="39" bodyend="46"/>
+        <location file="include/Player.hpp" line="77" column="10" bodyfile="src/Player.cpp" bodystart="56" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1af97f9b32912f28fdcdad1785d515cd2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -342,15 +410,16 @@
           <declname>damage</declname>
         </param>
         <briefdescription>
-<para>Reduces the player&apos;s health by a specified amount. </para>
+<para>Handles player damage. </para>
         </briefdescription>
         <detaileddescription>
+<para>Inflicts damage to the player and updates the health bar.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>damage</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The amount of damage to apply to the player. </para>
+<para>The amount of damage to inflict. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -358,43 +427,81 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="56" column="10" bodyfile="src/Player.cpp" bodystart="47" bodyend="56"/>
+        <location file="include/Player.hpp" line="83" column="10" bodyfile="src/Player.cpp" bodystart="70" bodyend="79"/>
       </memberdef>
-      <memberdef kind="function" id="class_player_1a4f679a9d2fa60e76fe00d615dfe4d584" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_player_1a35390626e4c38747a01f5f51127412d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setSkin</definition>
+        <argsstring>(const std::string &amp;filePath)</argsstring>
+        <name>setSkin</name>
+        <qualifiedname>Player::setSkin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Sets the player&apos;s skin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Changes the player&apos;s skin dynamically.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the texture.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the new texture. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Player.hpp" line="89" column="10" bodyfile="src/Player.cpp" bodystart="107" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a23356f99a9de86d3d47eadb679b332dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>sf::Vector2f</type>
         <definition>sf::Vector2f Player::getPosition</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>()</argsstring>
         <name>getPosition</name>
         <qualifiedname>Player::getPosition</qualifiedname>
         <briefdescription>
-<para>Gets the player&apos;s current position. </para>
+<para>Gets the player&apos;s position. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A 2D vector representing the player&apos;s position. </para>
+<para><simplesect kind="return"><para>The player&apos;s position. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="60" column="18" bodyfile="src/Player.cpp" bodystart="91" bodyend="93"/>
+        <location file="include/Player.hpp" line="95" column="18" bodyfile="src/Player.cpp" bodystart="155" bodyend="157"/>
       </memberdef>
-      <memberdef kind="function" id="class_player_1aec00a96a409d68ac0f88007f93f42329" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_player_1a93c9ef1c84a6aeffd225733536be2f53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>sf::FloatRect</type>
         <definition>sf::FloatRect Player::getBounds</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>()</argsstring>
         <name>getBounds</name>
         <qualifiedname>Player::getBounds</qualifiedname>
         <briefdescription>
-<para>Gets the bounding box of the player&apos;s sprite. </para>
+<para>Gets the bounding box of the player. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A FloatRect representing the player&apos;s bounding box. </para>
+<para><simplesect kind="return"><para>The bounding box of the player. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="64" column="19" bodyfile="src/Player.cpp" bodystart="95" bodyend="97"/>
+        <location file="include/Player.hpp" line="101" column="19" bodyfile="src/Player.cpp" bodystart="163" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1aa21595133cab1bfdf3c92ec55453fda1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_projectile" kindref="compound">Projectile</ref> &gt; &amp;</type>
@@ -403,16 +510,17 @@
         <name>getProjectiles</name>
         <qualifiedname>Player::getProjectiles</qualifiedname>
         <briefdescription>
-<para>Gets a reference to the player&apos;s active projectiles. </para>
+<para>Gets the player&apos;s active projectiles. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A vector containing the active projectiles. </para>
+<para>Gets a reference to the player&apos;s active projectiles.</para>
+<para><simplesect kind="return"><para>A reference to the vector of active projectiles. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="68" column="17" bodyfile="src/Player.cpp" bodystart="87" bodyend="89"/>
+        <location file="include/Player.hpp" line="107" column="17" bodyfile="src/Player.cpp" bodystart="147" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1a9ce7657823f99abdfcf8e0d752465800" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -425,7 +533,7 @@
           <declname>index</declname>
         </param>
         <briefdescription>
-<para>Removes a projectile from the player&apos;s projectile list. </para>
+<para>Removes a projectile at the specified index. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -441,7 +549,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="72" column="10" bodyfile="src/Player.cpp" bodystart="99" bodyend="103"/>
+        <location file="include/Player.hpp" line="113" column="10" bodyfile="src/Player.cpp" bodystart="171" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -450,47 +558,51 @@
         <name>getHealth</name>
         <qualifiedname>Player::getHealth</qualifiedname>
         <briefdescription>
-<para>Gets the player&apos;s current health. </para>
+<para>Gets the player&apos;s health. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>The player&apos;s health as an integer. </para>
+<para><simplesect kind="return"><para>The player&apos;s health. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Player.hpp" line="76" column="9" bodyfile="src/Player.cpp" bodystart="22" bodyend="24"/>
+        <location file="include/Player.hpp" line="119" column="9" bodyfile="src/Player.cpp" bodystart="32" bodyend="34"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Represents the player character in the game. </para>
+<para>Represents the player in the game. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class handles the player&apos;s movement, shooting, health, and rendering. </para>
     </detaileddescription>
-    <location file="include/Player.hpp" line="12" column="1" bodyfile="include/Player.hpp" bodystart="12" bodyend="77"/>
+    <location file="include/Player.hpp" line="13" column="1" bodyfile="include/Player.hpp" bodystart="13" bodyend="120"/>
     <listofallmembers>
-      <member refid="class_player_1aec00a96a409d68ac0f88007f93f42329" prot="public" virt="non-virtual"><scope>Player</scope><name>getBounds</name></member>
+      <member refid="class_player_1a93c9ef1c84a6aeffd225733536be2f53" prot="public" virt="non-virtual"><scope>Player</scope><name>getBounds</name></member>
       <member refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" prot="public" virt="non-virtual"><scope>Player</scope><name>getHealth</name></member>
-      <member refid="class_player_1a4f679a9d2fa60e76fe00d615dfe4d584" prot="public" virt="non-virtual"><scope>Player</scope><name>getPosition</name></member>
+      <member refid="class_player_1a23356f99a9de86d3d47eadb679b332dc" prot="public" virt="non-virtual"><scope>Player</scope><name>getPosition</name></member>
       <member refid="class_player_1aa21595133cab1bfdf3c92ec55453fda1" prot="public" virt="non-virtual"><scope>Player</scope><name>getProjectiles</name></member>
       <member refid="class_player_1a22c77aea817fb52c33280b2792992123" prot="public" virt="non-virtual"><scope>Player</scope><name>handleInput</name></member>
       <member refid="class_player_1aad33b52bfe73c4c978a3135172f286a0" prot="private" virt="non-virtual"><scope>Player</scope><name>health</name></member>
       <member refid="class_player_1a37cab32e0f665e31919196c05f8b68cd" prot="private" virt="non-virtual"><scope>Player</scope><name>healthBarBackground</name></member>
       <member refid="class_player_1a8434a534b36c0e2c5ae370316bb38f80" prot="private" virt="non-virtual"><scope>Player</scope><name>healthBarForeground</name></member>
+      <member refid="class_player_1a38c81d5639b78caa0a43d8da7e4a81b0" prot="private" virt="non-virtual"><scope>Player</scope><name>loadSounds</name></member>
       <member refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" prot="public" virt="non-virtual"><scope>Player</scope><name>Player</name></member>
       <member refid="class_player_1aba64aa705a1be12b6b96256e3f89bdff" prot="private" virt="non-virtual"><scope>Player</scope><name>projectiles</name></member>
       <member refid="class_player_1a9ce7657823f99abdfcf8e0d752465800" prot="public" virt="non-virtual"><scope>Player</scope><name>removeProjectile</name></member>
       <member refid="class_player_1a53938857e80374e79726309e78d1c15c" prot="public" virt="non-virtual"><scope>Player</scope><name>render</name></member>
       <member refid="class_player_1a6e448bb32639412c88101b64f41b50e6" prot="public" virt="non-virtual"><scope>Player</scope><name>renderHealthBar</name></member>
       <member refid="class_player_1aee602f1426fb5cea15ba9823f5e198b6" prot="public" virt="non-virtual"><scope>Player</scope><name>renderProjectiles</name></member>
+      <member refid="class_player_1a35390626e4c38747a01f5f51127412d2" prot="public" virt="non-virtual"><scope>Player</scope><name>setSkin</name></member>
       <member refid="class_player_1a4cdc67fd9ca2de09af89d9ae19efe5f8" prot="public" virt="non-virtual"><scope>Player</scope><name>shoot</name></member>
       <member refid="class_player_1a88b0d81b6e2165fe812512eae6ac8e22" prot="private" virt="non-virtual"><scope>Player</scope><name>shootClock</name></member>
       <member refid="class_player_1a6b76a680424ef79e29be0bd13e19e145" prot="private" virt="non-virtual"><scope>Player</scope><name>shootCooldown</name></member>
+      <member refid="class_player_1a2b5bab0811a1f8b92e02cf97f904f08a" prot="private" virt="non-virtual"><scope>Player</scope><name>shootingSound</name></member>
+      <member refid="class_player_1a7c1e23cf9e31a9a132142a7a5187f663" prot="private" virt="non-virtual"><scope>Player</scope><name>shootingSoundBuffer</name></member>
       <member refid="class_player_1a770942101eff683b030edde9f730d537" prot="private" virt="non-virtual"><scope>Player</scope><name>speed</name></member>
       <member refid="class_player_1a19bc8731e5e84613a2ae7c4b5134dfab" prot="private" virt="non-virtual"><scope>Player</scope><name>sprite</name></member>
       <member refid="class_player_1af97f9b32912f28fdcdad1785d515cd2d" prot="public" virt="non-virtual"><scope>Player</scope><name>takeDamage</name></member>
       <member refid="class_player_1a9c6c14b89a6f99031a0d677828f1fa1a" prot="private" virt="non-virtual"><scope>Player</scope><name>texture</name></member>
+      <member refid="class_player_1ac752cc4359a542f3471c3b6549546757" prot="private" virt="non-virtual"><scope>Player</scope><name>texturePath</name></member>
       <member refid="class_player_1a82c3476f3e65a4e2ac6bcd040771bdd4" prot="public" virt="non-virtual"><scope>Player</scope><name>update</name></member>
       <member refid="class_player_1aa0ca8feab9679e9e29e61501e5db8451" prot="public" virt="non-virtual"><scope>Player</scope><name>updateProjectiles</name></member>
     </listofallmembers>

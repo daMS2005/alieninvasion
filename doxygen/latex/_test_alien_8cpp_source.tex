@@ -1,0 +1,26 @@
+\doxysection{Test\+Alien.\+cpp}
+\hypertarget{_test_alien_8cpp_source}{}\label{_test_alien_8cpp_source}\index{tests/TestAlien.cpp@{tests/TestAlien.cpp}}
+\mbox{\hyperlink{_test_alien_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_alien_8hpp}{Alien.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00007}\mbox{\hyperlink{_test_alien_8cpp_a6d5a46153e772196af0887ad74326ddd}{00007}}\ \mbox{\hyperlink{_test_alien_8cpp_a6d5a46153e772196af0887ad74326ddd}{TEST}}(AlienTest,\ BlueAlienInitialization)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_alien}{Alien}}\ alien(\{100.0f,\ 50.0f\},\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien::AlienType::Blue}},\ 5);}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00009}00009\ \ \ \ \ EXPECT\_FALSE(alien.isDead());\ \textcolor{comment}{//\ Check\ that\ alien\ is\ not\ dead\ on\ initialization}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00010}00010\ \ \ \ \ EXPECT\_EQ(alien.getType(),\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Alien::AlienType::Blue}});\ \textcolor{comment}{//\ Verify\ type\ is\ Blue}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00016}\mbox{\hyperlink{_test_alien_8cpp_a07628a1c2b98b03b7f49e15143903647}{00016}}\ \mbox{\hyperlink{_test_alien_8cpp_a6d5a46153e772196af0887ad74326ddd}{TEST}}(AlienTest,\ GreenAlienInitialization)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_alien}{Alien}}\ alien(\{0.0f,\ 0.0f\},\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Alien::AlienType::Green}},\ 2);}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00018}00018\ \ \ \ \ EXPECT\_FALSE(alien.isDead());\ \textcolor{comment}{//\ Check\ that\ alien\ is\ not\ dead\ on\ initialization}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00019}00019\ \ \ \ \ EXPECT\_EQ(alien.getType(),\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Alien::AlienType::Green}});\ \textcolor{comment}{//\ Verify\ type\ is\ Green}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00025}\mbox{\hyperlink{_test_alien_8cpp_a32d91c75460ce0d1157b67da5e53c96c}{00025}}\ \mbox{\hyperlink{_test_alien_8cpp_a6d5a46153e772196af0887ad74326ddd}{TEST}}(AlienTest,\ YellowAlienInitialization)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_alien}{Alien}}\ alien(\{0.0f,\ 0.0f\},\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Alien::AlienType::Yellow}},\ 1);}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00027}00027\ \ \ \ \ EXPECT\_FALSE(alien.isDead());\ \textcolor{comment}{//\ Check\ that\ alien\ is\ not\ dead\ on\ initialization}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00028}00028\ \ \ \ \ EXPECT\_EQ(alien.getType(),\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Alien::AlienType::Yellow}});\ \textcolor{comment}{//\ Verify\ type\ is\ Yellow}}
+\DoxyCodeLine{\Hypertarget{_test_alien_8cpp_source_l00029}00029\ \}}
+
+\end{DoxyCode}

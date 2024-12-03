@@ -1,0 +1,5 @@
+/Users/danielmora/Desktop/alieninvasion copy/build/CMakeFiles/alien_invasion.dir
+/Users/danielmora/Desktop/alieninvasion copy/build/CMakeFiles/tests.dir
+/Users/danielmora/Desktop/alieninvasion copy/build/CMakeFiles/test.dir
+/Users/danielmora/Desktop/alieninvasion copy/build/CMakeFiles/edit_cache.dir
+/Users/danielmora/Desktop/alieninvasion copy/build/CMakeFiles/rebuild_cache.dir

@@ -231,9 +231,12 @@ backgroundSprite.setTexture(backgroundTexture);
 
 
 
-    // Normal game logic here...
+    /// @brief Handles player input and updates the player's state.
     player.handleInput(deltaTime);
     player.update();
+    /// @brief Checks for collisions between alien projectiles and the player.
+/// If a projectile hits the player, it reduces the player's health by 10
+/// and removes the projectile.
     player.updateProjectiles(deltaTime);
     for (auto& alien : aliens) {
         for (auto it = alien.getProjectiles().begin(); it != alien.getProjectiles().end();) {
@@ -309,12 +312,15 @@ if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
     spawnClock.restart();
 }
 
-// Update aliens
+/// @brief Updates the state of all aliens.
+/// This includes movement and any other state changes based on the elapsed time and score.
 for (auto& alien : aliens) {
     alien.update(deltaTime, 100, score);
 }
 
-// Collision between player projectiles and aliens
+/// @brief Handles collisions between player projectiles and aliens.
+/// If a projectile hits an alien, it reduces the alien's health and removes the projectile.
+/// If the alien is dead, it increases the player's score.
 for (auto& alien : aliens) {
     for (auto it = player.getProjectiles().begin(); it != player.getProjectiles().end();) {
         if (it->getBounds().intersects(alien.getBounds())) {
@@ -358,7 +364,8 @@ aliens.erase(
 
     scoreText.setString("Score: " + std::to_string(score));
     window.draw(scoreText);
-}
+}/// @brief Handles the skin selection screen.
+/// This displays the available skins for the player to choose from.
 else if (currentState == GameState::SkinSelection) {
             sf::Text skinTitle("Select Your Skin", font, 40);
             skinTitle.setPosition(200, 50);
@@ -366,6 +373,8 @@ else if (currentState == GameState::SkinSelection) {
             window.draw(skin1);
             window.draw(skin2);
             window.draw(skin3);
+            /// @brief Handles the leaderboard screen.
+/// This displays the top scores from the leaderboard file. else if (currentState == GameState::Leaderboard) {
         } else if (currentState == GameState::Leaderboard) {
             window.clear(sf::Color::Black);
             window.draw(leaderboardTitle);

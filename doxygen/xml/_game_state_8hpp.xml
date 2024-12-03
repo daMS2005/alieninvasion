@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_game_state_8hpp" kind="file" language="C++">
+    <compoundname>GameState.hpp</compoundname>
+    <includedby refid="_game_state_8cpp" local="yes">src/GameState.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/GameState.hpp</label>
+        <link refid="_game_state_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/GameState.cpp</label>
+        <link refid="_game_state_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GameState</name>
+        <enumvalue id="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a11be5a46cecdc713a8bf9daf0aca0590" prot="public">
+          <name>StartMenu</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a6288740a1cd0de37312619df3b6ddcf3" prot="public">
+          <name>Gameplay</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a4c0c5cdfb4f619be41546d9ee836670c" prot="public">
+          <name>SkinSelection</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285ae02b89857b91a11b8be92fca409827ba" prot="public">
+          <name>Leaderboard</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a8f347bc7cebca9fa6d97e70c6bc29eb3" prot="public">
+          <name>GameOver</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/GameState.hpp" line="5" column="1" bodyfile="include/GameState.hpp" bodystart="5" bodyend="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_game_state_8hpp_1a0bdce041ddd781191de660f959b6bc63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref></type>
+        <definition>GameState transitionTo</definition>
+        <argsstring>(GameState currentState, GameState nextState)</argsstring>
+        <name>transitionTo</name>
+        <param>
+          <type><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref></type>
+          <declname>currentState</declname>
+        </param>
+        <param>
+          <type><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref></type>
+          <declname>nextState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/GameState.hpp" line="14" column="11" bodyfile="src/GameState.cpp" bodystart="6" bodyend="10" declfile="include/GameState.hpp" declline="14" declcolumn="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GAME_STATE_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GAME_STATE_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>the<sp/>game<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a11be5a46cecdc713a8bf9daf0aca0590" kindref="member">StartMenu</ref>,</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a6288740a1cd0de37312619df3b6ddcf3" kindref="member">Gameplay</ref>,</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a4c0c5cdfb4f619be41546d9ee836670c" kindref="member">SkinSelection</ref>,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285ae02b89857b91a11b8be92fca409827ba" kindref="member">Leaderboard</ref>,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285a8f347bc7cebca9fa6d97e70c6bc29eb3" kindref="member">GameOver</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Functions<sp/>for<sp/>handling<sp/>transitions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/><ref refid="_game_state_8hpp_1a0bdce041ddd781191de660f959b6bc63" kindref="member">transitionTo</ref>(<ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/>currentState,<sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/>nextState);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>GAME_STATE_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/GameState.hpp"/>
+  </compounddef>
+</doxygen>

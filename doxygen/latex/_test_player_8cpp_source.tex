@@ -1,0 +1,25 @@
+\doxysection{Test\+Player.\+cpp}
+\hypertarget{_test_player_8cpp_source}{}\label{_test_player_8cpp_source}\index{tests/TestPlayer.cpp@{tests/TestPlayer.cpp}}
+\mbox{\hyperlink{_test_player_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8hpp}{Player.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00007}\mbox{\hyperlink{_test_player_8cpp_a34a73f1421795253ac200a30b0746c33}{00007}}\ \mbox{\hyperlink{_test_player_8cpp_a34a73f1421795253ac200a30b0746c33}{TEST}}(PlayerTest,\ InitialHealth)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00009}00009\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_player_abcb15d249bed9a4ab0ab86b52b0d747a}{getHealth}}(),\ 100);\ \textcolor{comment}{//\ Ensure\ the\ default\ health\ is\ 100}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00015}\mbox{\hyperlink{_test_player_8cpp_a54bbe0fbd0725cf34da338aed82a8bee}{00015}}\ \mbox{\hyperlink{_test_player_8cpp_a34a73f1421795253ac200a30b0746c33}{TEST}}(PlayerTest,\ TakeDamage)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00017}00017\ \ \ \ \ player.\mbox{\hyperlink{class_player_af97f9b32912f28fdcdad1785d515cd2d}{takeDamage}}(30);}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00018}00018\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_player_abcb15d249bed9a4ab0ab86b52b0d747a}{getHealth}}(),\ 70);\ \textcolor{comment}{//\ Verify\ health\ is\ reduced\ correctly}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00024}\mbox{\hyperlink{_test_player_8cpp_aa4f409a1479eec6bd9beed7ad151066c}{00024}}\ \mbox{\hyperlink{_test_player_8cpp_a34a73f1421795253ac200a30b0746c33}{TEST}}(PlayerTest,\ ShootingCooldown)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00026}00026\ \ \ \ \ player.\mbox{\hyperlink{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8}{shoot}}();}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00027}00027\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_player_aa21595133cab1bfdf3c92ec55453fda1}{getProjectiles}}().size(),\ 0);\ \textcolor{comment}{//\ Ensure\ a\ projectile\ is\ created}}
+\DoxyCodeLine{\Hypertarget{_test_player_8cpp_source_l00028}00028\ \}}
+
+\end{DoxyCode}

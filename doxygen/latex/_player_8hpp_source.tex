@@ -1,56 +1,64 @@
 \doxysection{Player.\+hpp}
 \hypertarget{_player_8hpp_source}{}\label{_player_8hpp_source}\index{include/Player.hpp@{include/Player.hpp}}
-
+\mbox{\hyperlink{_player_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_HPP}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYER\_HPP}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Projectile.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
-\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00014\ \ \ \ \ sf::Sprite\ sprite;\ }
-\DoxyCodeLine{00015\ \ \ \ \ sf::Texture\ texture;\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ speed;\ }
-\DoxyCodeLine{00017\ \ \ \ \ std::vector<Projectile>\ projectiles;\ }
-\DoxyCodeLine{00018\ \ \ \ \ sf::Clock\ shootClock;\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ shootCooldown;\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ health;\ }
-\DoxyCodeLine{00021\ \ \ \ \ sf::RectangleShape\ healthBarBackground;\ }
-\DoxyCodeLine{00022\ \ \ \ \ sf::RectangleShape\ healthBarForeground;\ }
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}();}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a22c77aea817fb52c33280b2792992123}{handleInput}}(\textcolor{keywordtype}{float}\ deltaTime);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}{update}}();}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa0ca8feab9679e9e29e61501e5db8451}{updateProjectiles}}(\textcolor{keywordtype}{float}\ deltaTime);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a53938857e80374e79726309e78d1c15c}{render}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aee602f1426fb5cea15ba9823f5e198b6}{renderProjectiles}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a6e448bb32639412c88101b64f41b50e6}{renderHealthBar}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8}{shoot}}();}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_af97f9b32912f28fdcdad1785d515cd2d}{takeDamage}}(\textcolor{keywordtype}{int}\ damage);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00060\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_player_a4f679a9d2fa60e76fe00d615dfe4d584}{getPosition}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00064\ \ \ \ \ sf::FloatRect\ \mbox{\hyperlink{class_player_aec00a96a409d68ac0f88007f93f42329}{getBounds}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00068\ \ \ \ \ std::vector<Projectile>\&\ \mbox{\hyperlink{class_player_aa21595133cab1bfdf3c92ec55453fda1}{getProjectiles}}();}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a9ce7657823f99abdfcf8e0d752465800}{removeProjectile}}(\textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_abcb15d249bed9a4ab0ab86b52b0d747a}{getHealth}}();}
-\DoxyCodeLine{00077\ \};}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PLAYER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projectile_8hpp}{Projectile.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00013}\mbox{\hyperlink{class_player}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00014}00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00015}00015\ \ \ \ \ sf::Sprite\ sprite;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00016}00016\ \ \ \ \ sf::Texture\ texture;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{float}\ speed;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00018}00018\ \ \ \ \ std::vector<Projectile>\ projectiles;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00019}00019\ \ \ \ \ sf::Clock\ shootClock;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{float}\ shootCooldown;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{int}\ health;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00022}00022\ \ \ \ \ sf::RectangleShape\ healthBarBackground;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00023}00023\ \ \ \ \ sf::RectangleShape\ healthBarForeground;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00024}00024\ \ \ \ \ sf::SoundBuffer\ shootingSoundBuffer;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00025}00025\ \ \ \ \ sf::Sound\ shootingSound;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00026}00026\ \ \ \ \ std::string\ texturePath;\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ loadSounds();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00033}00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a22c77aea817fb52c33280b2792992123}{handleInput}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}{update}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa0ca8feab9679e9e29e61501e5db8451}{updateProjectiles}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a53938857e80374e79726309e78d1c15c}{render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aee602f1426fb5cea15ba9823f5e198b6}{renderProjectiles}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a6e448bb32639412c88101b64f41b50e6}{renderHealthBar}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8}{shoot}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_af97f9b32912f28fdcdad1785d515cd2d}{takeDamage}}(\textcolor{keywordtype}{int}\ damage);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a35390626e4c38747a01f5f51127412d2}{setSkin}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00095}00095\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_player_a23356f99a9de86d3d47eadb679b332dc}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00101}00101\ \ \ \ \ sf::FloatRect\ \mbox{\hyperlink{class_player_a93c9ef1c84a6aeffd225733536be2f53}{getBounds}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00107}00107\ \ \ \ \ std::vector<Projectile>\&\ \mbox{\hyperlink{class_player_aa21595133cab1bfdf3c92ec55453fda1}{getProjectiles}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a9ce7657823f99abdfcf8e0d752465800}{removeProjectile}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_abcb15d249bed9a4ab0ab86b52b0d747a}{getHealth}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00120}00120\ \};}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00122}00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_HPP}}
 
 \end{DoxyCode}

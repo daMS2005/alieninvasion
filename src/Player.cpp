@@ -1,6 +1,9 @@
 #include "Player.hpp"
 #include <iostream>
 
+/**
+ * @brief Constructs a new Player object with default settings.
+ */
 Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100), texturePath("../resources/player.png") { 
     // Default skin
     if (!texture.loadFromFile(texturePath)) {
@@ -22,12 +25,18 @@ Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100), texturePath
     healthBarForeground.setPosition(580.0f, 10.0f);           // Top-right corner (adjust x and y)
 }
 
-// Get health
+/**
+ * @brief Gets the player's health.
+ * @return The player's health.
+ */
 int Player::getHealth() {
     return health;
 }
 
-// Handle player input
+/**
+ * @brief Handles player input for movement and shooting.
+ * @param deltaTime The time elapsed since the last update.
+ */
 void Player::handleInput(float deltaTime) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sprite.getPosition().x > 0) {
         sprite.move(-speed * deltaTime, 0); // Move left
@@ -41,7 +50,9 @@ void Player::handleInput(float deltaTime) {
     }
 }
 
-// Shoot a projectile
+/**
+ * @brief Shoots a projectile if the cooldown period has elapsed.
+ */
 void Player::shoot() {
     if (shootClock.getElapsedTime().asSeconds() >= shootCooldown) {
         sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
@@ -52,8 +63,10 @@ void Player::shoot() {
     }
 }
 
-
-// Take damage and update health bar
+/**
+ * @brief Inflicts damage to the player and updates the health bar.
+ * @param damage The amount of damage to inflict.
+ */
 void Player::takeDamage(int damage) {
     health -= damage; // Reduce health
     if (health < 0) {
@@ -65,7 +78,10 @@ void Player::takeDamage(int damage) {
     healthBarForeground.setSize(sf::Vector2f(200.0f * healthPercentage, 20.0f));
 }
 
-// Update projectiles
+/**
+ * @brief Updates the player's projectiles.
+ * @param deltaTime The time elapsed since the last update.
+ */
 void Player::updateProjectiles(float deltaTime) {
     for (auto it = projectiles.begin(); it != projectiles.end();) {
         it->update(deltaTime);
@@ -76,10 +92,18 @@ void Player::updateProjectiles(float deltaTime) {
         }
     }
 }
+
+/**
+ * @brief Updates the player's state.
+ */
 void Player::update() {
-    //To be implemented
+    // To be implemented
 }
-// Change skin dynamically
+
+/**
+ * @brief Changes the player's skin dynamically.
+ * @param filePath The file path to the new texture.
+ */
 void Player::setSkin(const std::string& filePath) {
     if (!texture.loadFromFile(filePath)) {
         std::cerr << "Error loading skin texture: " << filePath << std::endl;
@@ -89,40 +113,61 @@ void Player::setSkin(const std::string& filePath) {
     }
 }
 
-// Render the player sprite
+/**
+ * @brief Renders the player sprite.
+ * @param window The window to render the player on.
+ */
 void Player::render(sf::RenderWindow& window) {
     window.draw(sprite);
 }
 
-// Render projectiles
+/**
+ * @brief Renders the player's projectiles.
+ * @param window The window to render the projectiles on.
+ */
 void Player::renderProjectiles(sf::RenderWindow& window) {
     for (auto& projectile : projectiles) {
         projectile.render(window);
     }
 }
 
-// Render health bar
+/**
+ * @brief Renders the player's health bar.
+ * @param window The window to render the health bar on.
+ */
 void Player::renderHealthBar(sf::RenderWindow& window) {
     window.draw(healthBarBackground);
     window.draw(healthBarForeground);
 }
 
-// Get reference to projectiles
+/**
+ * @brief Gets a reference to the player's active projectiles.
+ * @return A reference to the vector of active projectiles.
+ */
 std::vector<Projectile>& Player::getProjectiles() {
     return projectiles;
 }
 
-// Get player position
+/**
+ * @brief Gets the player's position.
+ * @return The player's position.
+ */
 sf::Vector2f Player::getPosition() {
     return sprite.getPosition();
 }
 
-// Get player bounds
+/**
+ * @brief Gets the bounding box of the player.
+ * @return The bounding box of the player.
+ */
 sf::FloatRect Player::getBounds() {
     return sprite.getGlobalBounds();
 }
 
-// Remove a projectile by index
+/**
+ * @brief Removes a projectile at the specified index.
+ * @param index The index of the projectile to remove.
+ */
 void Player::removeProjectile(size_t index) {
     if (index < projectiles.size()) {
         projectiles.erase(projectiles.begin() + index);

@@ -3,6 +3,7 @@
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
     <innerfile refid="_alien_8cpp">Alien.cpp</innerfile>
+    <innerfile refid="_game_state_8cpp">GameState.cpp</innerfile>
     <innerfile refid="main_8cpp">main.cpp</innerfile>
     <innerfile refid="_player_8cpp">Player.cpp</innerfile>
     <innerfile refid="_projectile_8cpp">Projectile.cpp</innerfile>

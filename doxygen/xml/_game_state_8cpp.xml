@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_game_state_8cpp" kind="file" language="C++">
+    <compoundname>GameState.cpp</compoundname>
+    <includes refid="_game_state_8hpp" local="yes">GameState.hpp</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>GameState.hpp</label>
+        <link refid="_game_state_8hpp"/>
+      </node>
+      <node id="1">
+        <label>src/GameState.cpp</label>
+        <link refid="_game_state_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_game_state_8cpp_1a0bdce041ddd781191de660f959b6bc63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref></type>
+        <definition>GameState transitionTo</definition>
+        <argsstring>(GameState currentState, GameState nextState)</argsstring>
+        <name>transitionTo</name>
+        <param>
+          <type><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref></type>
+          <declname>currentState</declname>
+        </param>
+        <param>
+          <type><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref></type>
+          <declname>nextState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameState.cpp" line="6" column="11" bodyfile="src/GameState.cpp" bodystart="6" bodyend="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_game_state_8hpp" kindref="compound">GameState.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>can<sp/>hold<sp/>any<sp/>state-related<sp/>functions<sp/>or<sp/>helpers<sp/>if<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Example:<sp/>Transitioning<sp/>between<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="_game_state_8cpp_1a0bdce041ddd781191de660f959b6bc63" refkind="member"><highlight class="normal"><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/><ref refid="_game_state_8cpp_1a0bdce041ddd781191de660f959b6bc63" kindref="member">transitionTo</ref>(<ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/>currentState,<sp/><ref refid="_game_state_8hpp_1a7899b65f1ea0f655e4bbf8d2a5714285" kindref="member">GameState</ref><sp/>nextState)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>logic<sp/>when<sp/>transitioning<sp/>between<sp/>states,<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>now,<sp/>simply<sp/>return<sp/>the<sp/>next<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nextState;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/GameState.cpp"/>
+  </compounddef>
+</doxygen>

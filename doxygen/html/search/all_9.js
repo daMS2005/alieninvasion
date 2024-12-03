@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['update_0',['update',['../class_alien.html#a1cc622b85a2286d7ad2d908f42a3ac93',1,'Alien::update()'],['../class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4',1,'Player::update()'],['../class_projectile.html#a5bc646de87829b911d6817a6478c353e',1,'Projectile::update()']]],
-  ['updateprojectiles_1',['updateProjectiles',['../class_player.html#aa0ca8feab9679e9e29e61501e5db8451',1,'Player']]]
+  ['setskin_0',['setSkin',['../class_player.html#a35390626e4c38747a01f5f51127412d2',1,'Player']]],
+  ['shoot_1',['shoot',['../class_alien.html#ad38168e2cd96e67efdfde002e79cd31f',1,'Alien::shoot()'],['../class_player.html#a4cdc67fd9ca2de09af89d9ae19efe5f8',1,'Player::shoot()']]],
+  ['skinselection_2',['SkinSelection',['../_game_state_8hpp.html#a7899b65f1ea0f655e4bbf8d2a5714285a4c0c5cdfb4f619be41546d9ee836670c',1,'GameState.hpp']]],
+  ['startmenu_3',['StartMenu',['../_game_state_8hpp.html#a7899b65f1ea0f655e4bbf8d2a5714285a11be5a46cecdc713a8bf9daf0aca0590',1,'GameState.hpp']]]
 ];

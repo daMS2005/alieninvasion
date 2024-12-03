@@ -100,46 +100,57 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:af8a9d0e36fb97cba5c6412e55ba3d44b" id="r_af8a9d0e36fb97cba5c6412e55ba3d44b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">AlienType</a> { <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9">Blue</a>
-, <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1">Green</a>
 , <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8">Yellow</a>
+, <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1">Green</a>
+, <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc">UFO</a>
  }</td></tr>
 <tr class="memdesc:af8a9d0e36fb97cba5c6412e55ba3d44b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerates the types of aliens.  <a href="#af8a9d0e36fb97cba5c6412e55ba3d44b">More...</a><br /></td></tr>
 <tr class="separator:af8a9d0e36fb97cba5c6412e55ba3d44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adb73372fd4a10b742fab3df457bdc0da" id="r_adb73372fd4a10b742fab3df457bdc0da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb73372fd4a10b742fab3df457bdc0da">getHealth</a> () const</td></tr>
-<tr class="memdesc:adb73372fd4a10b742fab3df457bdc0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current health of the alien.  <br /></td></tr>
-<tr class="separator:adb73372fd4a10b742fab3df457bdc0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d4d1188bc4cec81a36630588f77f65d" id="r_a8d4d1188bc4cec81a36630588f77f65d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d4d1188bc4cec81a36630588f77f65d">Alien</a> (const sf::Vector2f &amp;position, int initialHealth=3, <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">AlienType</a> type=<a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9">AlienType::Blue</a>)</td></tr>
-<tr class="memdesc:a8d4d1188bc4cec81a36630588f77f65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_alien.html" title="Represents an alien in the game.">Alien</a> object.  <br /></td></tr>
-<tr class="separator:a8d4d1188bc4cec81a36630588f77f65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cc622b85a2286d7ad2d908f42a3ac93" id="r_a1cc622b85a2286d7ad2d908f42a3ac93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc622b85a2286d7ad2d908f42a3ac93">update</a> (float deltaTime, int scoreThreshold, int currentScore)</td></tr>
-<tr class="memdesc:a1cc622b85a2286d7ad2d908f42a3ac93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the alien's state, including position and animation.  <br /></td></tr>
-<tr class="separator:a1cc622b85a2286d7ad2d908f42a3ac93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a060310ef999b3be89c004cc0d8302e0a" id="r_a060310ef999b3be89c004cc0d8302e0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a060310ef999b3be89c004cc0d8302e0a">Alien</a> (const sf::Vector2f &amp;position, <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">AlienType</a> alienType, int initialHealth=3)</td></tr>
+<tr class="memdesc:a060310ef999b3be89c004cc0d8302e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_alien.html" title="Represents an alien in the game.">Alien</a> object.  <br /></td></tr>
+<tr class="separator:a060310ef999b3be89c004cc0d8302e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa7613bc0d257f498e876521a327e25b" id="r_aaa7613bc0d257f498e876521a327e25b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa7613bc0d257f498e876521a327e25b">render</a> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="memdesc:aaa7613bc0d257f498e876521a327e25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the alien to the specified window.  <br /></td></tr>
 <tr class="separator:aaa7613bc0d257f498e876521a327e25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e1202ecfff4f6a17ce54947539377dc" id="r_a3e1202ecfff4f6a17ce54947539377dc"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e1202ecfff4f6a17ce54947539377dc">getBounds</a> () const</td></tr>
-<tr class="memdesc:a3e1202ecfff4f6a17ce54947539377dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box of the alien's sprite.  <br /></td></tr>
-<tr class="separator:a3e1202ecfff4f6a17ce54947539377dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab51931eaa1313529b2950977dfe2b100" id="r_ab51931eaa1313529b2950977dfe2b100"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab51931eaa1313529b2950977dfe2b100">isOffScreen</a> () const</td></tr>
-<tr class="memdesc:ab51931eaa1313529b2950977dfe2b100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the alien has moved off the screen.  <br /></td></tr>
-<tr class="separator:ab51931eaa1313529b2950977dfe2b100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7253f1aded3432ddd6d7d1c20b6441b" id="r_ad7253f1aded3432ddd6d7d1c20b6441b"><td class="memItemLeft" align="right" valign="top"><a id="ad7253f1aded3432ddd6d7d1c20b6441b" name="ad7253f1aded3432ddd6d7d1c20b6441b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</td></tr>
-<tr class="memdesc:ad7253f1aded3432ddd6d7d1c20b6441b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the alien's movement. <br /></td></tr>
-<tr class="separator:ad7253f1aded3432ddd6d7d1c20b6441b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad38168e2cd96e67efdfde002e79cd31f" id="r_ad38168e2cd96e67efdfde002e79cd31f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad38168e2cd96e67efdfde002e79cd31f">shoot</a> ()</td></tr>
+<tr class="memdesc:ad38168e2cd96e67efdfde002e79cd31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the shooting logic for the alien.  <br /></td></tr>
+<tr class="separator:ad38168e2cd96e67efdfde002e79cd31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13a473b6bcad2471e558f35cbe86c65" id="r_ab13a473b6bcad2471e558f35cbe86c65"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab13a473b6bcad2471e558f35cbe86c65">getProjectiles</a> ()</td></tr>
+<tr class="memdesc:ab13a473b6bcad2471e558f35cbe86c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the projectiles fired by the alien.  <br /></td></tr>
+<tr class="separator:ab13a473b6bcad2471e558f35cbe86c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cd83a96bb14fd344017927bb2723fd" id="r_a74cd83a96bb14fd344017927bb2723fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74cd83a96bb14fd344017927bb2723fd">updateProjectiles</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a74cd83a96bb14fd344017927bb2723fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of the alien's projectiles.  <br /></td></tr>
+<tr class="separator:a74cd83a96bb14fd344017927bb2723fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55dcf4cc09999083c63f733fc2fb39ee" id="r_a55dcf4cc09999083c63f733fc2fb39ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55dcf4cc09999083c63f733fc2fb39ee">renderProjectiles</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a55dcf4cc09999083c63f733fc2fb39ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the alien's projectiles to the specified window.  <br /></td></tr>
+<tr class="separator:a55dcf4cc09999083c63f733fc2fb39ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade4a5092a52bb1540e7e28455fd3da3" id="r_aade4a5092a52bb1540e7e28455fd3da3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aade4a5092a52bb1540e7e28455fd3da3">takeDamage</a> (int damage)</td></tr>
 <tr class="memdesc:aade4a5092a52bb1540e7e28455fd3da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the alien's health by a specified amount of damage.  <br /></td></tr>
 <tr class="separator:aade4a5092a52bb1540e7e28455fd3da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f42e58e71748b4c14daece420b347e3" id="r_a9f42e58e71748b4c14daece420b347e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f42e58e71748b4c14daece420b347e3">isDead</a> () const</td></tr>
 <tr class="memdesc:a9f42e58e71748b4c14daece420b347e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the alien is dead (health &lt;= 0).  <br /></td></tr>
 <tr class="separator:a9f42e58e71748b4c14daece420b347e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1202ecfff4f6a17ce54947539377dc" id="r_a3e1202ecfff4f6a17ce54947539377dc"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e1202ecfff4f6a17ce54947539377dc">getBounds</a> () const</td></tr>
+<tr class="memdesc:a3e1202ecfff4f6a17ce54947539377dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box of the alien's sprite.  <br /></td></tr>
+<tr class="separator:a3e1202ecfff4f6a17ce54947539377dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51931eaa1313529b2950977dfe2b100" id="r_ab51931eaa1313529b2950977dfe2b100"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab51931eaa1313529b2950977dfe2b100">isOffScreen</a> () const</td></tr>
+<tr class="memdesc:ab51931eaa1313529b2950977dfe2b100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the alien has moved off the screen.  <br /></td></tr>
+<tr class="separator:ab51931eaa1313529b2950977dfe2b100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc622b85a2286d7ad2d908f42a3ac93" id="r_a1cc622b85a2286d7ad2d908f42a3ac93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc622b85a2286d7ad2d908f42a3ac93">update</a> (float deltaTime, int scoreThreshold, int currentScore)</td></tr>
+<tr class="memdesc:a1cc622b85a2286d7ad2d908f42a3ac93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the alien's state, including position, animation, and shooting.  <br /></td></tr>
+<tr class="separator:a1cc622b85a2286d7ad2d908f42a3ac93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d821afc8f77765a8ec9abe9777b335" id="r_a46d821afc8f77765a8ec9abe9777b335"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">AlienType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d821afc8f77765a8ec9abe9777b335">getType</a> () const</td></tr>
+<tr class="memdesc:a46d821afc8f77765a8ec9abe9777b335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the alien.  <br /></td></tr>
+<tr class="separator:a46d821afc8f77765a8ec9abe9777b335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an alien in the game. </p>
-<p>This class handles the properties and behaviors of aliens, including movement, health, rendering, and interaction with other game entities. </p>
+<p>This class handles the properties and behaviors of aliens, including movement, health, rendering, interaction with other game entities, and shooting mechanics. </p>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8hpp_source.html#l00013">13</a> of file <a class="el" href="_alien_8hpp_source.html">Alien.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="af8a9d0e36fb97cba5c6412e55ba3d44b" name="af8a9d0e36fb97cba5c6412e55ba3d44b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8a9d0e36fb97cba5c6412e55ba3d44b">&#9670;&#160;</a></span>AlienType</h2>
@@ -165,17 +176,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" name="af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9"></a>Blue&#160;</td><td class="fielddoc"><p>Represents a blue alien. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1" name="af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1"></a>Green&#160;</td><td class="fielddoc"><p>Represents a green alien. </p>
-</td></tr>
 <tr><td class="fieldname"><a id="af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8" name="af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8"></a>Yellow&#160;</td><td class="fielddoc"><p>Represents a yellow alien. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1" name="af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1"></a>Green&#160;</td><td class="fielddoc"><p>Represents a green alien. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc" name="af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc"></a>UFO&#160;</td><td class="fielddoc"><p>Represents a UFO alien. </p>
+</td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8hpp_source.html#l00017">17</a> of file <a class="el" href="_alien_8hpp_source.html">Alien.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8d4d1188bc4cec81a36630588f77f65d" name="a8d4d1188bc4cec81a36630588f77f65d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d4d1188bc4cec81a36630588f77f65d">&#9670;&#160;</a></span>Alien()</h2>
+<a id="a060310ef999b3be89c004cc0d8302e0a" name="a060310ef999b3be89c004cc0d8302e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a060310ef999b3be89c004cc0d8302e0a">&#9670;&#160;</a></span>Alien()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,25 +203,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>initialHealth</em></span><span class="paramdefsep"> = </span><span class="paramdefval">3</span>, </td>
+          <td class="paramtype"><a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">Alien::AlienType</a></td>          <td class="paramname"><span class="paramname"><em>alienType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">AlienType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9">AlienType::Blue</a></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>initialHealth</em></span><span class="paramdefsep"> = </span><span class="paramdefval">3</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructs an <a class="el" href="class_alien.html" title="Represents an alien in the game.">Alien</a> object. </p>
+<p>Constructs a new <a class="el" href="class_alien.html" title="Represents an alien in the game.">Alien</a> object with a specified position, type, and initial health.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>The initial position of the alien. </td></tr>
-    <tr><td class="paramname">initialHealth</td><td>The starting health of the alien (default is 3). </td></tr>
-    <tr><td class="paramname">type</td><td>The type of alien (default is <a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" title="Represents a blue alien.">AlienType::Blue</a>). </td></tr>
+    <tr><td class="paramname">alienType</td><td>The type of alien. </td></tr>
+    <tr><td class="paramname">initialHealth</td><td>The starting health of the alien (default is 3).</td></tr>
+    <tr><td class="paramname">position</td><td>The initial position of the alien. </td></tr>
+    <tr><td class="paramname">alienType</td><td>The type of the alien. </td></tr>
+    <tr><td class="paramname">initialHealth</td><td>The initial health of the alien. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00010">10</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
@@ -227,18 +248,48 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 </div><div class="memdoc">
 
 <p>Gets the bounding box of the alien's sprite. </p>
-<dl class="section return"><dt>Returns</dt><dd>A FloatRect representing the alien's bounding box. </dd></dl>
+<p>Gets the bounding box of the alien.</p>
+<dl class="section return"><dt>Returns</dt><dd>A FloatRect representing the alien's bounding box.</dd>
+<dd>
+The bounding box of the alien. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00155">155</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
-<a id="adb73372fd4a10b742fab3df457bdc0da" name="adb73372fd4a10b742fab3df457bdc0da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb73372fd4a10b742fab3df457bdc0da">&#9670;&#160;</a></span>getHealth()</h2>
+<a id="ab13a473b6bcad2471e558f35cbe86c65" name="ab13a473b6bcad2471e558f35cbe86c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13a473b6bcad2471e558f35cbe86c65">&#9670;&#160;</a></span>getProjectiles()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Alien::getHealth </td>
+          <td class="memname">std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> &gt; &amp; Alien::getProjectiles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the projectiles fired by the alien. </p>
+<p>Gets the alien's active projectiles.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a vector of projectiles.</dd>
+<dd>
+A reference to the vector of active projectiles. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00171">171</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a46d821afc8f77765a8ec9abe9777b335" name="a46d821afc8f77765a8ec9abe9777b335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d821afc8f77765a8ec9abe9777b335">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af8a9d0e36fb97cba5c6412e55ba3d44b">Alien::AlienType</a> Alien::getType </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -246,8 +297,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
       </table>
 </div><div class="memdoc">
 
-<p>Gets the current health of the alien. </p>
-<dl class="section return"><dt>Returns</dt><dd>The alien's current health as an integer. </dd></dl>
+<p>Gets the type of the alien. </p>
+<dl class="section return"><dt>Returns</dt><dd>The type of the alien as an AlienType.</dd>
+<dd>
+The type of the alien. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00134">134</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +322,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 </div><div class="memdoc">
 
 <p>Checks if the alien is dead (health &lt;= 0). </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the alien is dead, false otherwise. </dd></dl>
+<p>Checks if the alien is dead.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the alien is dead, false otherwise.</dd>
+<dd>
+True if the alien's health is 0 or less, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00052">52</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
@@ -287,7 +347,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 </div><div class="memdoc">
 
 <p>Checks if the alien has moved off the screen. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the alien is off-screen, false otherwise. </dd></dl>
+<p>Checks if the alien is off the screen.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the alien is off-screen, false otherwise.</dd>
+<dd>
+True if the alien is off the screen, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00163">163</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
@@ -307,12 +372,63 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 </div><div class="memdoc">
 
 <p>Renders the alien to the specified window. </p>
+<p>Renders the alien on the given window.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML window where the alien will be drawn. </td></tr>
+    <tr><td class="paramname">window</td><td>The SFML window where the alien will be drawn.</td></tr>
+    <tr><td class="paramname">window</td><td>The window to render the alien on. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00142">142</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a55dcf4cc09999083c63f733fc2fb39ee" name="a55dcf4cc09999083c63f733fc2fb39ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55dcf4cc09999083c63f733fc2fb39ee">&#9670;&#160;</a></span>renderProjectiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Alien::renderProjectiles </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renders the alien's projectiles to the specified window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML window where the projectiles will be drawn. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad38168e2cd96e67efdfde002e79cd31f" name="ad38168e2cd96e67efdfde002e79cd31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad38168e2cd96e67efdfde002e79cd31f">&#9670;&#160;</a></span>shoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Alien::shoot </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the shooting logic for the alien. </p>
+<p>Makes the alien shoot a projectile. </p>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00059">59</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
@@ -332,12 +448,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 </div><div class="memdoc">
 
 <p>Reduces the alien's health by a specified amount of damage. </p>
+<p>Inflicts damage to the alien.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">damage</td><td>The amount of damage to apply to the alien. </td></tr>
+    <tr><td class="paramname">damage</td><td>The amount of damage to apply to the alien.</td></tr>
+    <tr><td class="paramname">damage</td><td>The amount of damage to inflict. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00041">41</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
 
 </div>
 </div>
@@ -365,12 +485,43 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
       </table>
 </div><div class="memdoc">
 
-<p>Updates the alien's state, including position and animation. </p>
+<p>Updates the alien's state, including position, animation, and shooting. </p>
+<p>Updates the alien's state.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">deltaTime</td><td>The elapsed time since the last update. </td></tr>
     <tr><td class="paramname">scoreThreshold</td><td>A score threshold that may affect alien behavior. </td></tr>
-    <tr><td class="paramname">currentScore</td><td>The player's current score, used to adjust behavior. </td></tr>
+    <tr><td class="paramname">currentScore</td><td>The player's current score, used to adjust behavior.</td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last update. </td></tr>
+    <tr><td class="paramname">scoreThreshold</td><td>The score threshold for certain behaviors. </td></tr>
+    <tr><td class="paramname">currentScore</td><td>The current score of the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_alien_8cpp_source.html#l00080">80</a> of file <a class="el" href="_alien_8cpp_source.html">Alien.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a74cd83a96bb14fd344017927bb2723fd" name="a74cd83a96bb14fd344017927bb2723fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cd83a96bb14fd344017927bb2723fd">&#9670;&#160;</a></span>updateProjectiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Alien::updateProjectiles </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the state of the alien's projectiles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The elapsed time since the last update. </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,7 +530,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startMoving</b> ()</t
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_alien_8hpp_source.html">Alien.hpp</a></li>
-<li>src/<b>Alien.cpp</b></li>
+<li>src/<a class="el" href="_alien_8cpp_source.html">Alien.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

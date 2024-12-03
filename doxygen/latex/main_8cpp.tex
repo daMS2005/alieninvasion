@@ -1,0 +1,47 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include "{}Player.\+hpp"{}}\newline
+{\ttfamily \#include "{}Projectile.\+hpp"{}}\newline
+{\ttfamily \#include "{}Alien.\+hpp"{}}\newline
+{\ttfamily \#include "{}Game\+State.\+hpp"{}}\newline
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$SFML/\+Audio.\+hpp$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Handles player input and updates the player\textquotesingle{}s state.
+
+Checks for collisions between alien projectiles and the player.
+
+If a projectile hits the player, it reduces the player\textquotesingle{}s health by 10 and removes the projectile.
+
+Updates the state of all aliens. This includes movement and any other state changes based on the elapsed time and score.
+
+Handles collisions between player projectiles and aliens. If a projectile hits an alien, it reduces the alien\textquotesingle{}s health and removes the projectile. If the alien is dead, it increases the player\textquotesingle{}s score.
+
+Handles the skin selection screen.
+
+This displays the available skins for the player to choose from.
+
+Handles the leaderboard screen.
+
+This displays the top scores from the leaderboard file. else if (current\+State == \doxylink{_game_state_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ae02b89857b91a11b8be92fca409827ba}{Game\+State\+::\+Leaderboard}) \{
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

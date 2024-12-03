@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../class_player.html',1,'Player'],['../class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()']]],
-  ['projectile_1',['Projectile',['../class_projectile.html',1,'Projectile'],['../class_projectile.html#a9e132d7d14496fc1c2453c2cddf69d65',1,'Projectile::Projectile()']]]
+  ['leaderboard_0',['Leaderboard',['../_game_state_8hpp.html#a7899b65f1ea0f655e4bbf8d2a5714285ae02b89857b91a11b8be92fca409827ba',1,'GameState.hpp']]]
 ];

@@ -2,7 +2,7 @@
 \hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
 
 
-Represents the player character in the game.  
+Represents the player in the game.  
 
 
 
@@ -12,58 +12,80 @@ Represents the player character in the game.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8} 
-{\bfseries Player} ()
-\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_player}{Player} object and initializes its properties. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_player}{Player} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a22c77aea817fb52c33280b2792992123}{handle\+Input}} (float delta\+Time)
-\begin{DoxyCompactList}\small\item\em Handles player input and updates position based on input. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}\label{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4} 
-void {\bfseries update} ()
-\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s state, such as animations or cooldowns. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Handles the player\textquotesingle{}s input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_aa0ca8feab9679e9e29e61501e5db8451}{update\+Projectiles}} (float delta\+Time)
-\begin{DoxyCompactList}\small\item\em Updates the active projectiles fired by the player. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s projectiles. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a53938857e80374e79726309e78d1c15c}{render}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Renders the player sprite to the specified window. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Renders the player on the given window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_aee602f1426fb5cea15ba9823f5e198b6}{render\+Projectiles}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Renders all active projectiles to the specified window. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Renders the player\textquotesingle{}s projectiles on the given window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a6e448bb32639412c88101b64f41b50e6}{render\+Health\+Bar}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Renders the player\textquotesingle{}s health bar to the specified window. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8}\label{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8} 
-void {\bfseries shoot} ()
-\begin{DoxyCompactList}\small\item\em Fires a projectile if the cooldown allows. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Renders the player\textquotesingle{}s health bar on the given window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8}{shoot}} ()
+\begin{DoxyCompactList}\small\item\em Makes the player shoot a projectile. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_af97f9b32912f28fdcdad1785d515cd2d}{take\+Damage}} (int damage)
-\begin{DoxyCompactList}\small\item\em Reduces the player\textquotesingle{}s health by a specified amount. \end{DoxyCompactList}\item 
-sf\+::\+Vector2f \mbox{\hyperlink{class_player_a4f679a9d2fa60e76fe00d615dfe4d584}{get\+Position}} () const
-\begin{DoxyCompactList}\small\item\em Gets the player\textquotesingle{}s current position. \end{DoxyCompactList}\item 
-sf\+::\+Float\+Rect \mbox{\hyperlink{class_player_aec00a96a409d68ac0f88007f93f42329}{get\+Bounds}} () const
-\begin{DoxyCompactList}\small\item\em Gets the bounding box of the player\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Handles player damage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a35390626e4c38747a01f5f51127412d2}{set\+Skin}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Sets the player\textquotesingle{}s skin. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_player_a23356f99a9de86d3d47eadb679b332dc}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the player\textquotesingle{}s position. \end{DoxyCompactList}\item 
+sf\+::\+Float\+Rect \mbox{\hyperlink{class_player_a93c9ef1c84a6aeffd225733536be2f53}{get\+Bounds}} ()
+\begin{DoxyCompactList}\small\item\em Gets the bounding box of the player. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \& \mbox{\hyperlink{class_player_aa21595133cab1bfdf3c92ec55453fda1}{get\+Projectiles}} ()
-\begin{DoxyCompactList}\small\item\em Gets a reference to the player\textquotesingle{}s active projectiles. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the player\textquotesingle{}s active projectiles. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a9ce7657823f99abdfcf8e0d752465800}{remove\+Projectile}} (size\+\_\+t index)
-\begin{DoxyCompactList}\small\item\em Removes a projectile from the player\textquotesingle{}s projectile list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Removes a projectile at the specified index. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_player_abcb15d249bed9a4ab0ab86b52b0d747a}{get\+Health}} ()
-\begin{DoxyCompactList}\small\item\em Gets the player\textquotesingle{}s current health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the player\textquotesingle{}s health. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Represents the player character in the game. 
+Represents the player in the game. 
 
-This class handles the player\textquotesingle{}s movement, shooting, health, and rendering. 
+Definition at line \mbox{\hyperlink{_player_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{_player_8hpp_source}{Player.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily \label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8} 
+Player\+::\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{class_player}{Player} object. 
+
+Constructs a new \doxylink{class_player}{Player} object with default settings. 
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
+
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_player_aec00a96a409d68ac0f88007f93f42329}\index{Player@{Player}!getBounds@{getBounds}}
+\Hypertarget{class_player_a93c9ef1c84a6aeffd225733536be2f53}\index{Player@{Player}!getBounds@{getBounds}}
 \index{getBounds@{getBounds}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
-{\footnotesize\ttfamily \label{class_player_aec00a96a409d68ac0f88007f93f42329} 
-sf\+::\+Float\+Rect Player\+::get\+Bounds (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_player_a93c9ef1c84a6aeffd225733536be2f53} 
+sf\+::\+Float\+Rect Player\+::get\+Bounds (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Gets the bounding box of the player\textquotesingle{}s sprite. 
+Gets the bounding box of the player. 
 
 \begin{DoxyReturn}{Returns}
-A Float\+Rect representing the player\textquotesingle{}s bounding box. 
+The bounding box of the player. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_abcb15d249bed9a4ab0ab86b52b0d747a}\index{Player@{Player}!getHealth@{getHealth}}
 \index{getHealth@{getHealth}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
@@ -72,24 +94,32 @@ int Player\+::get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Gets the player\textquotesingle{}s current health. 
+Gets the player\textquotesingle{}s health. 
 
 \begin{DoxyReturn}{Returns}
-The player\textquotesingle{}s health as an integer. 
+The player\textquotesingle{}s health. 
 \end{DoxyReturn}
-\Hypertarget{class_player_a4f679a9d2fa60e76fe00d615dfe4d584}\index{Player@{Player}!getPosition@{getPosition}}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{class_player_a23356f99a9de86d3d47eadb679b332dc}\index{Player@{Player}!getPosition@{getPosition}}
 \index{getPosition@{getPosition}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
-{\footnotesize\ttfamily \label{class_player_a4f679a9d2fa60e76fe00d615dfe4d584} 
-sf\+::\+Vector2f Player\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_player_a23356f99a9de86d3d47eadb679b332dc} 
+sf\+::\+Vector2f Player\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Gets the player\textquotesingle{}s current position. 
+Gets the player\textquotesingle{}s position. 
 
 \begin{DoxyReturn}{Returns}
-A 2D vector representing the player\textquotesingle{}s position. 
+The player\textquotesingle{}s position. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_aa21595133cab1bfdf3c92ec55453fda1}\index{Player@{Player}!getProjectiles@{getProjectiles}}
 \index{getProjectiles@{getProjectiles}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{getProjectiles()}{getProjectiles()}}
@@ -98,11 +128,17 @@ std\+::vector$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \& Player\+
 
 
 
-Gets a reference to the player\textquotesingle{}s active projectiles. 
+Gets the player\textquotesingle{}s active projectiles. 
+
+Gets a reference to the player\textquotesingle{}s active projectiles.
 
 \begin{DoxyReturn}{Returns}
-A vector containing the active projectiles. 
+A reference to the vector of active projectiles. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_a22c77aea817fb52c33280b2792992123}\index{Player@{Player}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
@@ -111,13 +147,19 @@ void Player\+::handle\+Input (\begin{DoxyParamCaption}\item[{float}]{delta\+Time
 
 
 
-Handles player input and updates position based on input. 
+Handles the player\textquotesingle{}s input. 
+
+Handles player input for movement and shooting.
 
 
 \begin{DoxyParams}{Parameters}
-{\em delta\+Time} & The elapsed time since the last frame. \\
+{\em delta\+Time} & The time elapsed since the last update. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_a9ce7657823f99abdfcf8e0d752465800}\index{Player@{Player}!removeProjectile@{removeProjectile}}
 \index{removeProjectile@{removeProjectile}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{removeProjectile()}{removeProjectile()}}
@@ -126,13 +168,17 @@ void Player\+::remove\+Projectile (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{
 
 
 
-Removes a projectile from the player\textquotesingle{}s projectile list. 
+Removes a projectile at the specified index. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em index} & The index of the projectile to remove. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_a53938857e80374e79726309e78d1c15c}\index{Player@{Player}!render@{render}}
 \index{render@{render}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{render()}{render()}}
@@ -141,13 +187,19 @@ void Player\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}
 
 
 
-Renders the player sprite to the specified window. 
+Renders the player on the given window. 
+
+Renders the player sprite.
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The SFML window where the player will be drawn. \\
+{\em window} & The window to render the player on. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_a6e448bb32639412c88101b64f41b50e6}\index{Player@{Player}!renderHealthBar@{renderHealthBar}}
 \index{renderHealthBar@{renderHealthBar}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{renderHealthBar()}{renderHealthBar()}}
@@ -156,13 +208,19 @@ void Player\+::render\+Health\+Bar (\begin{DoxyParamCaption}\item[{sf\+::\+Rende
 
 
 
-Renders the player\textquotesingle{}s health bar to the specified window. 
+Renders the player\textquotesingle{}s health bar on the given window. 
+
+Renders the player\textquotesingle{}s health bar.
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The SFML window where the health bar will be drawn. \\
+{\em window} & The window to render the health bar on. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_aee602f1426fb5cea15ba9823f5e198b6}\index{Player@{Player}!renderProjectiles@{renderProjectiles}}
 \index{renderProjectiles@{renderProjectiles}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{renderProjectiles()}{renderProjectiles()}}
@@ -171,13 +229,56 @@ void Player\+::render\+Projectiles (\begin{DoxyParamCaption}\item[{sf\+::\+Rende
 
 
 
-Renders all active projectiles to the specified window. 
+Renders the player\textquotesingle{}s projectiles on the given window. 
+
+Renders the player\textquotesingle{}s projectiles.
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The SFML window where the projectiles will be drawn. \\
+{\em window} & The window to render the projectiles on. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{class_player_a35390626e4c38747a01f5f51127412d2}\index{Player@{Player}!setSkin@{setSkin}}
+\index{setSkin@{setSkin}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setSkin()}{setSkin()}}
+{\footnotesize\ttfamily \label{class_player_a35390626e4c38747a01f5f51127412d2} 
+void Player\+::set\+Skin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Sets the player\textquotesingle{}s skin. 
+
+Changes the player\textquotesingle{}s skin dynamically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The file path to the texture.\\
+\hline
+{\em file\+Path} & The file path to the new texture. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8}\index{Player@{Player}!shoot@{shoot}}
+\index{shoot@{shoot}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{shoot()}{shoot()}}
+{\footnotesize\ttfamily \label{class_player_a4cdc67fd9ca2de09af89d9ae19efe5f8} 
+void Player\+::shoot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes the player shoot a projectile. 
+
+Shoots a projectile if the cooldown period has elapsed. 
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_af97f9b32912f28fdcdad1785d515cd2d}\index{Player@{Player}!takeDamage@{takeDamage}}
 \index{takeDamage@{takeDamage}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
@@ -186,13 +287,33 @@ void Player\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{
 
 
 
-Reduces the player\textquotesingle{}s health by a specified amount. 
+Handles player damage. 
+
+Inflicts damage to the player and updates the health bar.
 
 
 \begin{DoxyParams}{Parameters}
-{\em damage} & The amount of damage to apply to the player. \\
+{\em damage} & The amount of damage to inflict. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}\index{Player@{Player}!update@{update}}
+\index{update@{update}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4} 
+void Player\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the player\textquotesingle{}s state. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{class_player_aa0ca8feab9679e9e29e61501e5db8451}\index{Player@{Player}!updateProjectiles@{updateProjectiles}}
 \index{updateProjectiles@{updateProjectiles}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{updateProjectiles()}{updateProjectiles()}}
@@ -201,16 +322,20 @@ void Player\+::update\+Projectiles (\begin{DoxyParamCaption}\item[{float}]{delta
 
 
 
-Updates the active projectiles fired by the player. 
+Updates the player\textquotesingle{}s projectiles. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em delta\+Time} & The elapsed time since the last frame. \\
+{\em delta\+Time} & The time elapsed since the last update. \\
 \hline
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_player_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Player.\+hpp\item 
-src/Player.\+cpp\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_player_8hpp}{Player.\+hpp}}\item 
+src/\mbox{\hyperlink{_player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

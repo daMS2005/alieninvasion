@@ -2,30 +2,23 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_test_game_logic_8cpp" kind="file" language="C++">
     <compoundname>TestGameLogic.cpp</compoundname>
-    <includes local="no">gtest/gtest.h</includes>
-    <includes refid="_player_8hpp" local="yes">Player.hpp</includes>
     <includes refid="_alien_8hpp" local="yes">Alien.hpp</includes>
+    <includes local="no">gtest/gtest.h</includes>
     <incdepgraph>
-      <node id="7">
+      <node id="2">
         <label>Alien.hpp</label>
-        <link refid="_alien_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <link refid="_alien_8hpp"/>
+        <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>Player.hpp</label>
-        <link refid="_player_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
       </node>
-      <node id="6">
+      <node id="5">
         <label>Projectile.hpp</label>
-        <link refid="_projectile_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <link refid="_projectile_8hpp"/>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -33,78 +26,59 @@
         <link refid="_test_game_logic_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="3">
         <label>SFML/Graphics.hpp</label>
       </node>
-      <node id="2">
+      <node id="6">
         <label>gtest/gtest.h</label>
       </node>
-      <node id="5">
+      <node id="4">
         <label>vector</label>
       </node>
     </incdepgraph>
     <sectiondef kind="func">
-      <memberdef kind="function" id="_test_game_logic_8cpp_1a021c9a0bada64ca1bf8dee94bdc6abf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_test_game_logic_8cpp_1ac1dbe28ba9a5e1379635cc71e13ccc36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>TEST</definition>
-        <argsstring>(GameLogicTest, AlienSpawning)</argsstring>
+        <argsstring>(GameLogicTest, AlienInitialization)</argsstring>
         <name>TEST</name>
         <param>
           <type>GameLogicTest</type>
         </param>
         <param>
-          <type>AlienSpawning</type>
+          <type>AlienInitialization</type>
         </param>
         <briefdescription>
+<para>Test: <ref refid="class_alien" kindref="compound">Alien</ref> Initialization in a Vector. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestGameLogic.cpp" line="5" column="1" bodyfile="tests/TestGameLogic.cpp" bodystart="5" bodyend="10"/>
+        <location file="tests/TestGameLogic.cpp" line="7" column="1" bodyfile="tests/TestGameLogic.cpp" bodystart="7" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="_test_game_logic_8cpp_1a1062c2abb3a4b2ee29f8f4091dfb4361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_test_game_logic_8cpp_1a8a8575bacff608e857f78c55544d68bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>TEST</definition>
-        <argsstring>(GameLogicTest, ScoreUpdate)</argsstring>
+        <argsstring>(GameLogicTest, AlienHealthInitialization)</argsstring>
         <name>TEST</name>
         <param>
           <type>GameLogicTest</type>
         </param>
         <param>
-          <type>ScoreUpdate</type>
+          <type>AlienHealthInitialization</type>
         </param>
         <briefdescription>
+<para>Test: <ref refid="class_alien" kindref="compound">Alien</ref> Health Initialization. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestGameLogic.cpp" line="12" column="1" bodyfile="tests/TestGameLogic.cpp" bodystart="12" bodyend="18"/>
-      </memberdef>
-      <memberdef kind="function" id="_test_game_logic_8cpp_1ae02464f097481a395e28eed7f7e3b952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>TEST</definition>
-        <argsstring>(GameLogicTest, GameOver)</argsstring>
-        <name>TEST</name>
-        <param>
-          <type>GameLogicTest</type>
-        </param>
-        <param>
-          <type>GameOver</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="tests/TestGameLogic.cpp" line="20" column="1" bodyfile="tests/TestGameLogic.cpp" bodystart="20" bodyend="24"/>
+        <location file="tests/TestGameLogic.cpp" line="22" column="1" bodyfile="tests/TestGameLogic.cpp" bodystart="22" bodyend="29"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -112,30 +86,29 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Player.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Alien.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal">TEST(GameLogicTest,<sp/>AlienSpawning)<sp/>{</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Alien&gt;<sp/>aliens;</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Simulate<sp/>spawning<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>aliens.emplace_back(sf::Vector2f(100.0f,<sp/>100.0f),<sp/>3,<sp/><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" kindref="member">Alien::AlienType::Blue</ref>);</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(aliens.size(),<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>One<sp/>alien<sp/>spawned</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal">TEST(GameLogicTest,<sp/>ScoreUpdate)<sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>score<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_alien" kindref="compound">Alien</ref><sp/>alien({0.0f,<sp/>0.0f},<sp/>1);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>alien.<ref refid="class_alien_1aade4a5092a52bb1540e7e28455fd3da3" kindref="member">takeDamage</ref>(1);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(alien.isDead())<sp/>score<sp/>+=<sp/>10;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(score,<sp/>10);<sp/></highlight><highlight class="comment">//<sp/>Score<sp/>increases</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal">TEST(GameLogicTest,<sp/>GameOver)<sp/>{</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>player.<ref refid="class_player_1af97f9b32912f28fdcdad1785d515cd2d" kindref="member">takeDamage</ref>(100);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" kindref="member">getHealth</ref>(),<sp/>0);<sp/></highlight><highlight class="comment">//<sp/>Player<sp/>is<sp/>out<sp/>of<sp/>health</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_alien_8hpp" kindref="compound">Alien.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="_test_game_logic_8cpp_1ac1dbe28ba9a5e1379635cc71e13ccc36" refkind="member"><highlight class="normal"><ref refid="_test_game_logic_8cpp_1ac1dbe28ba9a5e1379635cc71e13ccc36" kindref="member">TEST</ref>(GameLogicTest,<sp/>AlienInitialization)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Alien&gt;<sp/>aliens;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>an<sp/>alien<sp/>using<sp/>the<sp/>correct<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>aliens.emplace_back(sf::Vector2f(100.0f,<sp/>100.0f),<sp/><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" kindref="member">Alien::AlienType::Blue</ref>,<sp/>3);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>that<sp/>the<sp/>alien<sp/>was<sp/>successfully<sp/>added<sp/>to<sp/>the<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(aliens.size(),<sp/>1);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(aliens[0].getType(),<sp/><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" kindref="member">Alien::AlienType::Blue</ref>);<sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>the<sp/>type<sp/>of<sp/>the<sp/>alien</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_FALSE(aliens[0].isDead());<sp/></highlight><highlight class="comment">//<sp/>Check<sp/>that<sp/>the<sp/>alien<sp/>is<sp/>not<sp/>dead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="_test_game_logic_8cpp_1a8a8575bacff608e857f78c55544d68bf" refkind="member"><highlight class="normal"><ref refid="_test_game_logic_8cpp_1ac1dbe28ba9a5e1379635cc71e13ccc36" kindref="member">TEST</ref>(GameLogicTest,<sp/>AlienHealthInitialization)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>a<sp/>Green<sp/>alien<sp/>with<sp/>2<sp/>health<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_alien" kindref="compound">Alien</ref><sp/>alien({0.0f,<sp/>0.0f},<sp/><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1" kindref="member">Alien::AlienType::Green</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>initial<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_FALSE(alien.isDead());<sp/></highlight><highlight class="comment">//<sp/>The<sp/>alien<sp/>should<sp/>not<sp/>be<sp/>dead<sp/>initially</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(alien.getType(),<sp/><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1" kindref="member">Alien::AlienType::Green</ref>);<sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>the<sp/>type<sp/>is<sp/>Green</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="tests/TestGameLogic.cpp"/>
   </compounddef>

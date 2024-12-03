@@ -1,7 +1,9 @@
 #include "Alien.hpp"
 #include <gtest/gtest.h>
 
-// Test: Alien Initialization in a Vector
+/**
+ * @brief Test: Alien Initialization in a Vector.
+ */
 TEST(GameLogicTest, AlienInitialization) {
     std::vector<Alien> aliens;
 
@@ -14,7 +16,9 @@ TEST(GameLogicTest, AlienInitialization) {
     EXPECT_FALSE(aliens[0].isDead()); // Check that the alien is not dead
 }
 
-// Test: Alien Health Initialization
+/**
+ * @brief Test: Alien Health Initialization.
+ */
 TEST(GameLogicTest, AlienHealthInitialization) {
     // Initialize a Green alien with 2 health points
     Alien alien({0.0f, 0.0f}, Alien::AlienType::Green, 2);

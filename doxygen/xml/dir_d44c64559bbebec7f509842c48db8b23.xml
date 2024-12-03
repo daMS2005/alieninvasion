@@ -3,6 +3,7 @@
   <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
     <compoundname>include</compoundname>
     <innerfile refid="_alien_8hpp">Alien.hpp</innerfile>
+    <innerfile refid="_game_state_8hpp">GameState.hpp</innerfile>
     <innerfile refid="_player_8hpp">Player.hpp</innerfile>
     <innerfile refid="_projectile_8hpp">Projectile.hpp</innerfile>
     <briefdescription>

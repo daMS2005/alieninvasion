@@ -91,35 +91,71 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a projectile fired by the player.  
+<p>Represents a projectile in the game.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_projectile_8hpp_source.html">Projectile.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a1802a170388b149973b22b12edabd6d2" id="r_a1802a170388b149973b22b12edabd6d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1802a170388b149973b22b12edabd6d2">Projectile</a> (const sf::Vector2f &amp;position, const sf::Vector2f &amp;velocity)</td></tr>
+<tr class="memdesc:a1802a170388b149973b22b12edabd6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="class_projectile.html" title="Represents a projectile in the game.">Projectile</a> object with a specified position and velocity.  <br /></td></tr>
+<tr class="separator:a1802a170388b149973b22b12edabd6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e132d7d14496fc1c2453c2cddf69d65" id="r_a9e132d7d14496fc1c2453c2cddf69d65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e132d7d14496fc1c2453c2cddf69d65">Projectile</a> (const sf::Vector2f &amp;position)</td></tr>
-<tr class="memdesc:a9e132d7d14496fc1c2453c2cddf69d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_projectile.html" title="Represents a projectile fired by the player.">Projectile</a> object at the specified position.  <br /></td></tr>
+<tr class="memdesc:a9e132d7d14496fc1c2453c2cddf69d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="class_projectile.html" title="Represents a projectile in the game.">Projectile</a> object with a specified position.  <br /></td></tr>
 <tr class="separator:a9e132d7d14496fc1c2453c2cddf69d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc646de87829b911d6817a6478c353e" id="r_a5bc646de87829b911d6817a6478c353e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bc646de87829b911d6817a6478c353e">update</a> (float deltaTime)</td></tr>
-<tr class="memdesc:a5bc646de87829b911d6817a6478c353e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the projectile's position.  <br /></td></tr>
+<tr class="memdesc:a5bc646de87829b911d6817a6478c353e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the projectile's position based on its velocity and the elapsed time.  <br /></td></tr>
 <tr class="separator:a5bc646de87829b911d6817a6478c353e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add59f3ad833c5007223ace7e5b551071" id="r_add59f3ad833c5007223ace7e5b551071"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add59f3ad833c5007223ace7e5b551071">render</a> (sf::RenderWindow &amp;window)</td></tr>
-<tr class="memdesc:add59f3ad833c5007223ace7e5b551071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the projectile to the specified window.  <br /></td></tr>
+<tr class="memdesc:add59f3ad833c5007223ace7e5b551071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the projectile on the given window.  <br /></td></tr>
 <tr class="separator:add59f3ad833c5007223ace7e5b551071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10206c540f93413b1d0e6a61ef3de996" id="r_a10206c540f93413b1d0e6a61ef3de996"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10206c540f93413b1d0e6a61ef3de996">getBounds</a> () const</td></tr>
-<tr class="memdesc:a10206c540f93413b1d0e6a61ef3de996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box of the projectile's sprite.  <br /></td></tr>
+<tr class="memdesc:a10206c540f93413b1d0e6a61ef3de996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box of the projectile.  <br /></td></tr>
 <tr class="separator:a10206c540f93413b1d0e6a61ef3de996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992527d98d029ecd3264039c4dd86fb6" id="r_a992527d98d029ecd3264039c4dd86fb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a992527d98d029ecd3264039c4dd86fb6">isOffScreen</a> () const</td></tr>
-<tr class="memdesc:a992527d98d029ecd3264039c4dd86fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the projectile is off-screen.  <br /></td></tr>
+<tr class="memdesc:a992527d98d029ecd3264039c4dd86fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the projectile is off the screen.  <br /></td></tr>
 <tr class="separator:a992527d98d029ecd3264039c4dd86fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a projectile fired by the player. </p>
-<p>This class handles the properties and behaviors of projectiles, including movement, rendering, and collision detection. </p>
+<div class="textblock"><p>Represents a projectile in the game. </p>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8hpp_source.html#l00010">10</a> of file <a class="el" href="_projectile_8hpp_source.html">Projectile.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1802a170388b149973b22b12edabd6d2" name="a1802a170388b149973b22b12edabd6d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1802a170388b149973b22b12edabd6d2">&#9670;&#160;</a></span>Projectile() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Projectile::Projectile </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>velocity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="class_projectile.html" title="Represents a projectile in the game.">Projectile</a> object with a specified position and velocity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The initial position of the projectile. </td></tr>
+    <tr><td class="paramname">velocity</td><td>The initial velocity of the projectile. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8cpp_source.html#l00009">9</a> of file <a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a9e132d7d14496fc1c2453c2cddf69d65" name="a9e132d7d14496fc1c2453c2cddf69d65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e132d7d14496fc1c2453c2cddf69d65">&#9670;&#160;</a></span>Projectile()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e132d7d14496fc1c2453c2cddf69d65">&#9670;&#160;</a></span>Projectile() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,13 +169,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="class_projectile.html" title="Represents a projectile fired by the player.">Projectile</a> object at the specified position. </p>
+<p>Constructs a new <a class="el" href="class_projectile.html" title="Represents a projectile in the game.">Projectile</a> object with a specified position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>The initial position of the projectile. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8cpp_source.html#l00022">22</a> of file <a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a>.</p>
 
 </div>
 </div>
@@ -159,8 +197,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the bounding box of the projectile's sprite. </p>
-<dl class="section return"><dt>Returns</dt><dd>A FloatRect representing the projectile's bounding box. </dd></dl>
+<p>Gets the bounding box of the projectile. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box of the projectile. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8cpp_source.html#l00051">51</a> of file <a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a>.</p>
 
 </div>
 </div>
@@ -179,8 +219,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks if the projectile is off-screen. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the projectile is outside the visible area, false otherwise. </dd></dl>
+<p>Checks if the projectile is off the screen. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the projectile is off the screen, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8cpp_source.html#l00059">59</a> of file <a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a>.</p>
 
 </div>
 </div>
@@ -199,13 +241,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Renders the projectile to the specified window. </p>
+<p>Renders the projectile on the given window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML window where the projectile will be drawn. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to render the projectile on. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8cpp_source.html#l00043">43</a> of file <a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,19 +268,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the projectile's position. </p>
+<p>Updates the projectile's position based on its velocity and the elapsed time. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">deltaTime</td><td>The elapsed time since the last frame, used for frame-independent movement. </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last update. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_projectile_8cpp_source.html#l00035">35</a> of file <a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_projectile_8hpp_source.html">Projectile.hpp</a></li>
-<li>src/<b>Projectile.cpp</b></li>
+<li>src/<a class="el" href="_projectile_8cpp_source.html">Projectile.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

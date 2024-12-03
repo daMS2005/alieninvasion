@@ -7,17 +7,19 @@
     <incdepgraph>
       <node id="3">
         <label>Player.hpp</label>
-        <link refid="_player_8hpp_source"/>
+        <link refid="_player_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="6">
         <label>Projectile.hpp</label>
-        <link refid="_projectile_8hpp_source"/>
+        <link refid="_projectile_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
@@ -28,6 +30,9 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+      </node>
+      <node id="7">
+        <label>SFML/Audio.hpp</label>
       </node>
       <node id="4">
         <label>SFML/Graphics.hpp</label>
@@ -52,12 +57,13 @@
           <type>InitialHealth</type>
         </param>
         <briefdescription>
+<para>Test: Initial Health of <ref refid="class_player" kindref="compound">Player</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestPlayer.cpp" line="4" column="1" bodyfile="tests/TestPlayer.cpp" bodystart="4" bodyend="7"/>
+        <location file="tests/TestPlayer.cpp" line="7" column="1" bodyfile="tests/TestPlayer.cpp" bodystart="7" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="_test_player_8cpp_1a54bbe0fbd0725cf34da338aed82a8bee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -71,12 +77,13 @@
           <type>TakeDamage</type>
         </param>
         <briefdescription>
+<para>Test: <ref refid="class_player" kindref="compound">Player</ref> Takes Damage. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestPlayer.cpp" line="9" column="1" bodyfile="tests/TestPlayer.cpp" bodystart="9" bodyend="13"/>
+        <location file="tests/TestPlayer.cpp" line="15" column="1" bodyfile="tests/TestPlayer.cpp" bodystart="15" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="_test_player_8cpp_1aa4f409a1479eec6bd9beed7ad151066c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -90,12 +97,13 @@
           <type>ShootingCooldown</type>
         </param>
         <briefdescription>
+<para>Test: <ref refid="class_player" kindref="compound">Player</ref> Shooting Cooldown. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="tests/TestPlayer.cpp" line="15" column="1" bodyfile="tests/TestPlayer.cpp" bodystart="15" bodyend="19"/>
+        <location file="tests/TestPlayer.cpp" line="24" column="1" bodyfile="tests/TestPlayer.cpp" bodystart="24" bodyend="28"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -104,24 +112,24 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Player.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_player_8hpp" kindref="compound">Player.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal">TEST(PlayerTest,<sp/>InitialHealth)<sp/>{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" kindref="member">getHealth</ref>(),<sp/>100);<sp/></highlight><highlight class="comment">//<sp/>Default<sp/>health</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal">TEST(PlayerTest,<sp/>TakeDamage)<sp/>{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>player.<ref refid="class_player_1af97f9b32912f28fdcdad1785d515cd2d" kindref="member">takeDamage</ref>(30);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" kindref="member">getHealth</ref>(),<sp/>70);<sp/></highlight><highlight class="comment">//<sp/>Damage<sp/>taken<sp/>correctly</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal">TEST(PlayerTest,<sp/>ShootingCooldown)<sp/>{</highlight></codeline>
+<codeline lineno="7" refid="_test_player_8cpp_1a34a73f1421795253ac200a30b0746c33" refkind="member"><highlight class="normal"><ref refid="_test_player_8cpp_1a34a73f1421795253ac200a30b0746c33" kindref="member">TEST</ref>(PlayerTest,<sp/>InitialHealth)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" kindref="member">getHealth</ref>(),<sp/>100);<sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>the<sp/>default<sp/>health<sp/>is<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="_test_player_8cpp_1a54bbe0fbd0725cf34da338aed82a8bee" refkind="member"><highlight class="normal"><ref refid="_test_player_8cpp_1a34a73f1421795253ac200a30b0746c33" kindref="member">TEST</ref>(PlayerTest,<sp/>TakeDamage)<sp/>{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>player.<ref refid="class_player_1a4cdc67fd9ca2de09af89d9ae19efe5f8" kindref="member">shoot</ref>();</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1aa21595133cab1bfdf3c92ec55453fda1" kindref="member">getProjectiles</ref>().size(),<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>A<sp/>projectile<sp/>is<sp/>fired</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>player.<ref refid="class_player_1af97f9b32912f28fdcdad1785d515cd2d" kindref="member">takeDamage</ref>(30);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" kindref="member">getHealth</ref>(),<sp/>70);<sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>health<sp/>is<sp/>reduced<sp/>correctly</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="_test_player_8cpp_1aa4f409a1479eec6bd9beed7ad151066c" refkind="member"><highlight class="normal"><ref refid="_test_player_8cpp_1a34a73f1421795253ac200a30b0746c33" kindref="member">TEST</ref>(PlayerTest,<sp/>ShootingCooldown)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>player.<ref refid="class_player_1a4cdc67fd9ca2de09af89d9ae19efe5f8" kindref="member">shoot</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1aa21595133cab1bfdf3c92ec55453fda1" kindref="member">getProjectiles</ref>().size(),<sp/>0);<sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>a<sp/>projectile<sp/>is<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="tests/TestPlayer.cpp"/>
   </compounddef>

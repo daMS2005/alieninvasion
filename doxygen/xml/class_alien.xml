@@ -16,6 +16,14 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8" prot="public">
+          <name>Yellow</name>
+          <briefdescription>
+<para>Represents a yellow alien. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1" prot="public">
           <name>Green</name>
           <briefdescription>
@@ -24,10 +32,10 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8" prot="public">
-          <name>Yellow</name>
+        <enumvalue id="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba97687874fe21f0d2cd8fa47d35f22cdc" prot="public">
+          <name>UFO</name>
           <briefdescription>
-<para>Represents a yellow alien. </para>
+<para>Represents a UFO alien. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -39,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="15" column="5" bodyfile="include/Alien.hpp" bodystart="15" bodyend="19"/>
+        <location file="include/Alien.hpp" line="17" column="5" bodyfile="include/Alien.hpp" bodystart="17" bodyend="22"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -56,22 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="22" column="16" bodyfile="include/Alien.hpp" bodystart="22" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_alien_1a52facb5809f9d42085e5ae16efd5dcc8" prot="private" static="no" mutable="no">
-        <type>sf::Texture</type>
-        <definition>sf::Texture Alien::texture0</definition>
-        <argsstring></argsstring>
-        <name>texture0</name>
-        <qualifiedname>Alien::texture0</qualifiedname>
-        <briefdescription>
-<para>Texture for animation frame 0. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="23" column="17" bodyfile="include/Alien.hpp" bodystart="23" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="25" column="16" bodyfile="include/Alien.hpp" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_alien_1a428f49083be0998c5f68469d03d52a41" prot="private" static="no" mutable="no">
         <type>sf::Texture</type>
@@ -86,22 +79,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="24" column="17" bodyfile="include/Alien.hpp" bodystart="24" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="26" column="17" bodyfile="include/Alien.hpp" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_alien_1a38c0995a1312962ccefc2340698ca8b5" prot="private" static="no" mutable="no">
-        <type>float</type>
-        <definition>float Alien::speed</definition>
+      <memberdef kind="variable" id="class_alien_1a3852f91bca0b3115057532889608b7f1" prot="private" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture Alien::texture2</definition>
         <argsstring></argsstring>
-        <name>speed</name>
-        <qualifiedname>Alien::speed</qualifiedname>
+        <name>texture2</name>
+        <qualifiedname>Alien::texture2</qualifiedname>
         <briefdescription>
-<para>Speed of the alien&apos;s movement. </para>
+<para>Texture for animation frame 2. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="25" column="11" bodyfile="include/Alien.hpp" bodystart="25" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="27" column="17" bodyfile="include/Alien.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_alien_1aa6c745376251190c6e5b23465a322fe3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44b" kindref="member">AlienType</ref></type>
+        <definition>AlienType Alien::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>Alien::type</qualifiedname>
+        <briefdescription>
+<para>The type of the alien (affects appearance and behavior). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="28" column="15" bodyfile="include/Alien.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_alien_1a6b50f4ea2b4c6c40b3bee4cffa17e89a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -116,37 +124,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="26" column="9" bodyfile="include/Alien.hpp" bodystart="26" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="29" column="9" bodyfile="include/Alien.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_alien_1a8c9c996c70b2f3e505a7e6a5de6a117c" prot="private" static="no" mutable="no">
-        <type>sf::Clock</type>
-        <definition>sf::Clock Alien::animationClock</definition>
+      <memberdef kind="variable" id="class_alien_1a38c0995a1312962ccefc2340698ca8b5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Alien::speed</definition>
         <argsstring></argsstring>
-        <name>animationClock</name>
-        <qualifiedname>Alien::animationClock</qualifiedname>
+        <name>speed</name>
+        <qualifiedname>Alien::speed</qualifiedname>
         <briefdescription>
-<para>Timer for handling sprite animation. </para>
+<para>Speed of the alien&apos;s movement. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="27" column="15" bodyfile="include/Alien.hpp" bodystart="27" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_alien_1a9634967aa9bdc801238c70b400825522" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool Alien::useTexture0</definition>
-        <argsstring></argsstring>
-        <name>useTexture0</name>
-        <qualifiedname>Alien::useTexture0</qualifiedname>
-        <briefdescription>
-<para>Toggle between textures for animation. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="28" column="10" bodyfile="include/Alien.hpp" bodystart="28" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="30" column="11" bodyfile="include/Alien.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_alien_1aa353a56ae04c07f11506bfa88d51d531" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -161,47 +154,74 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="29" column="10" bodyfile="include/Alien.hpp" bodystart="29" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="31" column="10" bodyfile="include/Alien.hpp" bodystart="31" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_alien_1afb9106e67af24ba8123551bbf7b2a43c" prot="private" static="no" mutable="no">
-        <type><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44b" kindref="member">AlienType</ref></type>
-        <definition>AlienType Alien::alienType</definition>
+      <memberdef kind="variable" id="class_alien_1a8c9c996c70b2f3e505a7e6a5de6a117c" prot="private" static="no" mutable="no">
+        <type>sf::Clock</type>
+        <definition>sf::Clock Alien::animationClock</definition>
         <argsstring></argsstring>
-        <name>alienType</name>
-        <qualifiedname>Alien::alienType</qualifiedname>
+        <name>animationClock</name>
+        <qualifiedname>Alien::animationClock</qualifiedname>
         <briefdescription>
-<para>The type of the alien (affects appearance and behavior). </para>
+<para>Timer for handling sprite animation. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="30" column="15" bodyfile="include/Alien.hpp" bodystart="30" bodyend="-1"/>
+        <location file="include/Alien.hpp" line="32" column="15" bodyfile="include/Alien.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_alien_1a01eef37d3a7b6e11ec5ff06bf7c71b82" prot="private" static="no" mutable="no">
+        <type>sf::Clock</type>
+        <definition>sf::Clock Alien::shootClock</definition>
+        <argsstring></argsstring>
+        <name>shootClock</name>
+        <qualifiedname>Alien::shootClock</qualifiedname>
+        <briefdescription>
+<para>Timer for handling shooting intervals. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="33" column="15" bodyfile="include/Alien.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_alien_1a4f79d96f0a75a6120e4a93388200ab61" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Alien::useTexture1</definition>
+        <argsstring></argsstring>
+        <name>useTexture1</name>
+        <qualifiedname>Alien::useTexture1</qualifiedname>
+        <briefdescription>
+<para>Toggle between textures for animation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="34" column="10" bodyfile="include/Alien.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_alien_1a9327db89bf1bd39859d55e1e2f09692e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_projectile" kindref="compound">Projectile</ref> &gt;</type>
+        <definition>std::vector&lt;Projectile&gt; Alien::projectiles</definition>
+        <argsstring></argsstring>
+        <name>projectiles</name>
+        <qualifiedname>Alien::projectiles</qualifiedname>
+        <briefdescription>
+<para>Projectiles fired by this alien. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="35" column="17" bodyfile="include/Alien.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_alien_1adb73372fd4a10b742fab3df457bdc0da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>int</type>
-        <definition>int Alien::getHealth</definition>
-        <argsstring>() const</argsstring>
-        <name>getHealth</name>
-        <qualifiedname>Alien::getHealth</qualifiedname>
-        <briefdescription>
-<para>Gets the current health of the alien. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>The alien&apos;s current health as an integer. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="35" column="9" bodyfile="src/Alien.cpp" bodystart="34" bodyend="36"/>
-      </memberdef>
-      <memberdef kind="function" id="class_alien_1a8d4d1188bc4cec81a36630588f77f65d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_alien_1a060310ef999b3be89c004cc0d8302e0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Alien::Alien</definition>
-        <argsstring>(const sf::Vector2f &amp;position, int initialHealth=3, AlienType type=AlienType::Blue)</argsstring>
+        <argsstring>(const sf::Vector2f &amp;position, AlienType alienType, int initialHealth=3)</argsstring>
         <name>Alien</name>
         <qualifiedname>Alien::Alien</qualifiedname>
         <param>
@@ -209,19 +229,19 @@
           <declname>position</declname>
         </param>
         <param>
+          <type><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44b" kindref="member">AlienType</ref></type>
+          <declname>alienType</declname>
+        </param>
+        <param>
           <type>int</type>
           <declname>initialHealth</declname>
           <defval>3</defval>
-        </param>
-        <param>
-          <type><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44b" kindref="member">AlienType</ref></type>
-          <declname>type</declname>
-          <defval><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" kindref="member">AlienType::Blue</ref></defval>
         </param>
         <briefdescription>
 <para>Constructs an <ref refid="class_alien" kindref="compound">Alien</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs a new <ref refid="class_alien" kindref="compound">Alien</ref> object with a specified position, type, and initial health.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>position</parametername>
@@ -232,18 +252,42 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>initialHealth</parametername>
+<parametername>alienType</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The starting health of the alien (default is 3). </para>
+<para>The type of alien. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>type</parametername>
+<parametername>initialHealth</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of alien (default is <ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9" kindref="member">AlienType::Blue</ref>). </para>
+<para>The starting health of the alien (default is 3).</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial position of the alien. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alienType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the alien. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initialHealth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial health of the alien. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -251,7 +295,241 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="41" column="5" bodyfile="src/Alien.cpp" bodystart="4" bodyend="32"/>
+        <location file="include/Alien.hpp" line="42" column="5" bodyfile="src/Alien.cpp" bodystart="10" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1aaa7613bc0d257f498e876521a327e25b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Alien::render</definition>
+        <argsstring>(sf::RenderWindow &amp;window)</argsstring>
+        <name>render</name>
+        <qualifiedname>Alien::render</qualifiedname>
+        <param>
+          <type>sf::RenderWindow &amp;</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Renders the alien to the specified window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renders the alien on the given window.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML window where the alien will be drawn.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window to render the alien on. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="46" column="10" bodyfile="src/Alien.cpp" bodystart="142" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1ad38168e2cd96e67efdfde002e79cd31f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Alien::shoot</definition>
+        <argsstring>()</argsstring>
+        <name>shoot</name>
+        <qualifiedname>Alien::shoot</qualifiedname>
+        <briefdescription>
+<para>Handles the shooting logic for the alien. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Makes the alien shoot a projectile. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="49" column="10" bodyfile="src/Alien.cpp" bodystart="59" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1ab13a473b6bcad2471e558f35cbe86c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_projectile" kindref="compound">Projectile</ref> &gt; &amp;</type>
+        <definition>std::vector&lt; Projectile &gt; &amp; Alien::getProjectiles</definition>
+        <argsstring>()</argsstring>
+        <name>getProjectiles</name>
+        <qualifiedname>Alien::getProjectiles</qualifiedname>
+        <briefdescription>
+<para>Gets the projectiles fired by the alien. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the alien&apos;s active projectiles.</para>
+<para><simplesect kind="return"><para>A reference to a vector of projectiles.</para>
+</simplesect>
+<simplesect kind="return"><para>A reference to the vector of active projectiles. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="53" column="17" bodyfile="src/Alien.cpp" bodystart="171" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1a74cd83a96bb14fd344017927bb2723fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Alien::updateProjectiles</definition>
+        <argsstring>(float deltaTime)</argsstring>
+        <name>updateProjectiles</name>
+        <qualifiedname>Alien::updateProjectiles</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the state of the alien&apos;s projectiles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The elapsed time since the last update. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="57" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1a55dcf4cc09999083c63f733fc2fb39ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Alien::renderProjectiles</definition>
+        <argsstring>(sf::RenderWindow &amp;window)</argsstring>
+        <name>renderProjectiles</name>
+        <qualifiedname>Alien::renderProjectiles</qualifiedname>
+        <param>
+          <type>sf::RenderWindow &amp;</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Renders the alien&apos;s projectiles to the specified window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML window where the projectiles will be drawn. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="61" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1aade4a5092a52bb1540e7e28455fd3da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Alien::takeDamage</definition>
+        <argsstring>(int damage)</argsstring>
+        <name>takeDamage</name>
+        <qualifiedname>Alien::takeDamage</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>damage</declname>
+        </param>
+        <briefdescription>
+<para>Reduces the alien&apos;s health by a specified amount of damage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Inflicts damage to the alien.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>damage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of damage to apply to the alien.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>damage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of damage to inflict. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="65" column="10" bodyfile="src/Alien.cpp" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1a9f42e58e71748b4c14daece420b347e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Alien::isDead</definition>
+        <argsstring>() const</argsstring>
+        <name>isDead</name>
+        <qualifiedname>Alien::isDead</qualifiedname>
+        <briefdescription>
+<para>Checks if the alien is dead (health &lt;= 0). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the alien is dead.</para>
+<para><simplesect kind="return"><para>True if the alien is dead, false otherwise.</para>
+</simplesect>
+<simplesect kind="return"><para>True if the alien&apos;s health is 0 or less, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="69" column="10" bodyfile="src/Alien.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1a3e1202ecfff4f6a17ce54947539377dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::FloatRect</type>
+        <definition>sf::FloatRect Alien::getBounds</definition>
+        <argsstring>() const</argsstring>
+        <name>getBounds</name>
+        <qualifiedname>Alien::getBounds</qualifiedname>
+        <briefdescription>
+<para>Gets the bounding box of the alien&apos;s sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the bounding box of the alien.</para>
+<para><simplesect kind="return"><para>A FloatRect representing the alien&apos;s bounding box.</para>
+</simplesect>
+<simplesect kind="return"><para>The bounding box of the alien. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="73" column="19" bodyfile="src/Alien.cpp" bodystart="155" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="class_alien_1ab51931eaa1313529b2950977dfe2b100" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Alien::isOffScreen</definition>
+        <argsstring>() const</argsstring>
+        <name>isOffScreen</name>
+        <qualifiedname>Alien::isOffScreen</qualifiedname>
+        <briefdescription>
+<para>Checks if the alien has moved off the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the alien is off the screen.</para>
+<para><simplesect kind="return"><para>True if the alien is off-screen, false otherwise.</para>
+</simplesect>
+<simplesect kind="return"><para>True if the alien is off the screen, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Alien.hpp" line="77" column="10" bodyfile="src/Alien.cpp" bodystart="163" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="class_alien_1a1cc622b85a2286d7ad2d908f42a3ac93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -272,9 +550,10 @@
           <declname>currentScore</declname>
         </param>
         <briefdescription>
-<para>Updates the alien&apos;s state, including position and animation. </para>
+<para>Updates the alien&apos;s state, including position, animation, and shooting. </para>
         </briefdescription>
         <detaileddescription>
+<para>Updates the alien&apos;s state.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>deltaTime</parametername>
@@ -296,116 +575,31 @@
 <parametername>currentScore</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The player&apos;s current score, used to adjust behavior. </para>
+<para>The player&apos;s current score, used to adjust behavior.</para>
 </parameterdescription>
 </parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="47" column="10" bodyfile="src/Alien.cpp" bodystart="38" bodyend="56"/>
-      </memberdef>
-      <memberdef kind="function" id="class_alien_1aaa7613bc0d257f498e876521a327e25b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Alien::render</definition>
-        <argsstring>(sf::RenderWindow &amp;window)</argsstring>
-        <name>render</name>
-        <qualifiedname>Alien::render</qualifiedname>
-        <param>
-          <type>sf::RenderWindow &amp;</type>
-          <declname>window</declname>
-        </param>
-        <briefdescription>
-<para>Renders the alien to the specified window. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<parameteritem>
 <parameternamelist>
-<parametername>window</parametername>
+<parametername>deltaTime</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The SFML window where the alien will be drawn. </para>
+<para>The time elapsed since the last update. </para>
 </parameterdescription>
 </parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="51" column="10" bodyfile="src/Alien.cpp" bodystart="58" bodyend="60"/>
-      </memberdef>
-      <memberdef kind="function" id="class_alien_1a3e1202ecfff4f6a17ce54947539377dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>sf::FloatRect</type>
-        <definition>sf::FloatRect Alien::getBounds</definition>
-        <argsstring>() const</argsstring>
-        <name>getBounds</name>
-        <qualifiedname>Alien::getBounds</qualifiedname>
-        <briefdescription>
-<para>Gets the bounding box of the alien&apos;s sprite. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>A FloatRect representing the alien&apos;s bounding box. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="55" column="19" bodyfile="src/Alien.cpp" bodystart="62" bodyend="64"/>
-      </memberdef>
-      <memberdef kind="function" id="class_alien_1ab51931eaa1313529b2950977dfe2b100" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool Alien::isOffScreen</definition>
-        <argsstring>() const</argsstring>
-        <name>isOffScreen</name>
-        <qualifiedname>Alien::isOffScreen</qualifiedname>
-        <briefdescription>
-<para>Checks if the alien has moved off the screen. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>True if the alien is off-screen, false otherwise. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="59" column="10" bodyfile="src/Alien.cpp" bodystart="66" bodyend="68"/>
-      </memberdef>
-      <memberdef kind="function" id="class_alien_1ad7253f1aded3432ddd6d7d1c20b6441b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Alien::startMoving</definition>
-        <argsstring>()</argsstring>
-        <name>startMoving</name>
-        <qualifiedname>Alien::startMoving</qualifiedname>
-        <briefdescription>
-<para>Starts the alien&apos;s movement. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/Alien.hpp" line="62" column="10" bodyfile="src/Alien.cpp" bodystart="70" bodyend="72"/>
-      </memberdef>
-      <memberdef kind="function" id="class_alien_1aade4a5092a52bb1540e7e28455fd3da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Alien::takeDamage</definition>
-        <argsstring>(int damage)</argsstring>
-        <name>takeDamage</name>
-        <qualifiedname>Alien::takeDamage</qualifiedname>
-        <param>
-          <type>int</type>
-          <declname>damage</declname>
-        </param>
-        <briefdescription>
-<para>Reduces the alien&apos;s health by a specified amount of damage. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<parameteritem>
 <parameternamelist>
-<parametername>damage</parametername>
+<parametername>scoreThreshold</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The amount of damage to apply to the alien. </para>
+<para>The score threshold for certain behaviors. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentScore</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current score of the player. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -413,54 +607,61 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="66" column="10" bodyfile="src/Alien.cpp" bodystart="74" bodyend="77"/>
+        <location file="include/Alien.hpp" line="83" column="10" bodyfile="src/Alien.cpp" bodystart="80" bodyend="128"/>
       </memberdef>
-      <memberdef kind="function" id="class_alien_1a9f42e58e71748b4c14daece420b347e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool Alien::isDead</definition>
+      <memberdef kind="function" id="class_alien_1a46d821afc8f77765a8ec9abe9777b335" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44b" kindref="member">AlienType</ref></type>
+        <definition>Alien::AlienType Alien::getType</definition>
         <argsstring>() const</argsstring>
-        <name>isDead</name>
-        <qualifiedname>Alien::isDead</qualifiedname>
+        <name>getType</name>
+        <qualifiedname>Alien::getType</qualifiedname>
         <briefdescription>
-<para>Checks if the alien is dead (health &lt;= 0). </para>
+<para>Gets the type of the alien. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>True if the alien is dead, false otherwise. </para>
+<para><simplesect kind="return"><para>The type of the alien as an AlienType.</para>
+</simplesect>
+<simplesect kind="return"><para>The type of the alien. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Alien.hpp" line="70" column="10" bodyfile="src/Alien.cpp" bodystart="79" bodyend="81"/>
+        <location file="include/Alien.hpp" line="87" column="15" bodyfile="src/Alien.cpp" bodystart="134" bodyend="136"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Represents an alien in the game. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class handles the properties and behaviors of aliens, including movement, health, rendering, and interaction with other game entities. </para>
+<para>This class handles the properties and behaviors of aliens, including movement, health, rendering, interaction with other game entities, and shooting mechanics. </para>
     </detaileddescription>
-    <location file="include/Alien.hpp" line="11" column="1" bodyfile="include/Alien.hpp" bodystart="11" bodyend="71"/>
+    <location file="include/Alien.hpp" line="13" column="1" bodyfile="include/Alien.hpp" bodystart="13" bodyend="88"/>
     <listofallmembers>
-      <member refid="class_alien_1a8d4d1188bc4cec81a36630588f77f65d" prot="public" virt="non-virtual"><scope>Alien</scope><name>Alien</name></member>
+      <member refid="class_alien_1a060310ef999b3be89c004cc0d8302e0a" prot="public" virt="non-virtual"><scope>Alien</scope><name>Alien</name></member>
       <member refid="class_alien_1af8a9d0e36fb97cba5c6412e55ba3d44b" prot="public" virt="non-virtual"><scope>Alien</scope><name>AlienType</name></member>
-      <member refid="class_alien_1afb9106e67af24ba8123551bbf7b2a43c" prot="private" virt="non-virtual"><scope>Alien</scope><name>alienType</name></member>
       <member refid="class_alien_1a8c9c996c70b2f3e505a7e6a5de6a117c" prot="private" virt="non-virtual"><scope>Alien</scope><name>animationClock</name></member>
       <member refid="class_alien_1a3e1202ecfff4f6a17ce54947539377dc" prot="public" virt="non-virtual"><scope>Alien</scope><name>getBounds</name></member>
-      <member refid="class_alien_1adb73372fd4a10b742fab3df457bdc0da" prot="public" virt="non-virtual"><scope>Alien</scope><name>getHealth</name></member>
+      <member refid="class_alien_1ab13a473b6bcad2471e558f35cbe86c65" prot="public" virt="non-virtual"><scope>Alien</scope><name>getProjectiles</name></member>
+      <member refid="class_alien_1a46d821afc8f77765a8ec9abe9777b335" prot="public" virt="non-virtual"><scope>Alien</scope><name>getType</name></member>
       <member refid="class_alien_1a6b50f4ea2b4c6c40b3bee4cffa17e89a" prot="private" virt="non-virtual"><scope>Alien</scope><name>health</name></member>
       <member refid="class_alien_1a9f42e58e71748b4c14daece420b347e3" prot="public" virt="non-virtual"><scope>Alien</scope><name>isDead</name></member>
       <member refid="class_alien_1aa353a56ae04c07f11506bfa88d51d531" prot="private" virt="non-virtual"><scope>Alien</scope><name>isMoving</name></member>
       <member refid="class_alien_1ab51931eaa1313529b2950977dfe2b100" prot="public" virt="non-virtual"><scope>Alien</scope><name>isOffScreen</name></member>
+      <member refid="class_alien_1a9327db89bf1bd39859d55e1e2f09692e" prot="private" virt="non-virtual"><scope>Alien</scope><name>projectiles</name></member>
       <member refid="class_alien_1aaa7613bc0d257f498e876521a327e25b" prot="public" virt="non-virtual"><scope>Alien</scope><name>render</name></member>
+      <member refid="class_alien_1a55dcf4cc09999083c63f733fc2fb39ee" prot="public" virt="non-virtual"><scope>Alien</scope><name>renderProjectiles</name></member>
+      <member refid="class_alien_1ad38168e2cd96e67efdfde002e79cd31f" prot="public" virt="non-virtual"><scope>Alien</scope><name>shoot</name></member>
+      <member refid="class_alien_1a01eef37d3a7b6e11ec5ff06bf7c71b82" prot="private" virt="non-virtual"><scope>Alien</scope><name>shootClock</name></member>
       <member refid="class_alien_1a38c0995a1312962ccefc2340698ca8b5" prot="private" virt="non-virtual"><scope>Alien</scope><name>speed</name></member>
       <member refid="class_alien_1abd25ea5c1767209f7e515fb6fb1ac70d" prot="private" virt="non-virtual"><scope>Alien</scope><name>sprite</name></member>
-      <member refid="class_alien_1ad7253f1aded3432ddd6d7d1c20b6441b" prot="public" virt="non-virtual"><scope>Alien</scope><name>startMoving</name></member>
       <member refid="class_alien_1aade4a5092a52bb1540e7e28455fd3da3" prot="public" virt="non-virtual"><scope>Alien</scope><name>takeDamage</name></member>
-      <member refid="class_alien_1a52facb5809f9d42085e5ae16efd5dcc8" prot="private" virt="non-virtual"><scope>Alien</scope><name>texture0</name></member>
       <member refid="class_alien_1a428f49083be0998c5f68469d03d52a41" prot="private" virt="non-virtual"><scope>Alien</scope><name>texture1</name></member>
+      <member refid="class_alien_1a3852f91bca0b3115057532889608b7f1" prot="private" virt="non-virtual"><scope>Alien</scope><name>texture2</name></member>
+      <member refid="class_alien_1aa6c745376251190c6e5b23465a322fe3" prot="private" virt="non-virtual"><scope>Alien</scope><name>type</name></member>
       <member refid="class_alien_1a1cc622b85a2286d7ad2d908f42a3ac93" prot="public" virt="non-virtual"><scope>Alien</scope><name>update</name></member>
-      <member refid="class_alien_1a9634967aa9bdc801238c70b400825522" prot="private" virt="non-virtual"><scope>Alien</scope><name>useTexture0</name></member>
+      <member refid="class_alien_1a74cd83a96bb14fd344017927bb2723fd" prot="public" virt="non-virtual"><scope>Alien</scope><name>updateProjectiles</name></member>
+      <member refid="class_alien_1a4f79d96f0a75a6120e4a93388200ab61" prot="private" virt="non-virtual"><scope>Alien</scope><name>useTexture1</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

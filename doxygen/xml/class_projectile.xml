@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="13" column="16" bodyfile="include/Projectile.hpp" bodystart="13" bodyend="-1"/>
+        <location file="include/Projectile.hpp" line="12" column="16" bodyfile="include/Projectile.hpp" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_projectile_1a626e72b26e1213eedce8d3148b996afd" prot="private" static="no" mutable="no">
         <type>sf::Texture</type>
@@ -26,31 +26,72 @@
         <name>texture</name>
         <qualifiedname>Projectile::texture</qualifiedname>
         <briefdescription>
-<para>The texture used for the projectile&apos;s sprite. </para>
+<para>The texture of the projectile. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="14" column="17" bodyfile="include/Projectile.hpp" bodystart="14" bodyend="-1"/>
+        <location file="include/Projectile.hpp" line="13" column="17" bodyfile="include/Projectile.hpp" bodystart="13" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_projectile_1a70ff500bdae54f3ad1e9e759b0ecd1fe" prot="private" static="no" mutable="no">
-        <type>float</type>
-        <definition>float Projectile::speed</definition>
+      <memberdef kind="variable" id="class_projectile_1a648f9f19dc28d3b18fb250ed9e44d8f4" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f Projectile::velocity</definition>
         <argsstring></argsstring>
-        <name>speed</name>
-        <qualifiedname>Projectile::speed</qualifiedname>
+        <name>velocity</name>
+        <qualifiedname>Projectile::velocity</qualifiedname>
         <briefdescription>
-<para>The speed at which the projectile moves. </para>
+<para>The velocity of the projectile. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="15" column="11" bodyfile="include/Projectile.hpp" bodystart="15" bodyend="-1"/>
+        <location file="include/Projectile.hpp" line="14" column="18" bodyfile="include/Projectile.hpp" bodystart="14" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_projectile_1a1802a170388b149973b22b12edabd6d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Projectile::Projectile</definition>
+        <argsstring>(const sf::Vector2f &amp;position, const sf::Vector2f &amp;velocity)</argsstring>
+        <name>Projectile</name>
+        <qualifiedname>Projectile::Projectile</qualifiedname>
+        <param>
+          <type>const sf::Vector2f &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2f &amp;</type>
+          <declname>velocity</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="class_projectile" kindref="compound">Projectile</ref> object with a specified position and velocity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial position of the projectile. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>velocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial velocity of the projectile. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="22" column="5" bodyfile="src/Projectile.cpp" bodystart="9" bodyend="16"/>
+      </memberdef>
       <memberdef kind="function" id="class_projectile_1a9e132d7d14496fc1c2453c2cddf69d65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Projectile::Projectile</definition>
@@ -62,7 +103,7 @@
           <declname>position</declname>
         </param>
         <briefdescription>
-<para>Constructs a <ref refid="class_projectile" kindref="compound">Projectile</ref> object at the specified position. </para>
+<para>Constructs a new <ref refid="class_projectile" kindref="compound">Projectile</ref> object with a specified position. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -78,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="20" column="5" bodyfile="src/Projectile.cpp" bodystart="4" bodyend="10"/>
+        <location file="include/Projectile.hpp" line="28" column="5" bodyfile="src/Projectile.cpp" bodystart="22" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="class_projectile_1a5bc646de87829b911d6817a6478c353e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -91,7 +132,7 @@
           <declname>deltaTime</declname>
         </param>
         <briefdescription>
-<para>Updates the projectile&apos;s position. </para>
+<para>Updates the projectile&apos;s position based on its velocity and the elapsed time. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -99,7 +140,7 @@
 <parametername>deltaTime</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The elapsed time since the last frame, used for frame-independent movement. </para>
+<para>The time elapsed since the last update. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -107,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="24" column="10" bodyfile="src/Projectile.cpp" bodystart="12" bodyend="14"/>
+        <location file="include/Projectile.hpp" line="34" column="10" bodyfile="src/Projectile.cpp" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="class_projectile_1add59f3ad833c5007223ace7e5b551071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -120,7 +161,7 @@
           <declname>window</declname>
         </param>
         <briefdescription>
-<para>Renders the projectile to the specified window. </para>
+<para>Renders the projectile on the given window. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -128,7 +169,7 @@
 <parametername>window</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The SFML window where the projectile will be drawn. </para>
+<para>The window to render the projectile on. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -136,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="28" column="10" bodyfile="src/Projectile.cpp" bodystart="16" bodyend="18"/>
+        <location file="include/Projectile.hpp" line="40" column="10" bodyfile="src/Projectile.cpp" bodystart="43" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="class_projectile_1a10206c540f93413b1d0e6a61ef3de996" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>sf::FloatRect</type>
@@ -145,16 +186,16 @@
         <name>getBounds</name>
         <qualifiedname>Projectile::getBounds</qualifiedname>
         <briefdescription>
-<para>Gets the bounding box of the projectile&apos;s sprite. </para>
+<para>Gets the bounding box of the projectile. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A FloatRect representing the projectile&apos;s bounding box. </para>
+<para><simplesect kind="return"><para>The bounding box of the projectile. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="32" column="19" bodyfile="src/Projectile.cpp" bodystart="20" bodyend="22"/>
+        <location file="include/Projectile.hpp" line="46" column="19" bodyfile="src/Projectile.cpp" bodystart="51" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_projectile_1a992527d98d029ecd3264039c4dd86fb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -163,34 +204,34 @@
         <name>isOffScreen</name>
         <qualifiedname>Projectile::isOffScreen</qualifiedname>
         <briefdescription>
-<para>Checks if the projectile is off-screen. </para>
+<para>Checks if the projectile is off the screen. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>True if the projectile is outside the visible area, false otherwise. </para>
+<para><simplesect kind="return"><para>True if the projectile is off the screen, false otherwise. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/Projectile.hpp" line="36" column="10" bodyfile="src/Projectile.cpp" bodystart="24" bodyend="26"/>
+        <location file="include/Projectile.hpp" line="52" column="10" bodyfile="src/Projectile.cpp" bodystart="59" bodyend="61"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Represents a projectile fired by the player. </para>
+<para>Represents a projectile in the game. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class handles the properties and behaviors of projectiles, including movement, rendering, and collision detection. </para>
     </detaileddescription>
-    <location file="include/Projectile.hpp" line="11" column="1" bodyfile="include/Projectile.hpp" bodystart="11" bodyend="37"/>
+    <location file="include/Projectile.hpp" line="10" column="1" bodyfile="include/Projectile.hpp" bodystart="10" bodyend="53"/>
     <listofallmembers>
       <member refid="class_projectile_1a10206c540f93413b1d0e6a61ef3de996" prot="public" virt="non-virtual"><scope>Projectile</scope><name>getBounds</name></member>
       <member refid="class_projectile_1a992527d98d029ecd3264039c4dd86fb6" prot="public" virt="non-virtual"><scope>Projectile</scope><name>isOffScreen</name></member>
+      <member refid="class_projectile_1a1802a170388b149973b22b12edabd6d2" prot="public" virt="non-virtual"><scope>Projectile</scope><name>Projectile</name></member>
       <member refid="class_projectile_1a9e132d7d14496fc1c2453c2cddf69d65" prot="public" virt="non-virtual"><scope>Projectile</scope><name>Projectile</name></member>
       <member refid="class_projectile_1add59f3ad833c5007223ace7e5b551071" prot="public" virt="non-virtual"><scope>Projectile</scope><name>render</name></member>
-      <member refid="class_projectile_1a70ff500bdae54f3ad1e9e759b0ecd1fe" prot="private" virt="non-virtual"><scope>Projectile</scope><name>speed</name></member>
       <member refid="class_projectile_1a4f8fa986b975aa65acc582129cdb61cb" prot="private" virt="non-virtual"><scope>Projectile</scope><name>sprite</name></member>
       <member refid="class_projectile_1a626e72b26e1213eedce8d3148b996afd" prot="private" virt="non-virtual"><scope>Projectile</scope><name>texture</name></member>
       <member refid="class_projectile_1a5bc646de87829b911d6817a6478c353e" prot="public" virt="non-virtual"><scope>Projectile</scope><name>update</name></member>
+      <member refid="class_projectile_1a648f9f19dc28d3b18fb250ed9e44d8f4" prot="private" virt="non-virtual"><scope>Projectile</scope><name>velocity</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
