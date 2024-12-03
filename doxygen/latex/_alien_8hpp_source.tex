@@ -1,0 +1,51 @@
+\doxysection{Alien.\+hpp}
+\hypertarget{_alien_8hpp_source}{}\label{_alien_8hpp_source}\index{include/Alien.hpp@{include/Alien.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ALIEN\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ALIEN\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_alien}{Alien}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{AlienType}}\ \{\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{Blue}},\ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44bad382816a3cbeed082c9e216e7392eed1}{Green}},\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba51e6cd92b6c45f9affdc158ecca2b8b8}{Yellow}}\ }
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ sf::Sprite\ sprite;\ }
+\DoxyCodeLine{00023\ \ \ \ \ sf::Texture\ texture0;\ }
+\DoxyCodeLine{00024\ \ \ \ \ sf::Texture\ texture1;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{float}\ speed;\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ health;\ }
+\DoxyCodeLine{00027\ \ \ \ \ sf::Clock\ animationClock;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ useTexture0;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMoving;\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{AlienType}}\ alienType;\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_alien_adb73372fd4a10b742fab3df457bdc0da}{getHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_alien_a8d4d1188bc4cec81a36630588f77f65d}{Alien}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position,\ \textcolor{keywordtype}{int}\ initialHealth\ =\ 3,\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44b}{AlienType}}\ type\ =\ \mbox{\hyperlink{class_alien_af8a9d0e36fb97cba5c6412e55ba3d44ba9594eec95be70e7b1710f730fdda33d9}{AlienType::Blue}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_a1cc622b85a2286d7ad2d908f42a3ac93}{update}}(\textcolor{keywordtype}{float}\ deltaTime,\ \textcolor{keywordtype}{int}\ scoreThreshold,\ \textcolor{keywordtype}{int}\ currentScore);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_aaa7613bc0d257f498e876521a327e25b}{render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ sf::FloatRect\ \mbox{\hyperlink{class_alien_a3e1202ecfff4f6a17ce54947539377dc}{getBounds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_alien_ab51931eaa1313529b2950977dfe2b100}{isOffScreen}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_ad7253f1aded3432ddd6d7d1c20b6441b}{startMoving}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_alien_aade4a5092a52bb1540e7e28455fd3da3}{takeDamage}}(\textcolor{keywordtype}{int}\ damage);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_alien_a9f42e58e71748b4c14daece420b347e3}{isDead}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ALIEN\_HPP}}
+
+\end{DoxyCode}

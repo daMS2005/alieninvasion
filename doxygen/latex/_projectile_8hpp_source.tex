@@ -1,0 +1,30 @@
+\doxysection{Projectile.\+hpp}
+\hypertarget{_projectile_8hpp_source}{}\label{_projectile_8hpp_source}\index{include/Projectile.hpp@{include/Projectile.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROJECTILE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROJECTILE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ sf::Sprite\ sprite;\ }
+\DoxyCodeLine{00014\ \ \ \ \ sf::Texture\ texture;\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ speed;\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_projectile_a9e132d7d14496fc1c2453c2cddf69d65}{Projectile}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_a5bc646de87829b911d6817a6478c353e}{update}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_add59f3ad833c5007223ace7e5b551071}{render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00032\ \ \ \ \ sf::FloatRect\ \mbox{\hyperlink{class_projectile_a10206c540f93413b1d0e6a61ef3de996}{getBounds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_projectile_a992527d98d029ecd3264039c4dd86fb6}{isOffScreen}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PROJECTILE\_HPP}}
+
+\end{DoxyCode}

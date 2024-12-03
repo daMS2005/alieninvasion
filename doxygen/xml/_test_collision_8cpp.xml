@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_test_collision_8cpp" kind="file" language="C++">
+    <compoundname>TestCollision.cpp</compoundname>
+    <includes local="no">gtest/gtest.h</includes>
+    <includes refid="_alien_8hpp" local="yes">Alien.hpp</includes>
+    <includes refid="_player_8hpp" local="yes">Player.hpp</includes>
+    <includes refid="_projectile_8hpp" local="yes">Projectile.hpp</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Alien.hpp</label>
+        <link refid="_alien_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Player.hpp</label>
+        <link refid="_player_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Projectile.hpp</label>
+        <link refid="_projectile_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tests/TestCollision.cpp</label>
+        <link refid="_test_collision_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="2">
+        <label>gtest/gtest.h</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_test_collision_8cpp_1a34f6105f257d770c2095c4f489a03a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(CollisionTest, PlayerAlienCollision)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>CollisionTest</type>
+        </param>
+        <param>
+          <type>PlayerAlienCollision</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/TestCollision.cpp" line="6" column="1" bodyfile="tests/TestCollision.cpp" bodystart="6" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="_test_collision_8cpp_1a2d9e15afe6e26d4bc5e44e7e847ac893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(CollisionTest, ProjectileAlienCollision)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>CollisionTest</type>
+        </param>
+        <param>
+          <type>ProjectileAlienCollision</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/TestCollision.cpp" line="15" column="1" bodyfile="tests/TestCollision.cpp" bodystart="15" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Alien.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Player.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Projectile.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">TEST(CollisionTest,<sp/>PlayerAlienCollision)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player" kindref="compound">Player</ref><sp/>player;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_alien" kindref="compound">Alien</ref><sp/>alien({player.<ref refid="class_player_1a4f679a9d2fa60e76fe00d615dfe4d584" kindref="member">getPosition</ref>().x,<sp/>player.<ref refid="class_player_1a4f679a9d2fa60e76fe00d615dfe4d584" kindref="member">getPosition</ref>().y},<sp/>3);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_TRUE(alien.getBounds().intersects(player.<ref refid="class_player_1aec00a96a409d68ac0f88007f93f42329" kindref="member">getBounds</ref>()));</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>player.<ref refid="class_player_1af97f9b32912f28fdcdad1785d515cd2d" kindref="member">takeDamage</ref>(30);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(player.<ref refid="class_player_1abcb15d249bed9a4ab0ab86b52b0d747a" kindref="member">getHealth</ref>(),<sp/>70);<sp/></highlight><highlight class="comment">//<sp/>Player<sp/>takes<sp/>damage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">TEST(CollisionTest,<sp/>ProjectileAlienCollision)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_alien" kindref="compound">Alien</ref><sp/>alien({100.0f,<sp/>100.0f},<sp/>3);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>projectile({100.0f,<sp/>100.0f});</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_TRUE(projectile.getBounds().intersects(alien.getBounds()));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>alien.takeDamage(1);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(alien.getHealth(),<sp/>2);<sp/></highlight><highlight class="comment">//<sp/>Alien<sp/>takes<sp/>damage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="tests/TestCollision.cpp"/>
+  </compounddef>
+</doxygen>

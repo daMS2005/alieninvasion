@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_projectile_8cpp" kind="file" language="C++">
+    <compoundname>Projectile.cpp</compoundname>
+    <includes refid="_projectile_8hpp" local="yes">Projectile.hpp</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>Projectile.hpp</label>
+        <link refid="_projectile_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/Projectile.cpp</label>
+        <link refid="_projectile_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Projectile.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="class_projectile_1a9e132d7d14496fc1c2453c2cddf69d65" kindref="member">Projectile::Projectile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2f&amp;<sp/>position)<sp/>:<sp/>speed(-500.0f)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>a<sp/>negative<sp/>speed<sp/>for<sp/>upward<sp/>movement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!texture.loadFromFile(</highlight><highlight class="stringliteral">&quot;../resources/projectile.png&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>loading<sp/>projectile<sp/>texture\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>sprite.setTexture(texture);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>sprite.setPosition(position.x,<sp/>position.y);<sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_projectile_1a5bc646de87829b911d6817a6478c353e" kindref="member">Projectile::update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime)<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>sprite.move(0,<sp/>speed<sp/>*<sp/>deltaTime);<sp/></highlight><highlight class="comment">//<sp/>Use<sp/>deltaTime<sp/>for<sp/>consistent<sp/>upward<sp/>movement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_projectile_1add59f3ad833c5007223ace7e5b551071" kindref="member">Projectile::render</ref>(sf::RenderWindow&amp;<sp/>window)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>window.draw(sprite);<sp/></highlight><highlight class="comment">//<sp/>Render<sp/>the<sp/>projectile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">sf::FloatRect<sp/><ref refid="class_projectile_1a10206c540f93413b1d0e6a61ef3de996" kindref="member">Projectile::getBounds</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sprite.getGlobalBounds();<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>projectile&apos;s<sp/>bounds<sp/>for<sp/>collision<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_projectile_1a992527d98d029ecd3264039c4dd86fb6" kindref="member">Projectile::isOffScreen</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sprite.getPosition().y<sp/>+<sp/>sprite.getGlobalBounds().height<sp/>&lt;<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>the<sp/>projectile<sp/>is<sp/>above<sp/>the<sp/>screen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/Projectile.cpp"/>
+  </compounddef>
+</doxygen>

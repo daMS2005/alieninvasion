@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="class_projectile" kind="class" language="C++" prot="public">
+    <compoundname>Projectile</compoundname>
+    <includes refid="_projectile_8hpp" local="no">Projectile.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_projectile_1a4f8fa986b975aa65acc582129cdb61cb" prot="private" static="no" mutable="no">
+        <type>sf::Sprite</type>
+        <definition>sf::Sprite Projectile::sprite</definition>
+        <argsstring></argsstring>
+        <name>sprite</name>
+        <qualifiedname>Projectile::sprite</qualifiedname>
+        <briefdescription>
+<para>The sprite representing the projectile. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="13" column="16" bodyfile="include/Projectile.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_projectile_1a626e72b26e1213eedce8d3148b996afd" prot="private" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture Projectile::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <qualifiedname>Projectile::texture</qualifiedname>
+        <briefdescription>
+<para>The texture used for the projectile&apos;s sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="14" column="17" bodyfile="include/Projectile.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_projectile_1a70ff500bdae54f3ad1e9e759b0ecd1fe" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Projectile::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <qualifiedname>Projectile::speed</qualifiedname>
+        <briefdescription>
+<para>The speed at which the projectile moves. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="15" column="11" bodyfile="include/Projectile.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_projectile_1a9e132d7d14496fc1c2453c2cddf69d65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Projectile::Projectile</definition>
+        <argsstring>(const sf::Vector2f &amp;position)</argsstring>
+        <name>Projectile</name>
+        <qualifiedname>Projectile::Projectile</qualifiedname>
+        <param>
+          <type>const sf::Vector2f &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="class_projectile" kindref="compound">Projectile</ref> object at the specified position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial position of the projectile. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="20" column="5" bodyfile="src/Projectile.cpp" bodystart="4" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1a5bc646de87829b911d6817a6478c353e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile::update</definition>
+        <argsstring>(float deltaTime)</argsstring>
+        <name>update</name>
+        <qualifiedname>Projectile::update</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the projectile&apos;s position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The elapsed time since the last frame, used for frame-independent movement. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="24" column="10" bodyfile="src/Projectile.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1add59f3ad833c5007223ace7e5b551071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile::render</definition>
+        <argsstring>(sf::RenderWindow &amp;window)</argsstring>
+        <name>render</name>
+        <qualifiedname>Projectile::render</qualifiedname>
+        <param>
+          <type>sf::RenderWindow &amp;</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Renders the projectile to the specified window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML window where the projectile will be drawn. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="28" column="10" bodyfile="src/Projectile.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1a10206c540f93413b1d0e6a61ef3de996" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::FloatRect</type>
+        <definition>sf::FloatRect Projectile::getBounds</definition>
+        <argsstring>() const</argsstring>
+        <name>getBounds</name>
+        <qualifiedname>Projectile::getBounds</qualifiedname>
+        <briefdescription>
+<para>Gets the bounding box of the projectile&apos;s sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A FloatRect representing the projectile&apos;s bounding box. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="32" column="19" bodyfile="src/Projectile.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1a992527d98d029ecd3264039c4dd86fb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Projectile::isOffScreen</definition>
+        <argsstring>() const</argsstring>
+        <name>isOffScreen</name>
+        <qualifiedname>Projectile::isOffScreen</qualifiedname>
+        <briefdescription>
+<para>Checks if the projectile is off-screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the projectile is outside the visible area, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Projectile.hpp" line="36" column="10" bodyfile="src/Projectile.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a projectile fired by the player. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class handles the properties and behaviors of projectiles, including movement, rendering, and collision detection. </para>
+    </detaileddescription>
+    <location file="include/Projectile.hpp" line="11" column="1" bodyfile="include/Projectile.hpp" bodystart="11" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_projectile_1a10206c540f93413b1d0e6a61ef3de996" prot="public" virt="non-virtual"><scope>Projectile</scope><name>getBounds</name></member>
+      <member refid="class_projectile_1a992527d98d029ecd3264039c4dd86fb6" prot="public" virt="non-virtual"><scope>Projectile</scope><name>isOffScreen</name></member>
+      <member refid="class_projectile_1a9e132d7d14496fc1c2453c2cddf69d65" prot="public" virt="non-virtual"><scope>Projectile</scope><name>Projectile</name></member>
+      <member refid="class_projectile_1add59f3ad833c5007223ace7e5b551071" prot="public" virt="non-virtual"><scope>Projectile</scope><name>render</name></member>
+      <member refid="class_projectile_1a70ff500bdae54f3ad1e9e759b0ecd1fe" prot="private" virt="non-virtual"><scope>Projectile</scope><name>speed</name></member>
+      <member refid="class_projectile_1a4f8fa986b975aa65acc582129cdb61cb" prot="private" virt="non-virtual"><scope>Projectile</scope><name>sprite</name></member>
+      <member refid="class_projectile_1a626e72b26e1213eedce8d3148b996afd" prot="private" virt="non-virtual"><scope>Projectile</scope><name>texture</name></member>
+      <member refid="class_projectile_1a5bc646de87829b911d6817a6478c353e" prot="public" virt="non-virtual"><scope>Projectile</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

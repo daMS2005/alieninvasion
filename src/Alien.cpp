@@ -21,7 +21,7 @@ Alien::Alien(const sf::Vector2f& position, int initialHealth, AlienType type)
     } else if (alienType == AlienType::Yellow) {
         if (!texture0.loadFromFile("../resources/yellowalien0.png")) {
             std::cerr << "Error loading yellowalien0.png\n";
-        }
+        } 
         if (!texture1.loadFromFile("../resources/yellowalien1.png")) {
             std::cerr << "Error loading yellowalien1.png\n";
         }

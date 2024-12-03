@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_projectile_8hpp" kind="file" language="C++">
+    <compoundname>Projectile.hpp</compoundname>
+    <includes local="no">SFML/Graphics.hpp</includes>
+    <includedby refid="_player_8hpp" local="yes">include/Player.hpp</includedby>
+    <includedby refid="_projectile_8cpp" local="yes">src/Projectile.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="_test_collision_8cpp" local="yes">tests/TestCollision.cpp</includedby>
+    <includedby refid="_test_projectile_8cpp" local="yes">tests/TestProjectile.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/Projectile.hpp</label>
+        <link refid="_projectile_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/Player.hpp</label>
+        <link refid="_player_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>include/Projectile.hpp</label>
+        <link refid="_projectile_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_projectile" prot="public">Projectile</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PROJECTILE_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROJECTILE_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_projectile" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_projectile" kindref="compound">Projectile</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>sprite;<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture<sp/>texture;<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed;<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_projectile_1a9e132d7d14496fc1c2453c2cddf69d65" kindref="member">Projectile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2f&amp;<sp/>position);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_projectile_1a5bc646de87829b911d6817a6478c353e" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_projectile_1add59f3ad833c5007223ace7e5b551071" kindref="member">render</ref>(sf::RenderWindow&amp;<sp/>window);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::FloatRect<sp/><ref refid="class_projectile_1a10206c540f93413b1d0e6a61ef3de996" kindref="member">getBounds</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_projectile_1a992527d98d029ecd3264039c4dd86fb6" kindref="member">isOffScreen</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>PROJECTILE_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/Projectile.hpp"/>
+  </compounddef>
+</doxygen>
