@@ -26,10 +26,16 @@ AlienInvasion_SOURCE_DIR:STATIC=C:/Users/Lenovo/Desktop/cppaliens/alieninvasion
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/lib.exe
 
+//No help, variable specified on the command line.
+CMAKE_BUILD_TYPE:UNINITIALIZED=Debug
+
 //Semicolon separated list of supported configuration types, only
 // supports Debug, Release, MinSizeRel, and RelWithDebInfo, anything
 // else will be ignored.
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release;MinSizeRel;RelWithDebInfo
+
+//No help, variable specified on the command line.
+CMAKE_CXX_COMPILER:UNINITIALIZED=C:/msys64/mingw64/bin/g++.exe
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=/DWIN32 /D_WINDOWS /GR /EHsc
@@ -48,6 +54,9 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=/Zi /O2 /Ob1 /DNDEBUG
 
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+
+//No help, variable specified on the command line.
+CMAKE_C_COMPILER:UNINITIALIZED=C:/msys64/mingw64/bin/gcc.exe
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=/DWIN32 /D_WINDOWS
@@ -206,23 +215,23 @@ GMOCK_MAIN_LIBRARY:FILEPATH=GMOCK_MAIN_LIBRARY-NOTFOUND
 //Path to a library.
 GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
 
-//Path to a file.
-GTEST_INCLUDE_DIR:PATH=GTEST_INCLUDE_DIR-NOTFOUND
+//No help, variable specified on the command line.
+GTEST_INCLUDE_DIR:UNINITIALIZED=C:/msys64/mingw64/include
 
-//Path to a library.
-GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
+//No help, variable specified on the command line.
+GTEST_LIBRARY:UNINITIALIZED=C:/msys64/mingw64/lib/libgtest.a
 
 //Path to a library.
 GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
 
-//Path to a library.
-GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
+//No help, variable specified on the command line.
+GTEST_MAIN_LIBRARY:UNINITIALIZED=C:/msys64/mingw64/lib/libgtest_main.a
 
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 
 //The directory containing a CMake configuration file for GTest.
-GTest_DIR:PATH=GTest_DIR-NOTFOUND
+GTest_DIR:PATH=C:/msys64/mingw64/lib/cmake/GTest
 
 //The directory containing a CMake configuration file for SFML.
 SFML_DIR:PATH=C:/msys64/mingw64/lib/cmake/SFML
@@ -361,6 +370,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding GTest
+FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[C:/msys64/mingw64/lib/cmake/GTest/GTestConfig.cmake][c ][v1.15.2()]
 //ADVANCED property for variable: GMOCK_LIBRARY
 GMOCK_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GMOCK_LIBRARY_DEBUG

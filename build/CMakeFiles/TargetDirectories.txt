@@ -1,0 +1,5 @@
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/alien_invasion.dir
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/tests.dir
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/ZERO_CHECK.dir

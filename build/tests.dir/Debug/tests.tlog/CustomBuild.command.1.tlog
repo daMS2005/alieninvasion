@@ -1,0 +1,10 @@
+^C:\USERS\LENOVO\DESKTOP\CPPALIENS\ALIENINVASION\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Lenovo/Desktop/cppaliens/alieninvasion -BC:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build --check-stamp-file C:/Users/Lenovo/Desktop/cppaliens/alieninvasion/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
