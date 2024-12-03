@@ -16,6 +16,7 @@ set(SOURCES
     src/Player.cpp
     src/Alien.cpp
     src/Projectile.cpp
+    src/GameState.cpp
 )
 
 # Set the source files for the tests
