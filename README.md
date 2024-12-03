@@ -83,7 +83,7 @@ resources/
 ## Contributors
 
 - **Andrei:** CMake integration, report writing, and debugging.
-- **Daniel:** Core gameplay features, mechanics, and additional features.
+- **Daniel:** Core gameplay features, mechanics, and additional features, Documentation, GTests, and sound implementation, creative ideas, CMake integration, report writing, and debugging.
 - **Leonardo:** Presentation, design, and code structure.
 - **Peter:** Documentation, GTests, and sound implementation.
 - **Pietro:** Custom skins, creative ideas, and presentation.
