@@ -1,24 +1,24 @@
 #include "Alien.hpp"
 #include <iostream>
 
-Alien::Alien(const sf::Vector2f& position, AlienType alienType, int initialHealth)
+Alien::Alien(const sf::Vector2f& position, Alien::AlienType alienType, int initialHealth)
     : type(alienType), health(initialHealth), speed(100.0f), isMoving(false), useTexture1(true) {
-    if (type == AlienType::Blue) {
+    if (type == Alien::AlienType::Blue) {
         if (!texture1.loadFromFile("../resources/bluealien0.png") ||
             !texture2.loadFromFile("../resources/bluealien1.png")) {
             std::cerr << "Error loading blue alien textures\n";
         }
-    } else if (type == AlienType::Yellow) {
+    } else if (type == Alien::AlienType::Yellow) {
         if (!texture1.loadFromFile("../resources/yellowalien0.png") ||
             !texture2.loadFromFile("../resources/yellowalien1.png")) {
             std::cerr << "Error loading yellow alien textures\n";
         }
-    } else if (type == AlienType::Green) {
+    } else if (type == Alien::AlienType::Green) {
         if (!texture1.loadFromFile("../resources/greenalien0.png") ||
             !texture2.loadFromFile("../resources/greenalien1.png")) {
             std::cerr << "Error loading green alien textures\n";
         }
-    } else if (type == AlienType::UFO) {
+    } else if (type == Alien::AlienType::UFO) {
         if (!texture1.loadFromFile("../resources/ufo.png")) {
             std::cerr << "Error loading UFO texture\n";
         }
@@ -44,9 +44,9 @@ void Alien::shoot() {
         sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
                               sprite.getPosition().y + sprite.getGlobalBounds().height);
 
-        if (type == AlienType::Yellow || type == AlienType::Green) {
+        if (type == Alien::AlienType::Yellow || type == Alien::AlienType::Green) {
             projectiles.emplace_back(position, sf::Vector2f(0, 300.0f)); // Fire downward
-        } else if (type == AlienType::UFO) {
+        } else if (type == Alien::AlienType::UFO) {
             projectiles.emplace_back(position, sf::Vector2f(0, 400.0f)); // Stronger projectile
         }
 
@@ -55,14 +55,14 @@ void Alien::shoot() {
 }
 
 void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
-    if (type == AlienType::Blue || type == AlienType::Yellow) {
+    if (type == Alien::AlienType::Blue || type == Alien::AlienType::Yellow) {
         if (currentScore >= scoreThreshold) {
             isMoving = true; // Blue and Yellow start moving based on score
         }
         if (isMoving) {
             sprite.move(0, speed * deltaTime);
         }
-    } else if (type == AlienType::UFO) {
+    } else if (type == Alien::AlienType::UFO) {
         // UFO horizontal movement
         static bool movingRight = true;
         if (movingRight) {
@@ -76,7 +76,7 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
                 movingRight = true;
             }
         }
-    } else if (type == AlienType::Green) {
+    } else if (type == Alien::AlienType::Green) {
         // Ensure green aliens remain visible
         if (sprite.getPosition().y < 150.0f) { // Adjust to desired starting Y position
             sprite.setPosition(sprite.getPosition().x, 150.0f);
@@ -87,7 +87,7 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
     shoot();
 
     // Animation logic for Blue, Yellow, Green (UFO excluded)
-    if (type != AlienType::UFO && animationClock.getElapsedTime().asSeconds() > 0.5f) {
+    if (type != Alien::AlienType::UFO && animationClock.getElapsedTime().asSeconds() > 0.5f) {
         sprite.setTexture(useTexture1 ? texture2 : texture1);
         useTexture1 = !useTexture1;
         animationClock.restart();
@@ -105,7 +105,7 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
 }
 
 
-AlienType Alien::getType() const {
+Alien::AlienType Alien::getType() const {
     return type;
 }
 

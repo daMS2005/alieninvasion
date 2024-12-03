@@ -4,15 +4,14 @@ project(AlienInvasion)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Automatically look for SFML if it is installed on the system
-find_package(SFML 2.6.0 REQUIRED COMPONENTS graphics window system)
+# Find SFML library
+find_package(SFML 2.5 REQUIRED COMPONENTS graphics window system audio)
 
-# Automatically look for Google Test
+# Find Google Test
 find_package(GTest REQUIRED)
 
 # Set the source files for the main game
-set(SOURCES
-    src/main.cpp
+set(GAME_SOURCES
     src/Player.cpp
     src/Alien.cpp
     src/Projectile.cpp
@@ -28,16 +27,16 @@ set(TEST_SOURCES
     tests/TestCollision.cpp
 )
 
-# Include directories for headers
-include_directories(include)
+# Include directories
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Create the main game executable
-add_executable(alien_invasion ${SOURCES})
-target_link_libraries(alien_invasion sfml-graphics sfml-window sfml-system)
+add_executable(alien_invasion src/main.cpp ${GAME_SOURCES})
+target_link_libraries(alien_invasion sfml-graphics sfml-window sfml-system sfml-audio)
 
-# Create the test executable (include both test and game sources)
-add_executable(tests ${TEST_SOURCES} ${SOURCES})
-target_link_libraries(tests GTest::GTest GTest::Main pthread sfml-graphics sfml-window sfml-system)
+# Create the test executable
+add_executable(tests ${TEST_SOURCES} ${GAME_SOURCES})
+target_link_libraries(tests GTest::GTest GTest::Main pthread sfml-graphics sfml-window sfml-system sfml-audio)
 
 # Enable testing
 enable_testing()

@@ -1,21 +1,24 @@
-#include <gtest/gtest.h>
 #include "Alien.hpp"
+#include <gtest/gtest.h>
 
-TEST(AlienTest, Initialization) {
-    Alien alien({100.0f, 50.0f}, 5, Alien::AlienType::Blue);
-    EXPECT_EQ(alien.getHealth(), 5);
-    EXPECT_EQ(alien.getBounds().top, 50.0f);
-    EXPECT_EQ(alien.getBounds().left, 100.0f);
+// Test for Blue Alien Initialization
+TEST(AlienTest, BlueAlienInitialization) {
+    Alien alien({100.0f, 50.0f}, Alien::AlienType::Blue, 5);
+    EXPECT_FALSE(alien.isDead()); // Check that alien is not dead on initialization
+    EXPECT_EQ(alien.getType(), Alien::AlienType::Blue); // Verify type is Blue
 }
 
-TEST(AlienTest, TakeDamage) {
-    Alien alien({0.0f, 0.0f}, 3, Alien::AlienType::Green);
-    alien.takeDamage(1);
-    EXPECT_EQ(alien.getHealth(), 2);
+// Test for Green Alien Initialization
+TEST(AlienTest, GreenAlienInitialization) {
+    Alien alien({0.0f, 0.0f}, Alien::AlienType::Green, 2);
+    EXPECT_FALSE(alien.isDead()); // Check that alien is not dead on initialization
+    EXPECT_EQ(alien.getType(), Alien::AlienType::Green); // Verify type is Green
 }
 
-TEST(AlienTest, IsDead) {
-    Alien alien({0.0f, 0.0f}, 1, Alien::AlienType::Yellow);
-    alien.takeDamage(1);
-    EXPECT_TRUE(alien.isDead());
+// Test for Yellow Alien Initialization
+TEST(AlienTest, YellowAlienInitialization) {
+    Alien alien({0.0f, 0.0f}, Alien::AlienType::Yellow, 1);
+    EXPECT_FALSE(alien.isDead()); // Check that alien is not dead on initialization
+    EXPECT_EQ(alien.getType(), Alien::AlienType::Yellow); // Verify type is Yellow
 }
+

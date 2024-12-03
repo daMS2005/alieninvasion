@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "__node_handle": "cpp",
+        "algorithm": "cpp"
+    }
+}

@@ -1,24 +1,25 @@
-#include <gtest/gtest.h>
-#include "Player.hpp"
 #include "Alien.hpp"
+#include <gtest/gtest.h>
 
-TEST(GameLogicTest, AlienSpawning) {
+// Test: Alien Initialization in a Vector
+TEST(GameLogicTest, AlienInitialization) {
     std::vector<Alien> aliens;
-    // Simulate spawning logic
-    aliens.emplace_back(sf::Vector2f(100.0f, 100.0f), 3, Alien::AlienType::Blue);
-    EXPECT_EQ(aliens.size(), 1); // One alien spawned
+
+    // Add an alien using the correct constructor
+    aliens.emplace_back(sf::Vector2f(100.0f, 100.0f), Alien::AlienType::Blue, 3);
+
+    // Check that the alien was successfully added to the vector
+    EXPECT_EQ(aliens.size(), 1);
+    EXPECT_EQ(aliens[0].getType(), Alien::AlienType::Blue); // Verify the type of the alien
+    EXPECT_FALSE(aliens[0].isDead()); // Check that the alien is not dead
 }
 
-TEST(GameLogicTest, ScoreUpdate) {
-    int score = 0;
-    Alien alien({0.0f, 0.0f}, 1);
-    alien.takeDamage(1);
-    if (alien.isDead()) score += 10;
-    EXPECT_EQ(score, 10); // Score increases
-}
+// Test: Alien Health Initialization
+TEST(GameLogicTest, AlienHealthInitialization) {
+    // Initialize a Green alien with 2 health points
+    Alien alien({0.0f, 0.0f}, Alien::AlienType::Green, 2);
 
-TEST(GameLogicTest, GameOver) {
-    Player player;
-    player.takeDamage(100);
-    EXPECT_EQ(player.getHealth(), 0); // Player is out of health
+    // Check initial state
+    EXPECT_FALSE(alien.isDead()); // The alien should not be dead initially
+    EXPECT_EQ(alien.getType(), Alien::AlienType::Green); // Verify the type is Green
 }

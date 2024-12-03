@@ -248,7 +248,7 @@ backgroundSprite.setTexture(backgroundTexture);
     }
     if (initialSetup) {
     for (int i = 0; i < 10; ++i) {
-        AlienType type = (i % 2 == 0) ? AlienType::Blue : AlienType::Yellow; // Alternate blue and yellow aliens
+        Alien::AlienType type = (i % 2 == 0) ? Alien::AlienType::Blue : Alien::AlienType::Yellow; // Alternate blue and yellow aliens
         aliens.emplace_back(sf::Vector2f(50.0f + i * 70.0f, 100.0f), type);
     }
     initialSetup = false; // Ensure this block runs only once
@@ -263,7 +263,7 @@ for (auto it = aliens.begin(); it != aliens.end();) {
 }
 if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
     float x;
-    AlienType type;
+    Alien::AlienType type;
 
     // Adjust spawn count based on score
     int spawnCount = 1; // Default: spawn 1 alien
@@ -277,33 +277,33 @@ if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
         if (score > 2000) {
             int randomType = rand() % 5; // Adjust range to include more logic for green
             if (randomType == 0) {
-                type = AlienType::Green; // Favor green when score is high
+                type = Alien::AlienType::Green; // Favor green when score is high
             } else if (randomType == 1) {
-                type = AlienType::UFO;
+                type = Alien::AlienType::UFO;
             } else {
-                type = static_cast<AlienType>(rand() % 2); // Blue or Yellow
+                type = static_cast<Alien::AlienType>(rand() % 2); // Blue or Yellow
             }
         } else {
-            type = static_cast<AlienType>(rand() % 2); // Only Blue or Yellow
+            type = static_cast<Alien::AlienType>(rand() % 2); // Only Blue or Yellow
         }
 
         // Ensure only one UFO exists
-        if (type == AlienType::UFO) {
+        if (type == Alien::AlienType::UFO) {
             bool ufoExists = false;
             for (auto& alien : aliens) {
-                if (alien.getType() == AlienType::UFO) {
+                if (alien.getType() == Alien::AlienType::UFO) {
                     ufoExists = true;
                     break;
                 }
             }
             if (ufoExists) {
-                type = AlienType::Blue; // Default to another type if UFO exists
+                type = Alien::AlienType::Blue; // Default to another type if UFO exists
             }
         }
 
-        int health = (type == AlienType::Green) ? 2 : (type == AlienType::UFO) ? 3 : 1;
+        int health = (type == Alien::AlienType::Green) ? 2 : (type == Alien::AlienType::UFO) ? 3 : 1;
 
-        aliens.emplace_back(sf::Vector2f(x, (type == AlienType::UFO ? 50.0f : -50.0f)), type, health);
+        aliens.emplace_back(sf::Vector2f(x, (type == Alien::AlienType::UFO ? 50.0f : -50.0f)), type, health);
     }
 
     spawnClock.restart();
