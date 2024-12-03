@@ -4,22 +4,22 @@
 Alien::Alien(const sf::Vector2f& position, AlienType alienType, int initialHealth)
     : type(alienType), health(initialHealth), speed(100.0f), isMoving(false), useTexture1(true) {
     if (type == AlienType::Blue) {
-        if (!texture1.loadFromFile("resources/bluealien0.png") ||
-            !texture2.loadFromFile("resources/bluealien1.png")) {
+        if (!texture1.loadFromFile("../resources/bluealien0.png") ||
+            !texture2.loadFromFile("../resources/bluealien1.png")) {
             std::cerr << "Error loading blue alien textures\n";
         }
     } else if (type == AlienType::Yellow) {
-        if (!texture1.loadFromFile("resources/yellowalien0.png") ||
-            !texture2.loadFromFile("resources/yellowalien1.png")) {
+        if (!texture1.loadFromFile("../resources/yellowalien0.png") ||
+            !texture2.loadFromFile("../resources/yellowalien1.png")) {
             std::cerr << "Error loading yellow alien textures\n";
         }
     } else if (type == AlienType::Green) {
-        if (!texture1.loadFromFile("resources/greenalien0.png") ||
-            !texture2.loadFromFile("resources/greenalien1.png")) {
+        if (!texture1.loadFromFile("../resources/greenalien0.png") ||
+            !texture2.loadFromFile("../resources/greenalien1.png")) {
             std::cerr << "Error loading green alien textures\n";
         }
     } else if (type == AlienType::UFO) {
-        if (!texture1.loadFromFile("resources/ufo.png")) {
+        if (!texture1.loadFromFile("../resources/ufo.png")) {
             std::cerr << "Error loading UFO texture\n";
         }
     }

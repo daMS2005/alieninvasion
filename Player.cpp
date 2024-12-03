@@ -1,14 +1,14 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100), texturePath("resources/player.png") { 
+Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100), texturePath("../resources/player.png") { 
     // Default skin
     if (!texture.loadFromFile(texturePath)) {
         std::cerr << "Error loading default player texture: " << texturePath << std::endl;
     }
     sprite.setTexture(texture);
     sprite.setPosition(400.0f, 500.0f);
-    if (!shootingSoundBuffer.loadFromFile("resources/shootingsound.ogg")) {
+    if (!shootingSoundBuffer.loadFromFile("../resources/shootingsound.ogg")) {
         std::cerr << "Error loading shooting sound\n";
     }
     shootingSound.setBuffer(shootingSoundBuffer);

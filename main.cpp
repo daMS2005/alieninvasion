@@ -27,13 +27,13 @@ int main() {
     sf::Music gameoversound;
     sf::Texture backgroundTexture;
     sf::Sprite backgroundSprite;
-    if (!backgroundTexture.loadFromFile("resources/background.png")) {
+    if (!backgroundTexture.loadFromFile("../resources/background.png")) {
     std::cerr << "Error loading background image\n";
     return -1;
 }
 backgroundSprite.setTexture(backgroundTexture);
 
-    if (!bgMusic.openFromFile("resources/bgmusic.ogg")) {
+    if (!bgMusic.openFromFile("../resources/bgmusic.ogg")) {
         std::cerr << "Error loading background music\n";
         return -1;
     }
@@ -41,7 +41,7 @@ backgroundSprite.setTexture(backgroundTexture);
     bgMusic.play();  
     // Load font
     sf::Font font;
-    if (!font.loadFromFile("resources/retrofont.ttf")) {
+    if (!font.loadFromFile("../resources/retrofont.ttf")) {
         std::cerr << "Error loading font\n";
         return -1;
     }
@@ -78,9 +78,9 @@ backgroundSprite.setTexture(backgroundTexture);
     // Skin selection UI
     sf::Sprite skin1, skin2, skin3;
     sf::Texture skinTexture1, skinTexture2, skinTexture3;
-    if (!skinTexture1.loadFromFile("resources/skin1.png") ||
-        !skinTexture2.loadFromFile("resources/skin2.png") ||
-        !skinTexture3.loadFromFile("resources/skin3.png")) {
+    if (!skinTexture1.loadFromFile("../resources/skin1.png") ||
+        !skinTexture2.loadFromFile("../resources/skin2.png") ||
+        !skinTexture3.loadFromFile("../resources/skin3.png")) {
         std::cerr << "Error loading skin textures\n";
         return -1;
     }
@@ -123,15 +123,15 @@ backgroundSprite.setTexture(backgroundTexture);
                 sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
                 if (skin1.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-                    player.setSkin("resources/skin1.png");
+                    player.setSkin("../resources/skin1.png");
                     currentState = GameState::StartMenu;
                 }
                 if (skin2.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-                    player.setSkin("resources/skin2.png");
+                    player.setSkin("../resources/skin2.png");
                     currentState = GameState::StartMenu;
                 }
                 if (skin3.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-                    player.setSkin("resources/skin3.png");
+                    player.setSkin("../resources/skin3.png");
                     currentState = GameState::StartMenu;
                 }
             }
@@ -171,7 +171,7 @@ backgroundSprite.setTexture(backgroundTexture);
     gameOverText.setFillColor(sf::Color::Red);
     gameOverText.setPosition(200, 250);
     
-    if (!gameoversound.openFromFile("resources/gameoversound.ogg")) {
+    if (!gameoversound.openFromFile("../resources/gameoversound.ogg")) {
         std::cerr << "Error loading game over sound\n";
     }
     bgMusic.stop();
