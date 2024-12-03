@@ -1,13 +1,17 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100) { // By default we start with 100 health
-    if (!texture.loadFromFile("../resources/player.png")) {
-        std::cerr << "Error loading player texture\n";
+Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100), texturePath("../resources/player.png") { 
+    // Default skin
+    if (!texture.loadFromFile(texturePath)) {
+        std::cerr << "Error loading default player texture: " << texturePath << std::endl;
     }
     sprite.setTexture(texture);
     sprite.setPosition(400.0f, 500.0f);
-
+    if (!shootingSoundBuffer.loadFromFile("../resources/shootingsound.ogg")) {
+        std::cerr << "Error loading shooting sound\n";
+    }
+    shootingSound.setBuffer(shootingSoundBuffer);
     // Configure health bar
     healthBarBackground.setSize(sf::Vector2f(200.0f, 20.0f)); // Background size
     healthBarBackground.setFillColor(sf::Color::Red);         // Background color
@@ -18,11 +22,12 @@ Player::Player() : speed(430.0f), shootCooldown(0.33f), health(100) { // By defa
     healthBarForeground.setPosition(580.0f, 10.0f);           // Top-right corner (adjust x and y)
 }
 
-
+// Get health
 int Player::getHealth() {
     return health;
 }
 
+// Handle player input
 void Player::handleInput(float deltaTime) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sprite.getPosition().x > 0) {
         sprite.move(-speed * deltaTime, 0); // Move left
@@ -36,29 +41,31 @@ void Player::handleInput(float deltaTime) {
     }
 }
 
+// Shoot a projectile
 void Player::shoot() {
     if (shootClock.getElapsedTime().asSeconds() >= shootCooldown) {
         sf::Vector2f position(sprite.getPosition().x + sprite.getGlobalBounds().width / 2,
                               sprite.getPosition().y);
         projectiles.emplace_back(position); // Create a new projectile
-        shootClock.restart();              // Restart the cooldown timer
+        shootingSound.play();               // Play the shooting sound
+        shootClock.restart();               // Restart the cooldown timer
     }
 }
+
+
+// Take damage and update health bar
 void Player::takeDamage(int damage) {
     health -= damage; // Reduce health
     if (health < 0) {
         health = 0; // Prevent negative health
     }
-    
+
     // Update health bar
     float healthPercentage = static_cast<float>(health) / 100.0f;
     healthBarForeground.setSize(sf::Vector2f(200.0f * healthPercentage, 20.0f));
 }
 
-void Player::update() {
-    // General player update logic (if needed)
-}
-
+// Update projectiles
 void Player::updateProjectiles(float deltaTime) {
     for (auto it = projectiles.begin(); it != projectiles.end();) {
         it->update(deltaTime);
@@ -69,33 +76,53 @@ void Player::updateProjectiles(float deltaTime) {
         }
     }
 }
-
-void Player::render(sf::RenderWindow& window) {
-    window.draw(sprite); // Render the player
+void Player::update() {
+    //To be implemented
 }
-
-void Player::renderProjectiles(sf::RenderWindow& window) {
-    for (auto& projectile : projectiles) {
-        projectile.render(window); // Render projectiles
+// Change skin dynamically
+void Player::setSkin(const std::string& filePath) {
+    if (!texture.loadFromFile(filePath)) {
+        std::cerr << "Error loading skin texture: " << filePath << std::endl;
+    } else {
+        texturePath = filePath; // Update the stored texture path
+        sprite.setTexture(texture); // Apply the new texture
     }
 }
+
+// Render the player sprite
+void Player::render(sf::RenderWindow& window) {
+    window.draw(sprite);
+}
+
+// Render projectiles
+void Player::renderProjectiles(sf::RenderWindow& window) {
+    for (auto& projectile : projectiles) {
+        projectile.render(window);
+    }
+}
+
+// Render health bar
 void Player::renderHealthBar(sf::RenderWindow& window) {
-    window.draw(healthBarBackground); // Draw health bar background
-    window.draw(healthBarForeground); // Draw health bar foreground
+    window.draw(healthBarBackground);
+    window.draw(healthBarForeground);
 }
 
+// Get reference to projectiles
 std::vector<Projectile>& Player::getProjectiles() {
-    return projectiles; // Return reference to projectiles
+    return projectiles;
 }
 
-sf::Vector2f Player::getPosition() const {
+// Get player position
+sf::Vector2f Player::getPosition() {
     return sprite.getPosition();
 }
 
-sf::FloatRect Player::getBounds() const {
+// Get player bounds
+sf::FloatRect Player::getBounds() {
     return sprite.getGlobalBounds();
 }
 
+// Remove a projectile by index
 void Player::removeProjectile(size_t index) {
     if (index < projectiles.size()) {
         projectiles.erase(projectiles.begin() + index);

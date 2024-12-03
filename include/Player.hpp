@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "Projectile.hpp"
+#include <SFML/Audio.hpp>
 
 /// @class Player
 /// @brief Represents the player character in the game.
@@ -20,6 +21,12 @@ private:
     int health; ///< The player's health points.
     sf::RectangleShape healthBarBackground; ///< Background for the player's health bar.
     sf::RectangleShape healthBarForeground; ///< Foreground for the player's health bar.
+    sf::SoundBuffer shootingSoundBuffer; ///< Buffer for the shooting sound effect.
+    sf::Sound shootingSound; ///< The sound effect played when the player shoots.
+    std::string texturePath; ///< Tracks the current texture path.
+
+    /// @brief Loads sound effects for the player.
+    void loadSounds();
 
 public:
     /// @brief Constructs a Player object and initializes its properties.
@@ -54,6 +61,10 @@ public:
     /// @brief Reduces the player's health by a specified amount.
     /// @param damage The amount of damage to apply to the player.
     void takeDamage(int damage);
+
+    /// @brief Sets the player's sprite texture using a specified file path.
+    /// @param filePath The path to the texture file.
+    void setSkin(const std::string& filePath);
 
     /// @brief Gets the player's current position.
     /// @return A 2D vector representing the player's position.

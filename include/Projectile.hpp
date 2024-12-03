@@ -12,10 +12,15 @@ class Projectile {
 private:
     sf::Sprite sprite; ///< The sprite representing the projectile.
     sf::Texture texture; ///< The texture used for the projectile's sprite.
-    float speed; ///< The speed at which the projectile moves.
+    sf::Vector2f velocity; ///< The velocity of the projectile, determining its movement direction and speed.
 
 public:
-    /// @brief Constructs a Projectile object at the specified position.
+    /// @brief Constructs a Projectile object with a specified position and velocity.
+    /// @param position The initial position of the projectile.
+    /// @param velocity The velocity of the projectile, determining its movement.
+    Projectile(const sf::Vector2f& position, const sf::Vector2f& velocity);
+
+    /// @brief Constructs a Projectile object at the specified position with a default velocity.
     /// @param position The initial position of the projectile.
     Projectile(const sf::Vector2f& position);
 
