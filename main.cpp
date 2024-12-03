@@ -23,11 +23,12 @@ int main() {
     bool isGameOver = false;
     bool initialSetup = true;
     sf::Music bgMusic;
+    sf::Music gameoversound;
     if (!bgMusic.openFromFile("resources/bgmusic.ogg")) {
         std::cerr << "Error loading background music\n";
         return -1;
     }
-    bgMusic.setLoop(true);  // Loop the music
+  // Loop the music
     bgMusic.play();  
     // Load font
     sf::Font font;
@@ -147,60 +148,124 @@ int main() {
     float deltaTime = clock.restart().asSeconds();
 
     if (isGameOver || player.getHealth() <= 0) {
-        // Add score to the leaderboard
-        std::ofstream file("leaderboard.txt", std::ios::app);
-        if (file.is_open()) {
-            file << score << "\n";
-            file.close();
-        } else {
-            std::cerr << "Error opening leaderboard.txt for writing\n";
+    // Add score to the leaderboard
+    std::ofstream file("leaderboard.txt", std::ios::app);
+    if (file.is_open()) {
+        file << score << "\n";
+        file.close();
+    } else {
+        std::cerr << "Error opening leaderboard.txt for writing\n";
+    }
+
+    // Display Game Over screen
+    sf::Text gameOverText("Game Over!", font, 48);
+    gameOverText.setFillColor(sf::Color::Red);
+    gameOverText.setPosition(200, 250);
+    
+    if (!gameoversound.openFromFile("resources/gameoversound.ogg")) {
+        std::cerr << "Error loading game over sound\n";
+    }
+    gameoversound.play();
+
+    sf::Text restartText("Press R to Restart or ESC to Quit", font, 24);
+    restartText.setFillColor(sf::Color::White);
+    restartText.setPosition(150, 320);
+
+    sf::Text menuText("Press M to Return to Menu", font, 24);
+    menuText.setFillColor(sf::Color::White);
+    menuText.setPosition(200, 360);
+
+    bool gameOverScreenActive = true;
+    while (gameOverScreenActive && window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+                gameOverScreenActive = false; // Exit loop if window is closed
+            }
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::R) {
+                    // Restart game
+                    currentState = GameState::Gameplay;
+                    aliens.clear();
+                    score = 0;
+                    player = Player();
+                    spawnClock.restart();
+                    gameOverScreenActive = false; // Exit the Game Over screen
+                } else if (event.key.code == sf::Keyboard::M) {
+                    // Return to menu
+                    currentState = GameState::StartMenu;
+                    aliens.clear();
+                    score = 0;
+                    player = Player();
+                    spawnClock.restart();
+                    gameOverScreenActive = false; // Exit the Game Over screen
+                } else if (event.key.code == sf::Keyboard::Escape) {
+                    // Quit the game
+                    window.close();
+                }
+            }
         }
-
-        // Display Game Over screen
-        sf::Text gameOverText("Game Over!", font, 48);
-        gameOverText.setFillColor(sf::Color::Red);
-        gameOverText.setPosition(200, 250);
-
-        sf::Text restartText("Press R to Restart or ESC to Quit", font, 24);
-        restartText.setFillColor(sf::Color::White);
-        restartText.setPosition(150, 320);
-
-        sf::Text menuText("Press M to Return to Menu", font, 24);
-        menuText.setFillColor(sf::Color::White);
-        menuText.setPosition(200, 360);
 
         window.clear(sf::Color::Black);
         window.draw(gameOverText);
         window.draw(restartText);
         window.draw(menuText);
         window.display();
-
-        // Handle user input for Game Over options
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
-            currentState = GameState::Gameplay; // Restart game
-            aliens.clear();                     // Clear aliens
-            score = 0;                          // Reset score
-            player = Player();                  // Reset player
-            spawnClock.restart();               // Restart spawn clock
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
-            currentState = GameState::StartMenu; // Go back to menu
-            aliens.clear();                      // Clear aliens
-            score = 0;                           // Reset score
-            player = Player();                   // Reset player
-            spawnClock.restart();                // Restart spawn clock
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-            window.close(); // Quit the game
-        }
-
-        return 0; // Skip further game logic if game over
     }
+
+    // Return to main game loop after exiting Game Over state
+    // No `return 0`, just return from this section
+}
+
+
 
     // Normal game logic here...
     player.handleInput(deltaTime);
     player.update();
     player.updateProjectiles(deltaTime);
+    for (auto& alien : aliens) {
+        for (auto it = alien.getProjectiles().begin(); it != alien.getProjectiles().end();) {
+            // Check if the projectile hits the player
+            if (it->getBounds().intersects(player.getBounds())) {
+                player.takeDamage(10); // Reduce player's health by 10
+                it = alien.getProjectiles().erase(it); // Remove the projectile
+            } else {
+                ++it; // Move to the next projectile
+            }
+        }
+    }
+    if (initialSetup) {
+    for (int i = 0; i < 10; ++i) {
+        AlienType type = (i % 2 == 0) ? AlienType::Blue : AlienType::Yellow; // Alternate blue and yellow aliens
+        aliens.emplace_back(sf::Vector2f(50.0f + i * 70.0f, 100.0f), type);
+    }
+    initialSetup = false; // Ensure this block runs only once
+}
+if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
+    float x = static_cast<float>(rand() % 750);
+    AlienType type = static_cast<AlienType>(rand() % 4); // Blue, Yellow, Green, UFO
+
+    // Ensure only one UFO exists
+    if (type == AlienType::UFO) {
+        bool ufoExists = false;
+        for (auto& alien : aliens) {
+            if (alien.getType() == AlienType::UFO) {
+                ufoExists = true;
+                break;
+            }
+        }
+        if (ufoExists) {
+            type = AlienType::Blue; // Default to another type if UFO exists
+        }
+    }
+
+    int health = (type == AlienType::Green) ? 2 : (type == AlienType::UFO) ? 3 : 1;
+
+    aliens.emplace_back(sf::Vector2f(x, (type == AlienType::UFO ? 50.0f : -50.0f)), type, health);
+    spawnClock.restart();
+}
+
 
     for (auto& alien : aliens) {
         alien.update(deltaTime, 100, score);
