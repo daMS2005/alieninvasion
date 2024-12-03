@@ -45,7 +45,7 @@ Alien Invasion is a thrilling and challenging arcade game where players control 
 Clone the repository:
 
 ```bash
-git clone <[repository_url](https://github.com/daMS2005/alieninvasion)>
+git clone (https://github.com/daMS2005/alieninvasion)
 cd alieninvasion
 ```
 
