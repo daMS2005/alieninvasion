@@ -55,29 +55,9 @@ void Alien::shoot() {
 }
 
 void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
-    // Green aliens remain static
-    if (type == AlienType::Green) {
-        // Still allow Green aliens to shoot
-        shoot();
-
-        // Update projectiles for Green aliens
-        for (auto it = projectiles.begin(); it != projectiles.end();) {
-            it->update(deltaTime);
-            if (it->isOffScreen()) {
-                it = projectiles.erase(it);
-            } else {
-                ++it;
-            }
-        }
-
-        // No movement or animation for Green aliens
-        return;
-    }
-
-    // Update movement based on type
     if (type == AlienType::Blue || type == AlienType::Yellow) {
         if (currentScore >= scoreThreshold) {
-            isMoving = true;
+            isMoving = true; // Blue and Yellow start moving based on score
         }
         if (isMoving) {
             sprite.move(0, speed * deltaTime);
@@ -96,10 +76,22 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
                 movingRight = true;
             }
         }
+    } else if (type == AlienType::Green) {
+        // Ensure green aliens remain visible
+        if (sprite.getPosition().y < 150.0f) { // Adjust to desired starting Y position
+            sprite.setPosition(sprite.getPosition().x, 150.0f);
+        }
     }
 
     // Shooting logic
     shoot();
+
+    // Animation logic for Blue, Yellow, Green (UFO excluded)
+    if (type != AlienType::UFO && animationClock.getElapsedTime().asSeconds() > 0.5f) {
+        sprite.setTexture(useTexture1 ? texture2 : texture1);
+        useTexture1 = !useTexture1;
+        animationClock.restart();
+    }
 
     // Update projectiles
     for (auto it = projectiles.begin(); it != projectiles.end();) {
@@ -110,14 +102,8 @@ void Alien::update(float deltaTime, int scoreThreshold, int currentScore) {
             ++it;
         }
     }
-
-    // Animation logic for Blue, Yellow (UFO excluded)
-    if (type != AlienType::UFO && animationClock.getElapsedTime().asSeconds() > 0.5f) {
-        sprite.setTexture(useTexture1 ? texture2 : texture1);
-        useTexture1 = !useTexture1;
-        animationClock.restart();
-    }
 }
+
 
 AlienType Alien::getType() const {
     return type;

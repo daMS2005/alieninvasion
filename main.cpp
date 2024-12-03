@@ -19,6 +19,7 @@ int main() {
     sf::Clock spawnClock;
     sf::Clock clock;
     sf::Clock scoreClock;
+    float alienSpawnRate = 1.0f; // Start with 2 seconds between spawns
     int score = 0;
     bool isGameOver = false;
     bool initialSetup = true;
@@ -261,70 +262,91 @@ for (auto it = aliens.begin(); it != aliens.end();) {
     }
 }
 if (spawnClock.getElapsedTime().asSeconds() > 2.0f) {
-    float x = static_cast<float>(rand() % 750);
-    AlienType type = static_cast<AlienType>(rand() % 4); // Blue, Yellow, Green, UFO
+    float x;
+    AlienType type;
 
-    // Ensure only one UFO exists
-    if (type == AlienType::UFO) {
-        bool ufoExists = false;
-        for (auto& alien : aliens) {
-            if (alien.getType() == AlienType::UFO) {
-                ufoExists = true;
-                break;
+    // Adjust spawn count based on score
+    int spawnCount = 1; // Default: spawn 1 alien
+    if (score > 2000) spawnCount = 2;
+    if (score > 5000) spawnCount = 3;
+    if (score > 8000) spawnCount = 5;
+
+    for (int i = 0; i < spawnCount; ++i) {
+        x = static_cast<float>(rand() % 750);
+
+        if (score > 2000) {
+            int randomType = rand() % 5; // Adjust range to include more logic for green
+            if (randomType == 0) {
+                type = AlienType::Green; // Favor green when score is high
+            } else if (randomType == 1) {
+                type = AlienType::UFO;
+            } else {
+                type = static_cast<AlienType>(rand() % 2); // Blue or Yellow
+            }
+        } else {
+            type = static_cast<AlienType>(rand() % 2); // Only Blue or Yellow
+        }
+
+        // Ensure only one UFO exists
+        if (type == AlienType::UFO) {
+            bool ufoExists = false;
+            for (auto& alien : aliens) {
+                if (alien.getType() == AlienType::UFO) {
+                    ufoExists = true;
+                    break;
+                }
+            }
+            if (ufoExists) {
+                type = AlienType::Blue; // Default to another type if UFO exists
             }
         }
-        if (ufoExists) {
-            type = AlienType::Blue; // Default to another type if UFO exists
-        }
-    }
-    if (type == AlienType::Green && score <= 2000) {
-        type = AlienType::Blue; // Fallback to Blue if score < 2000
-    }
-    int health = (type == AlienType::Green) ? 2 : (type == AlienType::UFO) ? 3 : 1;
 
-    aliens.emplace_back(sf::Vector2f(x, (type == AlienType::UFO ? 50.0f : -50.0f)), type, health);
+        int health = (type == AlienType::Green) ? 2 : (type == AlienType::UFO) ? 3 : 1;
+
+        aliens.emplace_back(sf::Vector2f(x, (type == AlienType::UFO ? 50.0f : -50.0f)), type, health);
+    }
+
     spawnClock.restart();
 }
 
+// Update aliens
+for (auto& alien : aliens) {
+    alien.update(deltaTime, 100, score);
+}
 
-    for (auto& alien : aliens) {
-        alien.update(deltaTime, 100, score);
-    }
-    // Spawn new aliens
-    for (auto& alien : aliens) {
-        for (auto it = player.getProjectiles().begin(); it != player.getProjectiles().end();) {
-            if (it->getBounds().intersects(alien.getBounds())) {
-                alien.takeDamage(1);
-                if (alien.isDead()) {
-                    score += 100;
-                }
-                it = player.getProjectiles().erase(it);
-            } else {
-                ++it;
+// Collision between player projectiles and aliens
+for (auto& alien : aliens) {
+    for (auto it = player.getProjectiles().begin(); it != player.getProjectiles().end();) {
+        if (it->getBounds().intersects(alien.getBounds())) {
+            alien.takeDamage(1);
+            if (alien.isDead()) {
+                score += 100;
             }
-        }
-    }
-    for (auto it = aliens.begin(); it != aliens.end();) {
-        if (it->isOffScreen()) {
-            player.takeDamage(10); // Reduce player's health
-            it = aliens.erase(it); // Remove the alien
+            it = player.getProjectiles().erase(it);
         } else {
-            ++it; // Move to the next alien
+            ++it;
         }
     }
-    aliens.erase(
-        std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
-            return alien.isDead();
-        }),
-        aliens.end()
-    );
+}
 
-    aliens.erase(
-        std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
-            return alien.isOffScreen();
-        }),
-        aliens.end()
-    );
+// Remove offscreen aliens and reduce player's health
+for (auto it = aliens.begin(); it != aliens.end();) {
+    if (it->isOffScreen()) {
+        player.takeDamage(10); // Reduce player's health
+        it = aliens.erase(it); // Remove the alien
+    } else {
+        ++it; // Move to the next alien
+    }
+}
+
+// Remove dead aliens
+aliens.erase(
+    std::remove_if(aliens.begin(), aliens.end(), [](Alien& alien) {
+        return alien.isDead();
+    }),
+    aliens.end()
+);
+
 
     // Render game elements
     for (auto& alien : aliens) {
