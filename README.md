@@ -1,6 +1,6 @@
 # Alien Invasion
 
-Our approach to the classic retro game Space Invaders.
+My approach to the classic retro game Space Invaders.
 
 ## Introduction
 
@@ -144,14 +144,6 @@ doxygen/
 - **Update Methods:** Centralized logic for real-time interactivity between game elements (Player, Alien, Projectile).
 - **Scaling Difficulty:** Alien spawn rate increases with the score, adding replay value and challenge.
 - **Documentation Tools:** Integrated Sphinx and Doxygen for professional, detailed project documentation.
-
-## Contributors
-
-- **Andrei:** CMake integration, report writing, and debugging.
-- **Daniel:** Core gameplay features, mechanics, and additional features, documentation, GTests, sound implementation, creative ideas, CMake integration, report writing, and debugging.
-- **Leonardo:** Presentation, design, and code structure.
-- **Peter:** Documentation, GTests, and sound implementation.
-- **Pietro:** Custom skins, creative ideas, and presentation.
 
 ## Acknowledgments
 
